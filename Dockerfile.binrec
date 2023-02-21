@@ -4,5 +4,8 @@ ADD src/submodules/binrec binrec
 
 WORKDIR binrec/
 
+RUN apt-get update && \
+    apt-get -y install --no-install-recommends apt-utils && \
+    apt-get -y install sudo 
 RUN ./get_just.sh
 RUN just install-binrec
