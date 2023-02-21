@@ -1,0 +1,8 @@
+FROM ubuntu:20.04
+
+ADD src/submodules/binrec binrec 
+
+WORKDIR binrec/
+
+RUN ./get_just.sh
+RUN just install-binrec
