@@ -31,3 +31,6 @@
 [submodule "src/submodules/bingraphvis"]
 	path = src/submodules/bingraphvis
 	url = https://github.com/axt/bingraphvis
+[submodule "src/submodules/binrec"]
+	path = src/submodules/binrec
+	url = https://github.com/wiauxb/binrec-tob.git
