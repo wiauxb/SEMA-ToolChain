@@ -4,6 +4,8 @@ ADD src/submodules/binrec binrec
 
 WORKDIR binrec/
 
+
+RUN dpkg --add-architecture i386
 RUN apt-get update && \
     apt-get -y install --no-install-recommends apt-utils && \
     apt-get -y install sudo 
