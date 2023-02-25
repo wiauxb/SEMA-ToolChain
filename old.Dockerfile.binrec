@@ -1,0 +1,34 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND noninteractive 
+RUN dpkg --add-architecture i386
+
+RUN sed -i 's/amd64/i386/g' /etc/apt/sources.list
+
+RUN apt-get update
+RUN apt-get install -y libenchant-dev libc6-dev libc6-dev-i386 curl git gcc python3.9 python3.9-dev python3.9-venv clang sudo 
+
+RUN adduser --disabled-login --disabled-password myuser
+RUN usermod -aG sudo myuser
+
+
+RUN echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+USER myuser
+
+COPY src/submodules/binrec /home/myuser/binrec
+
+WORKDIR /home/myuser/binrec
+
+RUN sudo rm -f /home/myuser/binrec/.git
+COPY .git/modules/src/submodules/binrec /home/myuser/binrec/.git
+
+RUN sudo chown -R myuser:myuser /home/myuser/binrec
+
+RUN sed -i -e 's/..\/..\/..\/..\/..\/src\/submodules\/binrec/\/home\/myuser\/binrec/g' /home/myuser/binrec/.git/config
+RUN echo "gitdir: ../.git/modules/s2e-env" > /home/myuser/binrec/s2e-env/.git
+RUN sed -i -e 's/..\/..\/..\/..\/..\/src\/submodules\/binrec/s2e-env/g' /home/myuser/binrec/.git/modules/s2e-env/config
+RUN git config --global --add safe.directory /home/myuser/binrec
+
+
+RUN ./get_just.sh
+RUN just install-binrec

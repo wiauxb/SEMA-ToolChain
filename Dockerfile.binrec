@@ -1,4 +1,36 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.04 as base
+
+MAINTAINER christophe.crochet@uclouvain.be
+
+########################################################################################"
+# Possible errors afterward:
+
+# chmod: cannot access '/boot/vmlinu*': No such file or directory
+# ERROR: s2e-env 0.20 has requirement pefile==2019.4.18, but you'll have pefile 2022.5.30 which is incompatible.
+# curl -f -L "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.0//clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz" -o "clang+llvm-14.0.0-x86_64-linux-gnu-ubuntu-18.04.tar.xz"
+# ->>> strange ubuntu18
+# curl -f -L "https://github.com/Z3Prover/z3/releases/download/z3-4.7.1//z3-4.7.1-x64-ubuntu-16.04.zip" -o "z3-4.7.1-x64-ubuntu-16.04.zip"
+# ->>> strange ubuntu16
+# -- MySQL not found.
+# -- MySQL Embedded not found.
+# -- WARNING: MySQL libraries not found, some features will be disabled. 
+# -- ODBC: 
+# -- WARNING: ODBC libraries not found, some features will be disabled. 
+# -- Oracle: 
+# -- ORACLE_HOME=
+# -- None of the supported Oracle versions (21;20;19;18;12;11;10) could be found, consider updating ORACLE_VERSIONS if the version you use is not among them.
+# -- WARNING: Oracle libraries not found, some features will be disabled. 
+# -- PostgreSQL: 
+# -- WARNING: PostgreSQL libraries not found, some features will be disabled. 
+# -- SQLite3: 
+# -- SQLite3 not found (SQLITE3_INCLUDE_DIR=SQLITE3_INCLUDE_DIR-NOTFOUND, SQLITE3_LIBRARY=SQLITE3_LIBRARY-NOTFOUND.
+# -- WARNING: SQLite3 libraries not found, some features will be disabled. 
+# -- Firebird: 
+# -- SOCI_FIREBIRD_EMBEDDED                   = OFF 
+# -- WARNING: Firebird libraries not found, some features will be disabled. 
+# -- DB2: 
+# -- WARNING: DB2 libraries not found, some features will be disabled. 
+########################################################################################"
 
 ENV DEBIAN_FRONTEND noninteractive 
 RUN dpkg --add-architecture i386
@@ -15,20 +47,15 @@ RUN usermod -aG sudo myuser
 RUN echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER myuser
 
-COPY src/submodules/binrec /home/myuser/binrec
+WORKDIR /home/myuser/
 
-WORKDIR /home/myuser/binrec
+RUN git config --global url."https://".insteadOf git://
 
-RUN sudo rm -f /home/myuser/binrec/.git
-COPY .git/modules/src/submodules/binrec /home/myuser/binrec/.git
+# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; sudo python3.9 get-pip.py
 
-RUN sudo chown -R myuser:myuser /home/myuser/binrec
+RUN git clone https://github.com/wiauxb/binrec-tob.git
 
-RUN sed -i -e 's/..\/..\/..\/..\/..\/src\/submodules\/binrec/\/home\/myuser\/binrec/g' /home/myuser/binrec/.git/config
-RUN echo "gitdir: ../.git/modules/s2e-env" > /home/myuser/binrec/s2e-env/.git
-RUN sed -i -e 's/..\/..\/..\/..\/..\/src\/submodules\/binrec/s2e-env/g' /home/myuser/binrec/.git/modules/s2e-env/config
-RUN git config --global --add safe.directory /home/myuser/binrec
+WORKDIR /home/myuser/binrec-tob
 
+RUN chmod +x get_just.sh; ./get_just.sh; just install-binrec
 
-RUN ./get_just.sh
-RUN just install-binrec
