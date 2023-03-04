@@ -207,9 +207,9 @@
             <main>
                <form method=post enctype=multipart/form-data>
                   <div class="container-fluid px-4">
-                     <h1 class="mt-4">SEMA malware downloader</h1>
+                     <h1 class="mt-4">SEMA malware mutation tool</h1>
                      <div class="col-xl-12 rainbowContainer2">
-                        <h3 id="rainbowContainer2">Current downloading states</h3>
+                        <h3 id="rainbowContainer2">mutation state</h3>
                         <!-- <div class="progress" style="width: 75%; margin: auto; margin-top: 5px;margin-bottom: 5px;">
                               <div class="progress-bar progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
@@ -228,35 +228,22 @@
                              <a class="btn btn-link" data-bs-toggle="collapse" href="#collapse1" aria-expanded="trye" aria-controls="collapse1" role="button">
                                  <i class="fas fa-chart-bar me-1"></i>
                              </a>
-                              Malware downloader -  Malware Bazart
+                              Malware mutation
                            </div>
                            <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion">
                              <div class="card-body">
                                 <div class="mb-3">
-                                    <label for="db" class="form-label">Database path</label>
+                                    <label for="db" class="form-label">Malware path</label>
                                     <input class="form-control" aria-describedby="dbHelp" name="db" value="databases/" type="text" id="db">
                                     <div id="dbHelp" class="form-text">
-                                       Path for the downloaded samples
+                                       Path for the seed malware
                                     </div>
                                  </div>
-                                <div class="mb-3">
-                                    <label for="TAG" class="form-label">TAG</label>
-                                    <input class="form-control" aria-describedby="TAGHelp" name="TAG" value="" type="text" id="TAG" required>
-                                    <div id="TAGHelp" class="form-text">
-                                       MalwareDB tag - Separate multiple tags with a space " "
-                                    </div>
-                                 </div>
-                                 <row>
-                                    <label for="timeout" class="form-label">Maximum samples</label>
-                                    <input type="range" aria-describedby="max_sampleHelp" class="form-range" value="50" min="0" max="2000" name="max_sample" id="max_sample" oninput="this.nextElementSibling.value = this.value">
-                                    <output>50</output>
-                                    <div id="max_sampleHelp" class="form-text">Maximum samples download</div>
-                                 </row>
                              </div>
                          </div>
                         </div>
                      </div>
-                     <button class="btn btn-primary pull-right submitter" style="position: relative;margin-top: 1%;">Start download</button>
+                     <button class="btn btn-primary pull-right submitter" style="position: relative;margin-top: 1%;">Start mutate</button>
                   </div>
                   
                </form>

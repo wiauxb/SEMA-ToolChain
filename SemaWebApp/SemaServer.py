@@ -564,6 +564,10 @@ class SemaServer:
             SemaServer.download_thread = threading.Thread(target=SemaServer.download_malware, args=([request.form['TAG'].split(' '), request.form['max_sample'], request.form['db']])).start()
         return render_template('downloader.html')
     
+    @app.route('/binrec.html', methods = ['GET', 'POST'])
+    def serve_binrec():
+        return render_template('binrec.html')
+    
     @app.route('/results.html', methods = ['GET', 'POST'])
     def serve_results():
         """
