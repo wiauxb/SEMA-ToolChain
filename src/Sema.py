@@ -29,6 +29,8 @@ class Sema:
 
         self.start_time = time.time()
 
+        #TODO add binrec
+
         self.tool_scdg = SemaSCDG(
             print_sm_step=True,
             print_syscall=True,

@@ -64,6 +64,61 @@ class SemaServer:
     def __init__(self,dir_path=None,experiments=None):
         SemaServer.sema = Sema(is_from_tc=False, is_from_web=True)
         
+        SemaServer.actions_binrec = [{}]
+        
+        for group in SemaServer.sema.args_parser.args_parser_binrec.parser._mutually_exclusive_groups:
+            #print(group.title)
+            if group.title == "positional arguments":
+                continue
+            if group.title == "optional arguments":
+                continue
+            
+            if len(SemaServer.actions_binrec[-1]) == 3:
+                SemaServer.actions_binrec.append({})
+                
+            for action in group._group_actions:
+                # TODO add group_name in new dictionary
+                group_name = group.title
+                print(action)
+                if group_name not in SemaServer.actions_binrec[-1]:
+                    SemaServer.actions_binrec[-1][group_name] = []
+                if isinstance(action, argparse._StoreTrueAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": False, "is_mutually_exclusive": True})
+                elif isinstance(action, argparse._StoreFalseAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": True, "is_mutually_exclusive": True})
+                elif not isinstance(action, argparse._HelpAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": str(action.type), "default": action.default, "is_mutually_exclusive": True})
+            # print(SemaServer.actions_binrec)
+            # exit(0)
+            
+        for group in SemaServer.sema.args_parser.args_parser_binrec.parser._action_groups:
+            #print(group.title)
+            if group.title == "positional arguments":
+                continue
+            if group.title == "optional arguments":
+                continue
+            
+            if len(SemaServer.actions_binrec[-1]) == 3:
+                SemaServer.actions_binrec.append({})
+                
+            for action in group._group_actions:
+                # TODO add group_name in new dictionary
+                group_name = group.title
+                print(action)
+                if group_name not in SemaServer.actions_binrec[-1]:
+                    SemaServer.actions_binrec[-1][group_name] = []
+                if isinstance(action, argparse._StoreTrueAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": False, "is_mutually_exclusive": False})
+                elif isinstance(action, argparse._StoreFalseAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": True, "is_mutually_exclusive": False})
+                elif not isinstance(action, argparse._HelpAction):
+                    SemaServer.actions_binrec[-1][group_name].append({'name': action.dest, 'help': action.help, "type": str(action.type), "default": action.default, "is_mutually_exclusive": False})
+            # print(SemaServer.actions_binrec)
+            # exit(0)
+            
+        print(SemaServer.actions_binrec)
+
+        
         SemaServer.actions_scdg = [{}]
         
         for group in SemaServer.sema.args_parser.args_parser_scdg.parser._mutually_exclusive_groups:
@@ -233,6 +288,7 @@ class SemaServer:
             scdg_args = {}
             class_args = {}
             fl_args = {}
+            #TODO add binrec
             if "scdg_enable" in request.form or True: # TODO refactor
                 exp_args = []
                 exp_args_str = ""
@@ -394,12 +450,14 @@ class SemaServer:
                 pass
             threading.Thread(target=SemaServer.manage_exps, args=([args])).start()
             
-            return render_template('index.html', 
+            return render_template('index.html',
+                                actions_binrec=SemaServer.actions_binrec,
                                 actions_scdg=SemaServer.actions_scdg, 
                                 actions_classifier=SemaServer.actions_classifier,
                                 progress=0) # TODO 0rtt
         else:
-            return render_template('index.html', 
+            return render_template('index.html',
+                                actions_binrec=SemaServer.actions_binrec,
                                 actions_scdg=SemaServer.actions_scdg, 
                                 actions_classifier=SemaServer.actions_classifier,
                                 progress=0)

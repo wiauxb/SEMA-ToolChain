@@ -271,6 +271,111 @@
                              <a class="btn btn-link" data-bs-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1" role="button">
                                  <i class="fas fa-chart-bar me-1"></i>
                              </a>
+                              SEMA Mutation Tool
+                              <div class="col-xl-6">
+                                 <div class="form-check form-switch" style="right: 5%;position: absolute;top: 30%;">
+                                     <input class="form-check-input" type="checkbox" name="binrec_enable" value="binrec_enable" id="binrec_enable" checked>
+                                     <label class="form-check-label" for="binrec_enable">Enable</label>
+                                 </div>
+                             </div>
+                           </div>
+                           <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                             <div class="card-body">
+                              {% for action_binrec in actions_binrec %}
+                              <div class="card-group">
+                                 {% for group in action_binrec %}
+                                 <div class="card">
+                                    <div class="card-body">
+                                       <p class="card-text">
+                                           <div class="col-auto">
+                                               <label for="exec_mode" class="col-form-label"><b>{{ group }}</b></label>
+                                           </div>
+                                           {% if action_binrec[group][-1]["is_mutually_exclusive"] %}
+                                             {% for args in action_binrec[group] %}
+                                             <div class="form-check">
+                                                {% if args["default"] %}
+                                                      <input class="form-check-input"  aria-describedby="{{ args["name"] }}Help" type="radio" name="{{ group }}" value={{ args["name"] }} id={{ args["name"] }} checked>
+                                                {% else %}
+                                                      <input class="form-check-input"  aria-describedby="{{ args["name"] }}Help" type="radio" name="{{ group }}" value={{ args["name"] }} id={{ args["name"] }}>
+                                                {% endif %}
+                                                <label class="form-check-label" for={{ args["name"] }}>
+                                                {{ args["name"] }}
+                                                </label>
+                                                <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
+                                             </div>
+                                             {% endfor %}
+                                           {% else %}
+                                             {% for args in action_binrec[group] %}
+                                                {% if args["type"] == "<class 'int'>" %}
+                                                   <row>
+                                                      <label for="timeout" class="form-label">{{ args["name"] }}</label>
+                                                      <input type="range" aria-describedby="{{ args["name"] }}Help" class="form-range" value="{{ args["default"] }}" min="0" max="{{ args["default"]|int*5 }}" name="{{ args["name"] }}" id={{ args["name"] }} oninput="this.nextElementSibling.value = this.value">
+                                                      <output>{{ args["default"] }}</output>
+                                                      <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
+                                                   </row>
+                                                {% elif  args["type"] == "<class 'float'>" %}
+                                                   <row>
+                                                      <label for="timeout" class="form-label">{{ args["name"] }}</label>
+                                                      <input type="range" aria-describedby="{{ args["name"] }}Help" class="form-range" value="{{ args["default"] }}" step="0.25" min="0" max="{{ args["default"]|float*5 }}" name="{{ args["name"] }}" id={{ args["name"] }} oninput="this.nextElementSibling.value = this.value">
+                                                      <output>{{ args["default"] }}</output>
+                                                      <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
+                                                   </row>
+                                                {% elif  args["type"] == "bool" %}
+                                                   <div class="form-check">
+                                                      {% if args["default"] %}
+                                                         <input class="form-check-input"  aria-describedby="{{ args["name"] }}Help" type="checkbox" name="{{ args["name"] }}" value={{ args["name"] }} id={{ args["name"] }} checked>
+                                                      {% else %}
+                                                         <input class="form-check-input"  aria-describedby="{{ args["name"] }}Help" type="checkbox" name="{{ args["name"] }}" value={{ args["name"] }} id={{ args["name"] }}>
+                                                      {% endif %}
+                                                      <label class="form-check-label" for={{ args["name"] }}>
+                                                      {{ args["name"] }}
+                                                      </label>
+                                                      <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
+                                                   </div>
+                                                {% elif  args["name"] == "binaries" or args["name"] == "dir" or  args["name"] == "exp_dir" %}
+                                                   <div class="mb-3">
+                                                      <label for="{{ args["name"] }}" class="form-label">{{ args["name"] }}</label>
+                                                      <input class="form-control" aria-describedby="{{ args["name"] }}Help" name="{{ args["name"] }}" value="" type="file" id="{{ args["name"] }}" multiple directory webkitdirectory>
+                                                      <div id="{{ args["name"] }}Help" class="form-text">
+                                                         {{ args["help"] }}
+                                                         If you use the html "input" file, then we considere the root directory being in the default directory, else use the following textual input with full path
+                                                      </div>
+                                                      <input class="form-control"  name="{{ args["name"] }}" value="{{ args["default"] }}" type="text" id="{{ args["name"] }}">
+                                                   </div>
+                                                {% elif  args["name"] == "binary" %}
+                                                   <div class="mb-3">
+                                                      <label for="{{ args["name"] }}" class="form-label">{{ args["name"] }}</label>
+                                                      <input class="form-control" aria-describedby="{{ args["name"] }}Help" name="{{ args["name"] }}" value="" type="file" id="{{ args["name"] }}" multiple>
+                                                      <div id="{{ args["name"] }}Help" class="form-text">
+                                                         {{ args["help"] }}
+                                                         If you use the html "input" file, then we considere the root directory being in the default directory, else use the following textual input with full path
+                                                      </div>
+                                                      <input class="form-control"  name="{{ args["name"] }}" value="" type="text" id="{{ args["name"] }}">
+                                                   </div>
+                                                {% else %}
+                                                   <input class="form-control" aria-describedby="{{ args["name"] }}Help" type="text" placeholder="{{ args["name"] }}" aria-label="{{ args["help"] }}">
+                                                   <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
+                                                {% endif %}
+                                                <hr>
+                                             {% endfor %}
+                                           {% endif %}
+                                       </p>
+                                    </div>
+                                 </div>
+                                 {% endfor %}
+                              </div>
+                              {% endfor %}
+                             </div>
+                         </div>
+                        </div>
+                     </div>
+                     <br>
+                     <div class="col-xl-12">
+                        <div class="card">
+                           <div class="card-header" id="heading1">
+                             <a class="btn btn-link" data-bs-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1" role="button">
+                                 <i class="fas fa-chart-bar me-1"></i>
+                             </a>
                               SEMA SCDG
                               <div class="col-xl-6">
                                  <div class="form-check form-switch" style="right: 5%;position: absolute;top: 30%;">
