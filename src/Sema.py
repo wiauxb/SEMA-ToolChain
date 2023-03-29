@@ -9,11 +9,13 @@ try:
     from SemaSCDG.SemaSCDG import SemaSCDG
     from helper.ArgumentParserTC import ArgumentParserTC
     from SemaSCDG.clogging.CustomFormatter import CustomFormatter
+    from SemaMutater.SemaMutater import SemaMutater
 except:
     from src.SemaClassifier.SemaClassifier import SemaClassifier
     from src.SemaSCDG.SemaSCDG import SemaSCDG
     from src.helper.ArgumentParserTC import ArgumentParserTC
     from src.SemaSCDG.clogging.CustomFormatter import CustomFormatter
+    from src.SemaMutater.SemaMutater import SemaMutater
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,7 +31,7 @@ class Sema:
 
         self.start_time = time.time()
 
-        #TODO add binrec
+        self.tool_mutater = SemaMutater()
 
         self.tool_scdg = SemaSCDG(
             print_sm_step=True,
@@ -42,7 +44,7 @@ class Sema:
         )
         
         self.tool_classifier = SemaClassifier(parse=False)
-        self.args_parser = ArgumentParserTC(self.tool_scdg, self.tool_classifier)        
+        self.args_parser = ArgumentParserTC(self.tool_scdg, self.tool_classifier, self.tool_mutater)        
         if is_from_web:
             self.current_exp_dir = 0
             self.tool_scdg.current_exp_dir = 0

@@ -66,7 +66,7 @@ class SemaServer:
         
         SemaServer.actions_binrec = [{}]
         
-        for group in SemaServer.sema.args_parser.args_parser_binrec.parser._mutually_exclusive_groups:
+        for group in SemaServer.sema.args_parser.args_parser_mutater.parser._mutually_exclusive_groups:
             #print(group.title)
             if group.title == "positional arguments":
                 continue
@@ -91,7 +91,7 @@ class SemaServer:
             # print(SemaServer.actions_binrec)
             # exit(0)
             
-        for group in SemaServer.sema.args_parser.args_parser_binrec.parser._action_groups:
+        for group in SemaServer.sema.args_parser.args_parser_mutater.parser._action_groups:
             #print(group.title)
             if group.title == "positional arguments":
                 continue

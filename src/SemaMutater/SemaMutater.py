@@ -1,0 +1,5 @@
+
+class SemaMutater:
+
+    path = ""
+    traces = []
