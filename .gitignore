@@ -47,3 +47,4 @@ wl_model.pkl
 # *.tar
 # *.zip
 sema_tc.egg-info
+*.code-workspace

@@ -49,6 +49,11 @@ USER myuser
 
 WORKDIR /home/myuser/
 
+#install
+RUN wget https://apt.llvm.org/llvm.sh
+RUN chmod +x llvm.sh
+RUN sudo ./llvm.sh 14 all
+
 RUN git config --global url."https://".insteadOf git://
 
 # RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; sudo python3.9 get-pip.py
