@@ -75,6 +75,21 @@
                }
             });
 
+            if($('#binrec_enable').is(":checked")) {
+               $('#collapse0 :input').removeAttr('style');
+            } else {
+               $('#collapse0 :input').css('pointer-events','none');
+               $('#collapse0 :input').css('background-color','grey');
+            }
+            $('#binrec_enable').change(function(){
+               if($(this).is(":checked")) {
+                  $('#collapse0 :input').removeAttr('style');
+               } else {
+                  $('#collapse0 :input').css('pointer-events','none');
+                  $('#collapse0 :input').css('background-color','grey');
+               }
+            });
+
             if($('#scdg_enable').is(":checked")) {
                $('#collapse1 :input').removeAttr('style');
             } else {
@@ -268,7 +283,7 @@
                      <div class="col-xl-12">
                         <div class="card">
                            <div class="card-header" id="heading1">
-                             <a class="btn btn-link" data-bs-toggle="collapse" href="#collapse1" aria-expanded="false" aria-controls="collapse1" role="button">
+                             <a class="btn btn-link" data-bs-toggle="collapse" href="#collapse0" aria-expanded="false" aria-controls="collapse0" role="button">
                                  <i class="fas fa-chart-bar me-1"></i>
                              </a>
                               SEMA Mutation Tool
@@ -279,7 +294,7 @@
                                  </div>
                              </div>
                            </div>
-                           <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                           <div id="collapse0" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
                              <div class="card-body">
                               {% for action_binrec in actions_binrec %}
                               <div class="card-group">
