@@ -145,7 +145,7 @@ class ArgumentParserSCDG:
         self.group_bin.add_argument(
             "--conc_loop",
             help="Number of symbolic arguments given to the binary (default : 1024)",
-            default=1024,
+            default=10240,
             type=int,
         )
         
@@ -166,7 +166,19 @@ class ArgumentParserSCDG:
             "--track_command",
             help="Track command loop of RATs  (default : False)",
             action="store_true",
-            
+   
+        )
+        self.group_rats.add_argument(
+            "--ioc_report",
+            help="produces and IoC report  (default : False)",
+            action="store_true",
+   
+        )
+        self.group_rats.add_argument(
+            "--hooks",
+            help="activates the hooks for time-consuming functions  (default : False)",
+            action="store_true",
+   
         )
         
         self.group_scdg = self.parser.add_argument_group('SCDG creation parameter')
@@ -244,7 +256,7 @@ class ArgumentParserSCDG:
         self.group.add_argument(
             "--timeout",
             help="Timeout in seconds before ending extraction (default : 200)",
-            default=200,
+            default=1000,
             type=int,
         )     
         self.group.add_argument(

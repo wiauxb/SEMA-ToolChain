@@ -37,8 +37,8 @@ class SemaExplorer(ExplorationTechnique):
         max_end_state=600,
         max_step=100000000000000000000,
         timeout_tab=[1200, 2400, 3600],
-        jump_it=100,
-        loop_counter_concrete=100000000,
+        jump_it=100000000000,
+        loop_counter_concrete=10000000000,
         jump_dict={},
         jump_concrete_dict={},
         max_simul_state=1,
@@ -189,7 +189,7 @@ class SemaExplorer(ExplorationTechnique):
             return
 
         for s in simgr.stashes[source_stash]:
-            if s.globals["n_steps"] >= max_step:
+            if s.globals["n_steps"] > max_step:
                 id_to_move = s.globals["id"]
                 max_step = s.globals["n_steps"]
 
@@ -274,6 +274,9 @@ class SemaExplorer(ExplorationTechnique):
                 )
                 self.log.info("A state has been discarded because of simple loop")
 
+            if state.globals["n_steps"] % 1000 == 0:
+                self.log.debug("n_steps = " + str(state.globals["n_steps"]))
+                
             if state.globals["n_steps"] > self.max_step:
                 # import pdb; pdb.set_trace()
                 state.history.trim()
@@ -284,6 +287,7 @@ class SemaExplorer(ExplorationTechnique):
                 )
                 self.log.info("A state has been discarded because of max_step reached")
                 
+            # TODO check seems new
             if state.globals["loop"] > 3:
                 simgr.move(
                     from_stash="active",
@@ -376,7 +380,7 @@ class SemaExplorer(ExplorationTechnique):
             state.globals["addr_call"] = calls[1:]
 
     def step(self, simgr, stash="active", **kwargs):
-        pass
+        raise NotImplementedError()
 
     def build_snapshot(self, simgr):
         self.snapshot_state.clear()
@@ -397,7 +401,21 @@ class SemaExplorer(ExplorationTechnique):
                     "End of the trace number " + str(id_cur) + " unconstrained"
                 )
             self.unconstrained = len(simgr.unconstrained)
-
+            
+    def manage_lost(self, simgr):
+        simgr.move(
+            from_stash="active",
+            to_stash="lost" ,#"lost", deadended
+            filter_func=lambda s: s.addr < simgr._project.loader.main_object.mapped_base,
+        )
+        
+    def manage_end_thread(self, simgr):
+        simgr.move(
+            from_stash="active",
+            to_stash="deadbeef",
+            filter_func=lambda s: s.addr == 0xdeadbeef,
+        )
+        
     def manage_error(self, simgr):
         if len(simgr.errored) > self.errored:
             new_errors = len(simgr.errored) - self.errored
@@ -485,6 +503,7 @@ class SemaExplorer(ExplorationTechnique):
             for i in range(len(self.loopBreak_stack)):
                 self.log.info("A state has been discarded because of jump")
                 guilty_state_id, addr = self.loopBreak_stack.pop()
+                self.log.info(hex(addr))
                 simgr.move(
                     "active", "ExcessLoop", lambda s: s.globals["id"] == guilty_state_id
                 )

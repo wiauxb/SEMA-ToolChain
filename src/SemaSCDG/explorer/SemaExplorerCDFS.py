@@ -46,14 +46,12 @@ class SemaExplorerCDFS(SemaExplorer):
         try:
             simgr = simgr.step(stash=stash, **kwargs)
         except Exception as inst:
-            self.log.warning("ERROR IN STEP() - YOU ARE NOT SUPPOSED TO BE THERE !")
-            # self.log.warning(type(inst))    # the exception instance
             self.log.warning(inst)  # __str__ allows args to be printed directly,
             exc_type, exc_obj, exc_tb = sys.exc_info()
             # fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
             self.log.warning(exc_type)
-            self.log.warning(exc_tb)
-           # exit(-1)
+            self.log.warning(exc_obj,exc_type)
+            #exit(-1)
             #raise Exception("ERROR IN STEP() - YOU ARE NOT SUPPOSED TO BE THERE !")
 
         super().build_snapshot(simgr)
@@ -68,8 +66,8 @@ class SemaExplorerCDFS(SemaExplorer):
             self.log.info("pause stash len :" + str(len(self.pause_stash)))
 
         if self.print_sm_step and len(self.fork_stack) > 0:
-            self.log.info("fork_stack : " + str(len(self.fork_stack)))
-
+            self.log.info("fork_stack : " + str(len(self.fork_stack)) + " " + hex(simgr.active[0].addr) + " || " + hex(simgr.active[1].addr))
+            
         # if self.print_sm_step:
         #    self.log.info("len(self.loopBreak_stack) : " + str(len(self.loopBreak_stack)))
         #    self.log.info("state.globals['n_steps'] : " + str(state.globals['n_steps']))
@@ -77,11 +75,22 @@ class SemaExplorerCDFS(SemaExplorer):
         # We detect fork for a state
         super().manage_fork(simgr)
 
+        simgr.move(
+            from_stash="active",
+            to_stash="deadend",
+            filter_func=lambda s: s.addr == 0xdeadbeef,
+        )
+        
         # Remove state which performed more jump than the limit allowed
         super().remove_exceeded_jump(simgr)
+        
+        super().manage_end_thread(simgr)
+        
+        super().manage_lost(simgr)
 
         # Manage ended state
         super().manage_deadended(simgr)
+        
 
         for s in simgr.active:
             vis_addr = str(self.check_constraint(s, s.history.jump_target))
@@ -112,7 +121,7 @@ class SemaExplorerCDFS(SemaExplorer):
             and len(simgr.active) < self.max_simul_state
         ):
             simgr.active.append(simgr.stashes["new_addr"].pop())
-            #self.log.info("Hey new addr !")
+            self.log.info("Hey new addr !")
         while len(simgr.active) < self.max_simul_state and len(self.pause_stash) > 0:
             simgr.active.append(self.pause_stash.pop())
 
@@ -155,6 +164,7 @@ class SemaExplorerCDFS(SemaExplorer):
             for i in range(moves):
                 self.pause_stash.append(simgr.stashes["temp"].pop())
 
+            
         super().excessed_step_to_active(simgr)
 
         super().excessed_loop_to_active(simgr)

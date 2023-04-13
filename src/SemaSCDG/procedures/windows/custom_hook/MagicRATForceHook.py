@@ -12,7 +12,7 @@ class MagicRATForceHook(angr.SimProcedure):
         #self.state.solver.add(self.state.regs.ebx == 0)
         #self.state.solver.BVAND(self.state.regs.ebx, self.state.regs.ebx)
         self.state.regs.ebx = 1 # set TEST ebx, ebx to true
-        self.state.inspect.skip_jump = True
+        #self.state.inspect.skip_jump = True
         jumpkind = 'Ijk_NoHook' if self.plength == 0 else 'Ijk_Boring'
         print(self.plength)
         self.successors.add_successor(self.state, self.state.addr+self.plength, self.state.solver.true, jumpkind)
