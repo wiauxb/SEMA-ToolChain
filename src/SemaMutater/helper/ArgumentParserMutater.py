@@ -1,6 +1,8 @@
 import argparse
 import sys
 
+from src import SemaMutater
+
 
 class ArgumentParserMutater:
     
@@ -11,16 +13,21 @@ class ArgumentParserMutater:
         self.group = self.parser.add_argument_group('Traces Parameters')
 
         self.group.add_argument(
-            "--path",
+            "binary",
             help="Path to the Binary to mutate",
-            required=True
+            default="/src"
         )
 
+        #TODO handle multiple trace
         self.group.add_argument(
             "--trace",
-            help="Add a trace",
-            action="append",
-            required=True
+            help="Add a trace (usage: <name of trace> <symbolic arg> <args>)"
+        )
+        
+        self.group.add_argument(
+            "--output",
+            help=" Directory to save mutation created (default : output/mut/<exp_mut>)",
+            default="output/mut/",
         )
     
         self.tool_mutater = tool_mutater
@@ -28,6 +35,9 @@ class ArgumentParserMutater:
     def update_tool(self,args):
         self.tool_mutater.path = args.path
         self.tool_mutater.traces = args.trace
+        self.tool_mutater.output = args.output + "/"
+
+        self.tool_mutater.print_args()
 
     def parse_arguments(self, allow_unk = False, args_list=None):
         args = None
@@ -37,3 +47,24 @@ class ArgumentParserMutater:
             args, unknown = self.parser.parse_known_args(args_list)
 
         return args
+    
+
+def main():
+    toolm = SemaMutater(
+        print_sm_step=True,
+        print_syscall=True,
+        debug_error=True,
+        debug_string=True,
+        print_on=True,
+        is_from_web=False
+    )
+    args_parser = ArgumentParserMutater(toolm)
+    args = args_parser.parse_arguments()
+    args_parser.update_tool(args)
+    # toolm.start_scdg(args, is_fl=False,csv_file=None)
+
+
+if __name__ == "__main__":
+    
+    main()
+            

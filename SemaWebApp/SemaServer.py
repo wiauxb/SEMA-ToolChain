@@ -285,10 +285,64 @@ class SemaServer:
         if request.method == 'POST':
             print(request.form)
             
+            mut_args = {}
             scdg_args = {}
             class_args = {}
             fl_args = {}
             #TODO add binrec
+            if "binrec_enable" in request.form:
+                exp_args = []
+                exp_args_str = ""
+                for group in SemaServer.sema.args_parser.args_parser_mutater.parser._mutually_exclusive_groups:
+                    if group.title in request.form:
+                        exp_args.append("--" + request.form[group.title])
+                        mut_args[request.form[group.title]] = True
+                for group in SemaServer.sema.args_parser.args_parser_mutater.parser._action_groups:
+                    for action in group._group_actions:
+                        print("ACTION", action)
+                        if action.dest == "binary":
+                            pass
+                        elif action.dest == "output":
+                            if len(request.files["output"].filename) > 0:
+                                exp_args.append("--" + action.dest)
+                                exp_args.append(request.files["output"].split("/")[0])
+                            else:
+                                exp_args.append("--" + action.dest)
+                                exp_args.append(request.form[action.dest])
+                                mut_args[action.dest] = request.form[action.dest]
+                        elif action.dest == "path":
+                            if len(request.files["path"].filename) > 0:
+                                exp_args.append("--" + action.dest)
+                                exp_args.append(request.form[action.dest].split("/")[0])
+                            else:
+                                exp_args.append("--" + action.dest)
+                                exp_args.append(request.form[action.dest])
+                                mut_args[action.dest] = request.form[action.dest]
+                        elif action.dest in request.form:
+                            # TODO add group_name in new dictionary
+                            print(group, action)
+                            group_name = group.title
+                            if isinstance(action, argparse._StoreTrueAction) or isinstance(action, argparse._StoreFalseAction):
+                                exp_args.append("--" + action.dest)
+                                exp_args_str += "--" + action.dest + " "
+                                mut_args[action.dest] = True
+                            else:
+                                print("MUST BE HERE", action)
+                                exp_args.append("--" + action.dest)
+                                exp_args.append(request.form[action.dest])
+                                exp_args_str += "--" + action.dest + " " + request.form[action.dest] + " "  
+                                mut_args[action.dest] = request.form[action.dest]     
+                if len(request.form["binary"]) > 0:
+                    binary = request.form["binary"]
+                    binary_split = binary.split("/src")
+                    print(binary_split)
+                    #exit()
+                    binary = "/app/src" + binary_split[1]
+                    exp_args.append(binary)
+                    mut_args["binary"] = binary
+                else: # TODO
+                    exp_args.append(str(request.files["binary"].filename))
+                    exp_args_str += str(request.files["binary"].filename)   
             if "scdg_enable" in request.form or True: # TODO refactor
                 exp_args = []
                 exp_args_str = ""
@@ -392,11 +446,13 @@ class SemaServer:
 
             # TODO dir per malware
             
-            print(exp_args)
+            print("AAA", exp_args)
+            print("BBB", mut_args)
             #print(exp_args_str.split())
             #exit(0)
             #sys.argv = exp_args_str.split()
             args = SemaServer.sema.args_parser.parse_arguments(args_list=exp_args,allow_unk=False) # TODO
+            print("="*30)
             print(args)
             #exit(0)
             # print(unknow)
@@ -412,6 +468,13 @@ class SemaServer:
             else:
                 SemaServer.sema.current_exp_dir = int(args.binaries.split("/")[-1]) # TODO
                     
+            if "binrec_enable" in request.form:
+                SemaServer.sema.tool_mutater.args = args
+                SemaServer.sema.args_parser.args_parser_mutater.update_tool(args)
+                # csv_scdg_file = "src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/" + "scdg.csv"
+
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_mutater.print_args)) #,args=([class_args,"src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/"])))
+
             if "scdg_enable" in request.form:
                 SemaServer.sema.tool_classifier.args = args
                 SemaServer.sema.args_parser.args_parser_scdg.update_tool(args)
@@ -624,7 +687,7 @@ class SemaServer:
     
     @app.route('/binrec.html', methods = ['GET', 'POST'])
     def serve_binrec():
-        return render_template('binrec.html')
+        return redirect("localhost:8181", code=301)
     
     @app.route('/results.html', methods = ['GET', 'POST'])
     def serve_results():
