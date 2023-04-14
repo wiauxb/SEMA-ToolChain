@@ -413,7 +413,7 @@ class SemaSCDG:
         
         state.options.discard("LAZY_SOLVES") 
         state.register_plugin(
-            "heap", angr.state_plugins.heap.heap_ptmalloc.SimHeapPTMalloc(heap_size=int(64*4096*10*10*10*4*2*2*2*2)) # heap_size = 0x10000000
+            "heap", angr.state_plugins.heap.heap_ptmalloc.SimHeapPTMalloc(heap_size=int(64*4096)) # heap_size = 0x10000000
         ) #heap_size = 0x10000000
         
         # # Allocate memory for the OSVERSIONINFOW structure and initialize its size field
@@ -1058,7 +1058,8 @@ class SemaSCDG:
         
         if not state:
             tstate.options.discard("LAZY_SOLVES")
-            tstate.register_plugin("heap", angr.state_plugins.heap.heap_ptmalloc.SimHeapPTMalloc(heap_size =int(64*4096*10*10*10*4*2)))
+            # CHECK CHRIS : 64*4096*10*10*10* en dessous, modifié pour un test
+            tstate.register_plugin("heap", angr.state_plugins.heap.heap_ptmalloc.SimHeapPTMalloc(heap_size =int(4*2)))
             
             self.setup_env_var_plugin(tstate)
             self.setup_locale_info_plugin(tstate)

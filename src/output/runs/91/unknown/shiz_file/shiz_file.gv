@@ -1,0 +1,603 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4205424.main
+shiz_file"]
+	1 [label="0x401014.IsDebuggerPresent
+"]
+	2 [label="0x40102a.FindWindowA
+OLLYDBG
+0"]
+	3 [label="0x402b86.LoadLibraryA
+user32.dll"]
+	4 [label="0x402b9a.GetModuleFileNameA
+0
+shiz_file
+260"]
+	0 -> 4 [label="(1-->2)"]
+	5 [label="0x403953.GetModuleFileNameA
+0
+shiz_file
+260"]
+	0 -> 5 [label="(1-->2)"]
+	4 -> 5 [label="(2-->2)"]
+	4 -> 5 [label="(3-->3)"]
+	4 -> 5 [label="(0-->0)"]
+	6 [label="0x403967.strstr
+shiz_file
+test_item.exe"]
+	0 -> 6 [label="(1-->1)"]
+	4 -> 6 [label="(2-->1)"]
+	5 -> 6 [label="(2-->1)"]
+	7 [label="0x402bab.ExitProcess
+0"]
+	8 [label="0x40104b.memset
+2147417300
+0
+292"]
+	9 [label="0x401056.CreateToolhelp32Snapshot
+2
+0"]
+	10 [label="0x401071.Process32First
+retval_CreateToolhelp32Snapshot_131079_32
+2147417296"]
+	11 [label="0x40108d.StrStrIA
+2147417332
+4211840"]
+	12 [label="0x40109d.Process32Next
+retval_CreateToolhelp32Snapshot_131079_32
+2147417296"]
+	10 -> 12 [label="(1-->1)"]
+	10 -> 12 [label="(2-->2)"]
+	13 [label="0x401ac4.memset
+2147416972
+0
+292"]
+	8 -> 13 [label="(3-->3)"]
+	14 [label="0x401acf.CreateToolhelp32Snapshot
+2
+0"]
+	9 -> 14 [label="(1-->1)"]
+	15 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131098_32
+2147416968"]
+	10 -> 15 [label="(0-->0)"]
+	16 [label="0x401b10.StrStrIA
+2147417004
+4211856"]
+	17 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131098_32
+2147416968"]
+	15 -> 17 [label="(1-->1)"]
+	15 -> 17 [label="(2-->2)"]
+	18 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131133_32
+2147416968"]
+	15 -> 18 [label="(2-->2)"]
+	17 -> 18 [label="(2-->2)"]
+	10 -> 18 [label="(0-->0)"]
+	15 -> 18 [label="(0-->0)"]
+	19 [label="0x401b10.StrStrIA
+2147417004
+4211868"]
+	16 -> 19 [label="(1-->1)"]
+	20 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131133_32
+2147416968"]
+	18 -> 20 [label="(1-->1)"]
+	15 -> 20 [label="(2-->2)"]
+	17 -> 20 [label="(2-->2)"]
+	18 -> 20 [label="(2-->2)"]
+	21 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131283_32
+2147416968"]
+	15 -> 21 [label="(2-->2)"]
+	17 -> 21 [label="(2-->2)"]
+	18 -> 21 [label="(2-->2)"]
+	20 -> 21 [label="(2-->2)"]
+	10 -> 21 [label="(0-->0)"]
+	15 -> 21 [label="(0-->0)"]
+	18 -> 21 [label="(0-->0)"]
+	22 [label="0x401b10.StrStrIA
+2147417004
+4211880"]
+	16 -> 22 [label="(1-->1)"]
+	19 -> 22 [label="(1-->1)"]
+	23 [label="0x4010b9.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131079_32
+2147417292"]
+	10 -> 23 [label="(1-->1)"]
+	12 -> 23 [label="(1-->1)"]
+	24 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131099_32
+2147416968"]
+	10 -> 24 [label="(0-->0)"]
+	25 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131099_32
+2147416968"]
+	24 -> 25 [label="(1-->1)"]
+	24 -> 25 [label="(2-->2)"]
+	26 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131141_32
+2147416968"]
+	24 -> 26 [label="(2-->2)"]
+	25 -> 26 [label="(2-->2)"]
+	10 -> 26 [label="(0-->0)"]
+	24 -> 26 [label="(0-->0)"]
+	27 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131141_32
+2147416968"]
+	26 -> 27 [label="(1-->1)"]
+	24 -> 27 [label="(2-->2)"]
+	25 -> 27 [label="(2-->2)"]
+	26 -> 27 [label="(2-->2)"]
+	28 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131311_32
+2147416968"]
+	24 -> 28 [label="(2-->2)"]
+	25 -> 28 [label="(2-->2)"]
+	26 -> 28 [label="(2-->2)"]
+	27 -> 28 [label="(2-->2)"]
+	10 -> 28 [label="(0-->0)"]
+	24 -> 28 [label="(0-->0)"]
+	26 -> 28 [label="(0-->0)"]
+	29 [label="0x4010cb.CloseHandle
+retval_CreateToolhelp32Snapshot_131079_32"]
+	10 -> 29 [label="(1-->1)"]
+	12 -> 29 [label="(1-->1)"]
+	23 -> 29 [label="(1-->1)"]
+	10 -> 29 [label="(0-->0)"]
+	30 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131100_32
+2147416968"]
+	10 -> 30 [label="(0-->0)"]
+	29 -> 30 [label="(0-->0)"]
+	31 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131100_32
+2147416968"]
+	30 -> 31 [label="(1-->1)"]
+	30 -> 31 [label="(2-->2)"]
+	32 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131142_32
+2147416968"]
+	30 -> 32 [label="(2-->2)"]
+	31 -> 32 [label="(2-->2)"]
+	10 -> 32 [label="(0-->0)"]
+	29 -> 32 [label="(0-->0)"]
+	30 -> 32 [label="(0-->0)"]
+	33 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131142_32
+2147416968"]
+	32 -> 33 [label="(1-->1)"]
+	30 -> 33 [label="(2-->2)"]
+	31 -> 33 [label="(2-->2)"]
+	32 -> 33 [label="(2-->2)"]
+	34 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131319_32
+2147416968"]
+	30 -> 34 [label="(2-->2)"]
+	31 -> 34 [label="(2-->2)"]
+	32 -> 34 [label="(2-->2)"]
+	33 -> 34 [label="(2-->2)"]
+	10 -> 34 [label="(0-->0)"]
+	29 -> 34 [label="(0-->0)"]
+	30 -> 34 [label="(0-->0)"]
+	32 -> 34 [label="(0-->0)"]
+	35 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131133_32
+2147416964"]
+	18 -> 35 [label="(1-->1)"]
+	20 -> 35 [label="(1-->1)"]
+	36 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131321_32
+2147416968"]
+	15 -> 36 [label="(2-->2)"]
+	17 -> 36 [label="(2-->2)"]
+	18 -> 36 [label="(2-->2)"]
+	20 -> 36 [label="(2-->2)"]
+	10 -> 36 [label="(0-->0)"]
+	15 -> 36 [label="(0-->0)"]
+	18 -> 36 [label="(0-->0)"]
+	37 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131098_32
+2147416964"]
+	15 -> 37 [label="(1-->1)"]
+	17 -> 37 [label="(1-->1)"]
+	38 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131149_32
+2147416968"]
+	15 -> 38 [label="(2-->2)"]
+	17 -> 38 [label="(2-->2)"]
+	10 -> 38 [label="(0-->0)"]
+	15 -> 38 [label="(0-->0)"]
+	39 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131149_32
+2147416968"]
+	38 -> 39 [label="(1-->1)"]
+	15 -> 39 [label="(2-->2)"]
+	17 -> 39 [label="(2-->2)"]
+	38 -> 39 [label="(2-->2)"]
+	40 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131327_32
+2147416968"]
+	15 -> 40 [label="(2-->2)"]
+	17 -> 40 [label="(2-->2)"]
+	38 -> 40 [label="(2-->2)"]
+	39 -> 40 [label="(2-->2)"]
+	10 -> 40 [label="(0-->0)"]
+	15 -> 40 [label="(0-->0)"]
+	38 -> 40 [label="(0-->0)"]
+	41 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131141_32
+2147416964"]
+	26 -> 41 [label="(1-->1)"]
+	27 -> 41 [label="(1-->1)"]
+	42 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131352_32
+2147416968"]
+	24 -> 42 [label="(2-->2)"]
+	25 -> 42 [label="(2-->2)"]
+	26 -> 42 [label="(2-->2)"]
+	27 -> 42 [label="(2-->2)"]
+	10 -> 42 [label="(0-->0)"]
+	24 -> 42 [label="(0-->0)"]
+	26 -> 42 [label="(0-->0)"]
+	43 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131099_32
+2147416964"]
+	24 -> 43 [label="(1-->1)"]
+	25 -> 43 [label="(1-->1)"]
+	44 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131160_32
+2147416968"]
+	24 -> 44 [label="(2-->2)"]
+	25 -> 44 [label="(2-->2)"]
+	10 -> 44 [label="(0-->0)"]
+	24 -> 44 [label="(0-->0)"]
+	45 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131160_32
+2147416968"]
+	44 -> 45 [label="(1-->1)"]
+	24 -> 45 [label="(2-->2)"]
+	25 -> 45 [label="(2-->2)"]
+	44 -> 45 [label="(2-->2)"]
+	46 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131356_32
+2147416968"]
+	24 -> 46 [label="(2-->2)"]
+	25 -> 46 [label="(2-->2)"]
+	44 -> 46 [label="(2-->2)"]
+	45 -> 46 [label="(2-->2)"]
+	10 -> 46 [label="(0-->0)"]
+	24 -> 46 [label="(0-->0)"]
+	44 -> 46 [label="(0-->0)"]
+	47 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131100_32
+2147416964"]
+	30 -> 47 [label="(1-->1)"]
+	31 -> 47 [label="(1-->1)"]
+	48 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131164_32
+2147416968"]
+	30 -> 48 [label="(2-->2)"]
+	31 -> 48 [label="(2-->2)"]
+	10 -> 48 [label="(0-->0)"]
+	29 -> 48 [label="(0-->0)"]
+	30 -> 48 [label="(0-->0)"]
+	49 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131164_32
+2147416968"]
+	48 -> 49 [label="(1-->1)"]
+	30 -> 49 [label="(2-->2)"]
+	31 -> 49 [label="(2-->2)"]
+	48 -> 49 [label="(2-->2)"]
+	50 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131357_32
+2147416968"]
+	30 -> 50 [label="(2-->2)"]
+	31 -> 50 [label="(2-->2)"]
+	48 -> 50 [label="(2-->2)"]
+	49 -> 50 [label="(2-->2)"]
+	10 -> 50 [label="(0-->0)"]
+	29 -> 50 [label="(0-->0)"]
+	30 -> 50 [label="(0-->0)"]
+	48 -> 50 [label="(0-->0)"]
+	51 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131142_32
+2147416964"]
+	32 -> 51 [label="(1-->1)"]
+	33 -> 51 [label="(1-->1)"]
+	52 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131359_32
+2147416968"]
+	30 -> 52 [label="(2-->2)"]
+	31 -> 52 [label="(2-->2)"]
+	32 -> 52 [label="(2-->2)"]
+	33 -> 52 [label="(2-->2)"]
+	10 -> 52 [label="(0-->0)"]
+	29 -> 52 [label="(0-->0)"]
+	30 -> 52 [label="(0-->0)"]
+	32 -> 52 [label="(0-->0)"]
+	53 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131133_32"]
+	18 -> 53 [label="(1-->1)"]
+	20 -> 53 [label="(1-->1)"]
+	35 -> 53 [label="(1-->1)"]
+	10 -> 53 [label="(0-->0)"]
+	15 -> 53 [label="(0-->0)"]
+	18 -> 53 [label="(0-->0)"]
+	54 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131362_32
+2147416968"]
+	15 -> 54 [label="(2-->2)"]
+	17 -> 54 [label="(2-->2)"]
+	18 -> 54 [label="(2-->2)"]
+	20 -> 54 [label="(2-->2)"]
+	10 -> 54 [label="(0-->0)"]
+	15 -> 54 [label="(0-->0)"]
+	18 -> 54 [label="(0-->0)"]
+	53 -> 54 [label="(0-->0)"]
+	55 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131098_32"]
+	15 -> 55 [label="(1-->1)"]
+	17 -> 55 [label="(1-->1)"]
+	37 -> 55 [label="(1-->1)"]
+	10 -> 55 [label="(0-->0)"]
+	15 -> 55 [label="(0-->0)"]
+	56 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131168_32
+2147416968"]
+	15 -> 56 [label="(2-->2)"]
+	17 -> 56 [label="(2-->2)"]
+	10 -> 56 [label="(0-->0)"]
+	15 -> 56 [label="(0-->0)"]
+	55 -> 56 [label="(0-->0)"]
+	57 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131168_32
+2147416968"]
+	56 -> 57 [label="(1-->1)"]
+	15 -> 57 [label="(2-->2)"]
+	17 -> 57 [label="(2-->2)"]
+	56 -> 57 [label="(2-->2)"]
+	58 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131368_32
+2147416968"]
+	15 -> 58 [label="(2-->2)"]
+	17 -> 58 [label="(2-->2)"]
+	56 -> 58 [label="(2-->2)"]
+	57 -> 58 [label="(2-->2)"]
+	10 -> 58 [label="(0-->0)"]
+	15 -> 58 [label="(0-->0)"]
+	55 -> 58 [label="(0-->0)"]
+	56 -> 58 [label="(0-->0)"]
+	59 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131149_32
+2147416964"]
+	38 -> 59 [label="(1-->1)"]
+	39 -> 59 [label="(1-->1)"]
+	37 -> 59 [label="(2-->2)"]
+	60 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131367_32
+2147416968"]
+	15 -> 60 [label="(2-->2)"]
+	17 -> 60 [label="(2-->2)"]
+	38 -> 60 [label="(2-->2)"]
+	39 -> 60 [label="(2-->2)"]
+	10 -> 60 [label="(0-->0)"]
+	15 -> 60 [label="(0-->0)"]
+	38 -> 60 [label="(0-->0)"]
+	61 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131141_32"]
+	26 -> 61 [label="(1-->1)"]
+	27 -> 61 [label="(1-->1)"]
+	41 -> 61 [label="(1-->1)"]
+	10 -> 61 [label="(0-->0)"]
+	24 -> 61 [label="(0-->0)"]
+	26 -> 61 [label="(0-->0)"]
+	62 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131388_32
+2147416968"]
+	24 -> 62 [label="(2-->2)"]
+	25 -> 62 [label="(2-->2)"]
+	26 -> 62 [label="(2-->2)"]
+	27 -> 62 [label="(2-->2)"]
+	10 -> 62 [label="(0-->0)"]
+	24 -> 62 [label="(0-->0)"]
+	26 -> 62 [label="(0-->0)"]
+	61 -> 62 [label="(0-->0)"]
+	63 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131160_32
+2147416964"]
+	44 -> 63 [label="(1-->1)"]
+	45 -> 63 [label="(1-->1)"]
+	43 -> 63 [label="(2-->2)"]
+	64 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131389_32
+2147416968"]
+	24 -> 64 [label="(2-->2)"]
+	25 -> 64 [label="(2-->2)"]
+	44 -> 64 [label="(2-->2)"]
+	45 -> 64 [label="(2-->2)"]
+	10 -> 64 [label="(0-->0)"]
+	24 -> 64 [label="(0-->0)"]
+	44 -> 64 [label="(0-->0)"]
+	65 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131100_32"]
+	30 -> 65 [label="(1-->1)"]
+	31 -> 65 [label="(1-->1)"]
+	47 -> 65 [label="(1-->1)"]
+	10 -> 65 [label="(0-->0)"]
+	29 -> 65 [label="(0-->0)"]
+	30 -> 65 [label="(0-->0)"]
+	66 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131181_32
+2147416968"]
+	30 -> 66 [label="(2-->2)"]
+	31 -> 66 [label="(2-->2)"]
+	10 -> 66 [label="(0-->0)"]
+	29 -> 66 [label="(0-->0)"]
+	30 -> 66 [label="(0-->0)"]
+	65 -> 66 [label="(0-->0)"]
+	67 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131181_32
+2147416968"]
+	66 -> 67 [label="(1-->1)"]
+	30 -> 67 [label="(2-->2)"]
+	31 -> 67 [label="(2-->2)"]
+	66 -> 67 [label="(2-->2)"]
+	68 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131392_32
+2147416968"]
+	30 -> 68 [label="(2-->2)"]
+	31 -> 68 [label="(2-->2)"]
+	66 -> 68 [label="(2-->2)"]
+	67 -> 68 [label="(2-->2)"]
+	10 -> 68 [label="(0-->0)"]
+	29 -> 68 [label="(0-->0)"]
+	30 -> 68 [label="(0-->0)"]
+	65 -> 68 [label="(0-->0)"]
+	66 -> 68 [label="(0-->0)"]
+	69 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131099_32"]
+	24 -> 69 [label="(1-->1)"]
+	25 -> 69 [label="(1-->1)"]
+	43 -> 69 [label="(1-->1)"]
+	10 -> 69 [label="(0-->0)"]
+	24 -> 69 [label="(0-->0)"]
+	70 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131180_32
+2147416968"]
+	24 -> 70 [label="(2-->2)"]
+	25 -> 70 [label="(2-->2)"]
+	10 -> 70 [label="(0-->0)"]
+	24 -> 70 [label="(0-->0)"]
+	69 -> 70 [label="(0-->0)"]
+	71 [label="0x401b1c.Process32Next
+retval_CreateToolhelp32Snapshot_131180_32
+2147416968"]
+	70 -> 71 [label="(1-->1)"]
+	24 -> 71 [label="(2-->2)"]
+	25 -> 71 [label="(2-->2)"]
+	70 -> 71 [label="(2-->2)"]
+	72 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131395_32
+2147416968"]
+	24 -> 72 [label="(2-->2)"]
+	25 -> 72 [label="(2-->2)"]
+	70 -> 72 [label="(2-->2)"]
+	71 -> 72 [label="(2-->2)"]
+	10 -> 72 [label="(0-->0)"]
+	24 -> 72 [label="(0-->0)"]
+	69 -> 72 [label="(0-->0)"]
+	70 -> 72 [label="(0-->0)"]
+	73 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131164_32
+2147416964"]
+	48 -> 73 [label="(1-->1)"]
+	49 -> 73 [label="(1-->1)"]
+	47 -> 73 [label="(2-->2)"]
+	74 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131396_32
+2147416968"]
+	30 -> 74 [label="(2-->2)"]
+	31 -> 74 [label="(2-->2)"]
+	48 -> 74 [label="(2-->2)"]
+	49 -> 74 [label="(2-->2)"]
+	10 -> 74 [label="(0-->0)"]
+	29 -> 74 [label="(0-->0)"]
+	30 -> 74 [label="(0-->0)"]
+	48 -> 74 [label="(0-->0)"]
+	75 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131142_32"]
+	32 -> 75 [label="(1-->1)"]
+	33 -> 75 [label="(1-->1)"]
+	51 -> 75 [label="(1-->1)"]
+	10 -> 75 [label="(0-->0)"]
+	29 -> 75 [label="(0-->0)"]
+	30 -> 75 [label="(0-->0)"]
+	32 -> 75 [label="(0-->0)"]
+	76 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131397_32
+2147416968"]
+	30 -> 76 [label="(2-->2)"]
+	31 -> 76 [label="(2-->2)"]
+	32 -> 76 [label="(2-->2)"]
+	33 -> 76 [label="(2-->2)"]
+	10 -> 76 [label="(0-->0)"]
+	29 -> 76 [label="(0-->0)"]
+	30 -> 76 [label="(0-->0)"]
+	32 -> 76 [label="(0-->0)"]
+	75 -> 76 [label="(0-->0)"]
+	77 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131149_32"]
+	38 -> 77 [label="(1-->1)"]
+	39 -> 77 [label="(1-->1)"]
+	59 -> 77 [label="(1-->1)"]
+	10 -> 77 [label="(0-->0)"]
+	15 -> 77 [label="(0-->0)"]
+	38 -> 77 [label="(0-->0)"]
+	78 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131405_32
+2147416968"]
+	15 -> 78 [label="(2-->2)"]
+	17 -> 78 [label="(2-->2)"]
+	38 -> 78 [label="(2-->2)"]
+	39 -> 78 [label="(2-->2)"]
+	10 -> 78 [label="(0-->0)"]
+	15 -> 78 [label="(0-->0)"]
+	38 -> 78 [label="(0-->0)"]
+	77 -> 78 [label="(0-->0)"]
+	79 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131168_32
+2147416964"]
+	56 -> 79 [label="(1-->1)"]
+	57 -> 79 [label="(1-->1)"]
+	37 -> 79 [label="(2-->2)"]
+	80 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131406_32
+2147416968"]
+	15 -> 80 [label="(2-->2)"]
+	17 -> 80 [label="(2-->2)"]
+	56 -> 80 [label="(2-->2)"]
+	57 -> 80 [label="(2-->2)"]
+	10 -> 80 [label="(0-->0)"]
+	15 -> 80 [label="(0-->0)"]
+	55 -> 80 [label="(0-->0)"]
+	56 -> 80 [label="(0-->0)"]
+	81 [label="0x401b4a.CloseHandle
+retval_CreateToolhelp32Snapshot_131160_32"]
+	44 -> 81 [label="(1-->1)"]
+	45 -> 81 [label="(1-->1)"]
+	63 -> 81 [label="(1-->1)"]
+	10 -> 81 [label="(0-->0)"]
+	24 -> 81 [label="(0-->0)"]
+	44 -> 81 [label="(0-->0)"]
+	82 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131432_32
+2147416968"]
+	24 -> 82 [label="(2-->2)"]
+	25 -> 82 [label="(2-->2)"]
+	44 -> 82 [label="(2-->2)"]
+	45 -> 82 [label="(2-->2)"]
+	10 -> 82 [label="(0-->0)"]
+	24 -> 82 [label="(0-->0)"]
+	44 -> 82 [label="(0-->0)"]
+	81 -> 82 [label="(0-->0)"]
+	83 [label="0x401b38.GetHandleInformation
+retval_CreateToolhelp32Snapshot_131181_32
+2147416964"]
+	66 -> 83 [label="(1-->1)"]
+	67 -> 83 [label="(1-->1)"]
+	47 -> 83 [label="(2-->2)"]
+	84 [label="0x401af5.Process32First
+retval_CreateToolhelp32Snapshot_131435_32
+2147416968"]
+	30 -> 84 [label="(2-->2)"]
+	31 -> 84 [label="(2-->2)"]
+	66 -> 84 [label="(2-->2)"]
+	67 -> 84 [label="(2-->2)"]
+	10 -> 84 [label="(0-->0)"]
+	29 -> 84 [label="(0-->0)"]
+	30 -> 84 [label="(0-->0)"]
+	65 -> 84 [label="(0-->0)"]
+	66 -> 84 [label="(0-->0)"]
+}

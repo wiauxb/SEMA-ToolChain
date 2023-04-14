@@ -1,0 +1,11 @@
+[1;32;40mINFO - 2023-04-14 09:23:59,276 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,278 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,280 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,281 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,286 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,287 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,288 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,344 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,345 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,384 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,386 - [33mwerkzeug[0m - [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

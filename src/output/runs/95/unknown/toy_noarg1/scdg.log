@@ -1,0 +1,50 @@
+[1;32;40mINFO - 2023-04-10 13:33:31,708 - [34mangr.project[0m - [34mLoading binary /app/src/databases/toy_examples/toy_noarg1[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,745 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,752 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,755 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,756 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,762 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,762 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,766 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:33:31,780 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,781 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved printf from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,782 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved free from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,782 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fclose from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,783 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved rewind from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,784 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fseek from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,784 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fwrite from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,784 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fread from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,784 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved malloc from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,785 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved exit from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,785 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved __libc_start_main from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,785 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved ftell from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,786 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fopen from libc.so.0[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:33:31,788 - [33mangr.engines.vex.lifter[0m - [33mSelf-modifying code is not always correctly optimized by PyVEX. To guarantee correctness, VEX optimizations have been disabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,852 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,854 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,901 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:31,902 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:31] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,222 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "GET /index.html HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,266 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,269 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,271 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,273 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,274 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,279 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,281 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,364 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,364 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,399 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:38,400 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:38] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,719 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /index.html HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,732 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/js/nyan.js HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,732 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/css/nyan.css HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,733 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/css/styles.css HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,740 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/js/scripts.js HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,742 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/assets/demo/chart-area-demo.js HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,743 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/assets/demo/chart-bar-demo.js HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:50,744 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:50] "GET /static/js/datatables-simple-demo.js HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:51,013 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:51] "GET /static/css/images/nyanCat.png HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:51,013 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:51] "GET /static/css/images/rainbow.png HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:51,069 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:51] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:33:51,070 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:33:51] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

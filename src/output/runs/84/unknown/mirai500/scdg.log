@@ -1,0 +1,27 @@
+[1;33;40mWARNING - 2023-04-08 15:13:02,160 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,176 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,215 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,233 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,233 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,250 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,273 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,405 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,412 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,418 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,462 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,489 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:23,603 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:23] "POST /index.html HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,144 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,184 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,191 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,207 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,247 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,248 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,273 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,338 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,338 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,350 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:24,356 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-08 15:13:25,543 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:54,339 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:54] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 15:13:54,340 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 15:13:54] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

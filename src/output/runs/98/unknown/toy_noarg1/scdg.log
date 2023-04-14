@@ -1,0 +1,253 @@
+[1;32;40mINFO - 2023-04-10 13:40:55,749 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:40:55] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,752 - [34mangr.project[0m - [34mLoading binary /app/src/databases/toy_examples/toy_noarg1[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,817 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,817 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved printf from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,818 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved free from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,818 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fclose from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,819 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved rewind from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,821 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fseek from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,821 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fwrite from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,822 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fread from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,823 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved malloc from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,823 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved exit from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,824 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved __libc_start_main from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,824 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved ftell from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,824 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fopen from libc.so.0[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,827 - [33mangr.engines.vex.lifter[0m - [33mSelf-modifying code is not always correctly optimized by PyVEX. To guarantee correctness, VEX optimizations have been disabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,850 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:40:55] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,852 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:40:55] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,908 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mThe program is accessing memory with an unspecified value. This could indicate unwanted behavior.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,909 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mangr will cope with this by generating an unconstrained symbolic variable and continuing. You can resolve this by:[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,910 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m1) setting a value to the initial state[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,910 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m2) adding the state option ZERO_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to make unknown regions hold null[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,910 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m3) adding the state option SYMBOL_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to suppress these messages.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:55,911 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc000800c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,916 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:40:55] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:40:55,919 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:40:55] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:40:59,658 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0010014 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:03,295 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc001801c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:06,765 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020024 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,306 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0x30 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,454 - [36mCustomSimProcedure[0m - [36mcustom_hook_static[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,454 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,454 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,454 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,454 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,455 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,455 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,455 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,455 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,455 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,456 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,457 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,458 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100004, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,458 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100008, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,459 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810000c, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,459 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100010, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,459 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100014, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100018, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810001c, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100020, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100024, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100028, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,460 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810002c, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,461 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100030, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,461 - [36mCustomSimProcedure[0m - [36mcustom_hook_no_symbols[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,480 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,518 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80491c0: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,518 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,522 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80491f7: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,523 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,538 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80491d4: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,539 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,550 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049190: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,550 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,595 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002032c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,656 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x300>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,694 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002033c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,754 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,814 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020944 with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,878 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x600>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:10,916 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020954 with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:10,975 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,039 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f5c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,098 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x600>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,134 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f6c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,193 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,254 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f7c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,314 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,323 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[<BV32 0x80493eb>, <BV32 0x1>, <BV32 0x7ffeffb0>, <BV32 0x8049420>, <BV32 0x8049490>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,325 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure __libc_start_main from 0x8100028: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,325 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,333 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049420: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,334 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,337 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049495: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,338 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,341 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling register edi with 4 unconstrained bytes referenced from 0x8049430 (__libc_csu_init+0x10 in toy_noarg1 (0x8049430))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,349 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804942a: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,350 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,357 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049000: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,358 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,361 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049210: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,362 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,371 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804900d: 1 sat 1 unsat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,371 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,377 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804901f: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,377 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,390 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049441: 1 sat 1 unsat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,390 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,404 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049454: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,404 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,407 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80492d0: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,407 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,427 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049260: 1 sat 1 unsat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,427 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,430 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049298: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,431 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,441 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049473: 1 sat 1 unsat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,441 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,450 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804947d: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,450 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,460 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[134517739, 1, 2147418032, 134517792, 134517904][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,460 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure __libc_start_main from 0x820104c: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,460 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,467 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493eb: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,468 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,472 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049410: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,473 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,479 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493fa: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,479 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,487 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80492d6: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,488 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,491 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049410: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,492 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,502 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80492e5: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,502 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,506 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049404: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,506 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,514 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80492ff: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,515 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,519 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049210: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,519 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,530 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804930f: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,530 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,534 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80491b0: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,534 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,546 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a01e>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,547 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a01c>][0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,548 - [33mangr.state_plugins.posix[0m - [33mTrying to open unknown file b'text_file1.txt' - created a symbolic file since ALL_FILES_EXIST is set[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,584 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002101c with 4 unconstrained bytes referenced from 0x8100030 (fopen+0x0 in extern-address space (0x30))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,642 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x94>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,643 - [36mCustomSimProcedure[0m - [36mSyscall found:  fopen[<BV32 0x804a01e>, <BV32 0x804a01c>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,647 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure fopen from 0x8100030: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,647 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,657 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804932b: 1 sat 1 unsat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,657 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,666 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804935d: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,666 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,669 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049140: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,670 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,674 - [36mCustomSimProcedure[0m - [36mSyscall found:  fseek[<BV32 0xc0020f80>, <BV32 0x0>, <BV32 0x2>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,698 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure fseek from 0x8100014: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,698 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,706 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804936c: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,707 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,710 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80491a0: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,711 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,714 - [36mCustomSimProcedure[0m - [36mSyscall found:  ftell[<BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,717 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure ftell from 0x810002c: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,718 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,726 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804937a: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,727 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,730 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049130: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,731 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,734 - [36mCustomSimProcedure[0m - [36mSyscall found:  fseek[<BV32 0xc0020f80>, <BV32 0x0>, <BV32 0x0>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,734 - [36mCustomSimProcedure[0m - [36mSyscall found:  rewind[<BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,735 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure rewind from 0x8100010: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,736 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,744 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804938b: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,745 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,748 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049170: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,748 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,806 - [33mangr.state_plugins.heap.heap_base[0m - [33mAllocation request of 2147483647 bytes exceeded maximum of 128 bytes; allocating 128 bytes[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:11,842 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc00210a4 with 4 unconstrained bytes referenced from 0x8100020 (malloc+0x0 in extern-address space (0x20))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,900 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 if 0x0 <=s filesize_file_1_text_file1.txt_131084_32 then filesize_file_1_text_file1.txt_131084_32 else 0x0>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,901 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure malloc from 0x8100020: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,902 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,914 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x804939a: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,915 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,919 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049160: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:11,919 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:12,509 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0021028 with 124 unconstrained bytes referenced from 0x810001c (fread+0x0 in extern-address space (0x1c))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:12,509 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc00210b0 with 111 unconstrained bytes referenced from 0x810001c (fread+0x0 in extern-address space (0x1c))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,773 - [36mCustomSimProcedure[0m - [36mSyscall found:  fread[<BV32 0xc0021020>, <BV32 0x1>, <BV32 if 0x0 <=s filesize_file_1_text_file1.txt_131084_32 then filesize_file_1_text_file1.txt_131084_32 else 0x0>, <BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,776 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure fread from 0x810001c: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,777 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,787 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493b1: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,788 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,791 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049100: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,792 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:12,795 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a03d>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:15,178 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0xc0021020>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,601 - [36mCustomSimProcedure[0m - [36mSyscall found:  printf[<BV32 0x804a03d>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,602 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure printf from 0x8100004: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,603 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,611 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493c6: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,611 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,614 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049120: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,615 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,617 - [36mCustomSimProcedure[0m - [36mSyscall found:  close[<BV32 0x3>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,618 - [36mCustomSimProcedure[0m - [36mSyscall found:  fclose[<BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,619 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure fclose from 0x810000c: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,619 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,627 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493d4: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,627 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,630 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049110: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:16,630 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:41:16,722 - [33mangr.state_plugins.heap.heap_ptmalloc[0m - [33mA chunk's P flag is symbolic; assuming it is not set[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,099 - [36mCustomSimProcedure[0m - [36mSyscall found:  free[<BV32 0xc0021020>][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,128 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure free from 0x8100008: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,128 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,135 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x80493e2: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,135 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,140 - [37mangr.engines.engine[0m - [37mTicked state: <IRSB from 0x8049409: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,140 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,142 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[134517739, 1, 2147418032, 134517792, 134517904][0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,142 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure __libc_start_main from 0x8201050: 1 sat>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,142 - [35mangr.sim_manager[0m - [35mStepping active of <SimulationManager with 1 active>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,144 - [37mangr.engines.engine[0m - [37mTicked state: <SimProcedure PathTerminator from 0x8201050: empty>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,144 - [32mSemaExplorerCDFS[0m - [32mA new block of execution have been executed with changes in sim_manager.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,144 - [32mSemaExplorerCDFS[0m - [32mCurrently, simulation manager is :
+<SimulationManager with 1 deadended>[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,144 - [32mSemaExplorerCDFS[0m - [32mpause stash len :0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,144 - [32mSemaExplorerCDFS[0m - [32mlen(simgr.active) <= 0 or deadended >= self.max_end_state)[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,147 - [37mGraphBuilder[0m - [37mOutput dir :src/output/runs/98//unknown[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:17,147 - [37mGraphBuilder[0m - [37mUsing SCDG 1 over 1[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:25,909 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:41:25] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:25,910 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:41:25] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:55,920 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:41:55] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:41:55,926 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:41:55] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:42:25,916 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:42:25] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:42:25,921 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:42:25] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:42:55,908 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:42:55] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:42:55,909 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:42:55] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:43:25,912 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:43:25] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:43:25,913 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:43:25] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:43:55,920 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:43:55] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:43:55,921 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:43:55] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:44:25,910 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:44:25] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:44:25,913 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:44:25] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:44:55,913 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:44:55] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:44:55,916 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:44:55] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

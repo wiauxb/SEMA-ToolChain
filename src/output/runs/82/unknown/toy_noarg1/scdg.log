@@ -1,0 +1,21 @@
+[1;33;40mWARNING - 2023-04-08 14:38:24,002 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-08 14:38:52,985 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:38:52] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:38:52,990 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:38:52] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:39:22,978 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:39:22] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:39:22,979 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:39:22] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:39:52,977 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:39:52] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:39:52,978 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:39:52] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:40:22,987 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:40:22] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:40:22,991 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:40:22] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:40:52,982 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:40:52] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:40:52,987 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:40:52] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:41:22,975 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:41:22] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:41:22,976 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:41:22] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:41:52,981 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:41:52] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:41:52,982 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:41:52] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:42:22,981 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:42:22] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:42:22,982 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:42:22] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:42:52,976 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:42:52] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:42:52,977 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:42:52] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:43:22,988 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:43:22] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-08 14:43:22,992 - [33mwerkzeug[0m - [33m172.17.0.1 - - [08/Apr/2023 14:43:22] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

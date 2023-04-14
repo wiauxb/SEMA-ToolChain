@@ -274,6 +274,8 @@ class SemaServer:
                                 scdg_args[action.dest] = request.form[action.dest]     
                 if len(request.form["binary"]) > 0:
                     binary = request.form["binary"]
+                    print("next is binary")
+                    print(binary)
                     binary_split = binary.split("/src")
                     print(binary_split)
                     #exit()

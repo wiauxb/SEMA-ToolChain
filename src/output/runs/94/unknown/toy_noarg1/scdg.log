@@ -1,0 +1,27 @@
+[1;32;40mINFO - 2023-04-10 13:32:11,285 - [34mangr.project[0m - [34mLoading binary /app/src/databases/toy_examples/toy_noarg1[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,313 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,326 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,348 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,349 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,362 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,362 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,364 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:32:11,378 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,378 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved printf from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,379 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved free from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,380 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fclose from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,380 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved rewind from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,381 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fseek from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,381 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fwrite from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,381 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fread from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,382 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved malloc from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,382 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved exit from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,382 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved __libc_start_main from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,383 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved ftell from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,383 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fopen from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,482 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,496 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,504 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:11,505 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:11] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:41,474 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:41] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:32:41,475 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:32:41] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m

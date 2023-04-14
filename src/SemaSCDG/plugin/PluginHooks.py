@@ -102,20 +102,6 @@ class PluginHooks: # TODO replace with classses
             if offset != -1:
                 self.hooks[fun] = offset+total
               
-        print(self.hooks.keys())  
-        print(self.hooks["magicRAT_trap"])
-        print(self.hooks["trap"])
-        print(self.hooks["force_test"])
-        
-        
-        self.hooks["magicRAT_trap"] = 0x4870c0
-        self.hooks["trap"] = 0xd80ba7
-        #self.hooks["force_test"] = 0x0040132e
-        
-        # 85 db <-> 0x0040132e
-
-        
-        #exit()
                 
     def hook(self,state,proj,call_sim):
         if False: # TODO 
