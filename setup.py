@@ -62,12 +62,13 @@ setup(name='sema-tc',
           'cryptography',
           'logbook',
           'mmh3',
-          'psutil'
+          'psutil',
           'claripy',
           "unix",
           'kvm',
           'libvirt-python',
           'unipacker',
-          "minidump==0.0.10"
+          "minidump==0.0.10",
+          "docker"
       ],
       zip_safe=False)

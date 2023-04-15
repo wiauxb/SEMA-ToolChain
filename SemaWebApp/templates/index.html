@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+   <!-- FIXME I found some input without name, causing Flask to ignore them ... I full check should be made <wiauxb> -->
    <head>
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -75,13 +76,13 @@
                }
             });
 
-            if($('#binrec_enable').is(":checked")) {
+            if($('#mutator_enable').is(":checked")) {
                $('#collapse0 :input').removeAttr('style');
             } else {
                $('#collapse0 :input').css('pointer-events','none');
                $('#collapse0 :input').css('background-color','grey');
             }
-            $('#binrec_enable').change(function(){
+            $('#mutator_enable').change(function(){
                if($(this).is(":checked")) {
                   $('#collapse0 :input').removeAttr('style');
                } else {
@@ -231,10 +232,10 @@
                               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 SEMA downloader
                             </a>
-                            <a class="nav-link" href="binrec.html">
+                            <!-- <a class="nav-link" href="binrec.html">
                               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 SEMA binrec
-                            </a>
+                            </a> -->
                         </nav>
                     </div>
                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -289,24 +290,24 @@
                               SEMA Mutation Tool
                               <div class="col-xl-6">
                                  <div class="form-check form-switch" style="right: 5%;position: absolute;top: 30%;">
-                                     <input class="form-check-input" type="checkbox" name="binrec_enable" value="binrec_enable" id="binrec_enable" checked>
-                                     <label class="form-check-label" for="binrec_enable">Enable</label>
+                                     <input class="form-check-input" type="checkbox" name="mutator_enable" value="mutator_enable" id="mutator_enable" checked>
+                                     <label class="form-check-label" for="mutator_enable">Enable</label>
                                  </div>
                              </div>
                            </div>
                            <div id="collapse0" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
                              <div class="card-body">
-                              {% for action_binrec in actions_binrec %}
+                              {% for action_mutator in actions_mutator %}
                               <div class="card-group">
-                                 {% for group in action_binrec %}
+                                 {% for group in action_mutator %}
                                  <div class="card">
                                     <div class="card-body">
                                        <p class="card-text">
                                            <div class="col-auto">
                                                <label for="exec_mode" class="col-form-label"><b>{{ group }}</b></label>
                                            </div>
-                                           {% if action_binrec[group][-1]["is_mutually_exclusive"] %}
-                                             {% for args in action_binrec[group] %}
+                                           {% if action_mutator[group][-1]["is_mutually_exclusive"] %}
+                                             {% for args in action_mutator[group] %}
                                              <div class="form-check">
                                                 {% if args["default"] %}
                                                       <input class="form-check-input"  aria-describedby="{{ args["name"] }}Help" type="radio" name="{{ group }}" value={{ args["name"] }} id={{ args["name"] }} checked>
@@ -320,7 +321,7 @@
                                              </div>
                                              {% endfor %}
                                            {% else %}
-                                             {% for args in action_binrec[group] %}
+                                             {% for args in action_mutator[group] %}
                                                 {% if args["type"] == "<class 'int'>" %}
                                                    <row>
                                                       <label for="timeout" class="form-label">{{ args["name"] }}</label>
@@ -347,7 +348,7 @@
                                                       </label>
                                                       <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
                                                    </div>
-                                                {% elif  args["name"] == "binaries" or args["name"] == "dir" or args["name"] == "exp_dir" or args["name"] == "output" or args["name"] == "path" %}
+                                                {% elif  args["name"] == "binaries" or args["name"] == "dir" or args["name"] == "exp_dir" or args["name"] == "output" or args["name"] == "binaries_mutated" %}
                                                    <div class="mb-3">
                                                       <label for="{{ args["name"] }}" class="form-label">{{ args["name"] }}</label>
                                                       <input class="form-control" aria-describedby="{{ args["name"] }}Help" name="{{ args["name"] }}" value="" type="file" id="{{ args["name"] }}" multiple directory webkitdirectory>
@@ -368,7 +369,7 @@
                                                       <input class="form-control"  name="{{ args["name"] }}" value="" type="text" id="{{ args["name"] }}">
                                                    </div>
                                                 {% else %}
-                                                   <input class="form-control" aria-describedby="{{ args["name"] }}Help" type="text" placeholder="{{ args["name"] }}" aria-label="{{ args["help"] }}">
+                                                   <input class="form-control" aria-describedby="{{ args["name"] }}Help" type="text" placeholder="{{ args["name"] }}" aria-label="{{ args["help"] }}" name="{{ args["name"] }}" >
                                                    <div id="{{ args["name"] }}Help" class="form-text">{{ args["help"] }}</div>
                                                 {% endif %}
                                                 <hr>

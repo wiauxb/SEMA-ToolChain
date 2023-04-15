@@ -37,6 +37,7 @@ build-binrec:
 
 run-web:
 	#bash update_etc_hosts.sh
+	#FIXME is this security risk okay ?
 	docker run  \
 			   --rm \
 			   -v $(PWD)/src/:/app/src/ \
@@ -46,8 +47,9 @@ run-web:
 			   -v $(PWD)/SemaWebApp/:/app/SemaWebApp/ \
 			   -v /tmp/.X11-unix:/tmp/.X11-unix \
 			   -v $(PWD)/penv-fix/:/penv-fix/ \
+			   -v /var/run/docker.sock:/var/run/docker.sock \
     		   -e DISPLAY=$(DISPLAY) \
-			   -p 80:80 \
+			   -p 8080:80 \
 			   --network="bridge" \
 			   -it sema-web bash run_server.sh
 

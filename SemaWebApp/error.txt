@@ -1,0 +1,145 @@
+docker.errors.ContainerError: Command '['sh', '-c', 'just new-project test programs/mult_func && just add-trace tr1 1 0 && just recover test']' in image 'binrec' returned non-zero exit status 1:
+b'pipenv run python -m binrec.project new "test" "programs/mult_func" ""
+Loading .env environment variables\xe2\x80\xa6
+13:06:04 INFO binrec.project: Creating project: test
+Warning: _curses.error: setupterm: could not find terminfo database
+
+Traceback (most recent call last):
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/bin/s2e", line 8, in <module>
+    sys.exit(main())
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/manage.py", line 188, in main
+    manager.execute()
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/manage.py", line 177, in execute
+    self.fetch_command(subcommand).run_from_argv(self._argv)
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/manage.py", line 144, in fetch_command
+    return load_command_class(subcommand)
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/manage.py", line 62, in load_command_class
+    module = importlib.import_module(f\'s2e_env.commands.{name}\')
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 855, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/commands/new_project.py", line 31, in <module>
+    from s2e_env.commands.project_creation import CGCProject, LinuxProject, AbstractProject
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/commands/project_creation/__init__.py", line 26, in <module>
+    from .cgc_project import CGCProject
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/commands/project_creation/cgc_project.py", line 28, in <module>
+    from .base_project import is_valid_arch, BaseProject
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/commands/project_creation/base_project.py", line 32, in <module>
+    from s2e_env.commands.recipe import Command as RecipeCommand
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/s2e_env/commands/recipe.py", line 27, in <module>
+    from pwn import asm
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwn/__init__.py", line 4, in <module>
+    from pwn.toplevel import *
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwn/toplevel.py", line 20, in <module>
+    import pwnlib
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/__init__.py", line 43, in <module>
+    importlib.import_module(\'.%s\' % module, \'pwnlib\')
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/args.py", line 62, in <module>
+    from pwnlib import term
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/__init__.py", line 6, in <module>
+    from pwnlib.term import completer
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/completer.py", line 7, in <module>
+    from pwnlib.term import readline
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/readline.py", line 13, in <module>
+    from pwnlib.term import text
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/text.py", line 126, in <module>
+    sys.modules[__name__] = Module()
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/text.py", line 49, in __init__
+    s = termcap.get(y)
+  File "/home/myuser/.local/share/virtualenvs/binrec-tob-stAzo2mh/lib/python3.9/site-packages/pwnlib/term/unix_termcap.py", line 28, in get
+    s = curses.tigetstr(cap)
+_curses.error: must call (at least) setupterm() first
+Traceback (most recent call last):
+  File "/home/myuser/binrec-tob/binrec/project.py", line 536, in new_project
+    subprocess.check_call(callargs)
+  File "/usr/lib/python3.9/subprocess.py", line 373, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command \'[\'s2e\', \'new_project\', \'--name\', \'test\', \'programs/mult_func\']\' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/myuser/binrec-tob/binrec/project.py", line 897, in <module>
+    main()
+  File "/home/myuser/binrec-tob/binrec/project.py", line 836, in main
+    new_project(args.project, args.binary, template)
+  File "/home/myuser/binrec-tob/binrec/project.py", line 538, in new_project
+    raise BinRecError(f"s2e run failed for project: {project_name}")
+binrec.errors.BinRecError: s2e run failed for project: test
+error: Recipe `new-project` failed on line 175 with exit code 1
+
+===================================================================================
+
+docker.errors.ContainerError: Command '['sh', '-c', 'just new-project test programs/mult_func && just add-trace tr1 1 0 && just recover test']' in image 'binrec' returned non-zero exit status 1: b'pipenv run python -m binrec.project new "test" "programs/mult_func" ""
+Loading .env environment variables\xe2\x80\xa6
+13:25:17 INFO binrec.project: Creating project: test
+INFO: [new_project] No image was specified (-i option). Attempting to guess a suitable image for a i386 binary...
+WARNING: [new_project] Found debian-9.2.1-i386, which looks suitable for this binary. Please use -i if you want to use another image
+INFO: [new_project] Creating a symlink to programs/mult_func
+INFO: [new_project] Creating a symlink to /home/myuser/binrec-tob/s2e/install/bin/guest-tools32
+INFO: [new_project] Creating a symlink to /home/myuser/binrec-tob/s2e/images/debian-9.2.1-i386/guestfs
+INFO: [new_project] Creating launch script
+INFO: [new_project] Creating S2E configuration
+INFO: [new_project] Creating S2E bootstrap script
+INFO: [new_project] Creating JSON description
+WARNING: [new_project] You did not specify any symbolic input. Symbolic execution requires symbolic inputs. You will have to manually edit the bootstrap file in order to run the program on multiple paths.
+
+Example: programs/mult_func @@
+
+You can also make arguments symbolic using the ``S2E_SYM_ARGS`` environment variable in the bootstrap file
+INFO: [new_project] Creating JSON description
+SUCCESS: [new_project] Here are some hints to get started with your project:
+
+s2e.so
+======
+
+programs/mult_func is dynamically linked - you can use s2e.so to
+generate symbolic command line arguments.
+
+
+Function Models
+===============
+
+programs/mult_func is dynamically linked and imports the following
+functions:
+
+    * strcmp
+
+
+The FunctionModels plugin provides models for these functions.
+You can enable it in s2e-config.lua.
+
+Running S2E
+===========
+
+The S2E project is now ready to run. You have two ways to start the analysis:
+
+    * cd /home/myuser/binrec-tob/s2e/projects/test && ./launch-s2e.sh
+    * Use the "s2e run" command
+
+The results of the analysis can be found in the s2e-last directory.
+You may customize s2e-config.lua, bootstrap.sh, launch-s2e.sh, and others
+as needed.
+
+If something does not run as expected, you can troubleshoot like this:
+
+    * Enable graphics output by deleting the -nographic flag from launch-s2e.sh
+    * Look at the logs in serial.txt, log.txt, and s2e-last/debug.txt
+    * Run S2E in GDB using ./launch-s2e.sh debug
+
+-------
+Project /home/myuser/binrec-tob/s2e/projects/test created.
+error: Recipe `add-trace` got 3 arguments but takes 4
+usage:
+    just add-trace project-name trace-name symbolic-indexes args

@@ -37,6 +37,11 @@ import pyzipper
 import shutil
 
 class SemaServer:
+
+    log = logging.getLogger('SemaServer[C]')
+
+    log.setLevel(logging.DEBUG) #TODO make dynamic for debugging ?
+
     ROOTPATH = os.getcwd()
     #SemaServer.log.info(ROOTPATH)
     
@@ -155,17 +160,71 @@ class SemaServer:
             # SemaServer.log.info(SemaServer.actions_scdg)
             # exit(0)
           
+
+    def init_mutator_args(self):    
+        for group in SemaServer.sema.args_parser.args_parser_mutator.parser._mutually_exclusive_groups:
+            if group.title == "positional arguments":
+                continue
+            if group.title == "optional arguments":
+                continue
+            
+            if len(SemaServer.actions_mutator[-1]) == 3:
+                SemaServer.actions_mutator.append({})
+                
+            for action in group._group_actions:
+                # TODO add group_name in new dictionary
+                group_name = group.title
+                if group_name not in SemaServer.actions_mutator[-1]:
+                    SemaServer.actions_mutator[-1][group_name] = []
+                if isinstance(action, argparse._StoreTrueAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": False, "is_mutually_exclusive": True})
+                elif isinstance(action, argparse._StoreFalseAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": True,  "is_mutually_exclusive": True})
+                elif not isinstance(action, argparse._HelpAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": str(action.type), "default": action.default, "is_mutually_exclusive": True})
+            
+        for group in SemaServer.sema.args_parser.args_parser_mutator.parser._action_groups:
+            if group.title == "positional arguments":
+                continue
+            if group.title == "optional arguments":
+                continue
+            
+            if len(SemaServer.actions_mutator[-1]) == 3:
+                SemaServer.actions_mutator.append({})
+                
+            for action in group._group_actions:
+                # TODO add group_name in new dictionary
+                group_name = group.title
+                # SemaServer.log.info(action)
+                if group_name not in SemaServer.actions_mutator[-1]:
+                    SemaServer.actions_mutator[-1][group_name] = []
+                if isinstance(action, argparse._StoreTrueAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": False, "is_mutually_exclusive": False})
+                elif isinstance(action, argparse._StoreFalseAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": "bool", "default": True, "is_mutually_exclusive": False})
+                elif not isinstance(action, argparse._HelpAction):
+                    SemaServer.actions_mutator[-1][group_name].append({'name': action.dest, 'help': action.help, "type": str(action.type), "default": action.default, "is_mutually_exclusive": False})
+            # SemaServer.log.info(SemaServer.actions_mutator)
+            # exit(0)
+          
     
     # TODO refactor
     def __init__(self,dir_path=None,experiments=None):
         SemaServer.sema = Sema(is_from_tc=False, is_from_web=True)
         
-        self.log = logging.getLogger('SemaServer')
+        self.log = logging.getLogger('SemaServer[O]')
+        self.log.setLevel(logging.DEBUG) #TODO make dynamic for debugging ?
         
         # List that contains a dictionary containing all the arguments, it is then used
         # to generate dynamically the UI
         # Each element of the list is a HTML row that contains as element the associated dictionary
         
+        # Init actions_mutator with current arguments available in ArgParser
+        SemaServer.actions_mutator = [{}]
+        self.init_mutator_args()
+        self.log.info("Mutator arguments: ")
+        self.log.info(SemaServer.actions_mutator)
+
         # Init actions_scdg with current arguments available in ArgParser
         SemaServer.actions_scdg = [{}]
         self.init_scdg_args()
@@ -235,7 +294,7 @@ class SemaServer:
     def iteration_dl():
         return str(SemaServer.malware_to_download) ## TODO
     
-    def get_fl_args(self,request):
+    def get_fl_args(request):
         fl_args = {}
         exp_args = []
         exp_args_str = ""
@@ -254,10 +313,65 @@ class SemaServer:
                         exp_args.append(request.form[action.dest])
         return fl_args, exp_args, exp_args_str
     
-    def get_mutator_args(self,request):
-        pass # TODO bastien
+
+    def get_mutator_args(request):
+        mutator_args = {}
+        exp_args = []
+        exp_args_str = ""
+        # Start with _mutually_exclusive_groups
+        for group in SemaServer.sema.args_parser.args_parser_mutator.parser._mutually_exclusive_groups:
+            if group.title in request.form:
+                exp_args.append("--" + request.form[group.title])
+                mutator_args[request.form[group.title]] = True
+        
+        for group in SemaServer.sema.args_parser.args_parser_mutator.parser._action_groups:
+            for action in group._group_actions:
+                if action.dest == "binary":
+                    pass
+                ##
+                # About folder & path used
+                ##
+                elif action.dest == "binaries_mutated":
+                    if len(request.files["binaries_mutated"].filename) > 0:
+                        exp_args.append("--" + action.dest)
+                        exp_args.append(request.files["binaries_mutated"].split("/")[0])
+                    else:
+                        exp_args.append("--" + action.dest)
+                        exp_args.append(request.form[action.dest])
+                        mutator_args[action.dest] = request.form[action.dest]
+                ##
+                # The rest of the arguments
+                ##
+                elif action.dest in request.form:
+                    # TODO add group_name in new dictionary
+                    group_name = group.title
+                    # For boolean arguments
+                    if isinstance(action, argparse._StoreTrueAction) or isinstance(action, argparse._StoreFalseAction):
+                        exp_args.append("--" + action.dest)
+                        exp_args_str += "--" + action.dest + " "
+                        mutator_args[action.dest] = True
+                    else:
+                        exp_args.append("--" + action.dest)
+                        exp_args.append(request.form[action.dest])
+                        exp_args_str += "--" + action.dest + " " + request.form[action.dest] + " "  
+                        mutator_args[action.dest] = request.form[action.dest]     
+        if len(request.form["binary"]) > 0:
+            # If there is a specified path in the binary field, we refacor the input to point toward the right path in the docker
+            binary = request.form["binary"]
+            binary_split = binary.split("/src")
+            if len(binary_split) > 1:
+                SemaServer.log.info(binary_split)
+                binary = "/app/src" + binary_split[1]
+            exp_args.append(binary)
+            mutator_args["binary"] = binary
+        else: # TODO
+            # To implement: when the binary is uploaded -> Do we want to "upload" since it is only local for now
+            exp_args.append(str(request.files["binary"].filename))
+            exp_args_str += str(request.files["binary"].filename)  
+        return mutator_args, exp_args, exp_args_str
     
-    def get_class_args(self,request):
+
+    def get_class_args(request):
         # The above code is initializing an empty dictionary `class_args` and two empty lists
         # `exp_args` and `exp_args_str`. It is not doing anything else with these variables.
         class_args = {}
@@ -300,7 +414,7 @@ class SemaServer:
         return class_args, exp_args, exp_args_str
 
     
-    def get_scdg_args(self,request):
+    def get_scdg_args(request):
         scdg_args = {}
         exp_args = []
         exp_args_str = ""
@@ -371,23 +485,30 @@ class SemaServer:
         """
         if request.method == 'POST':
             SemaServer.log.info(request.form)
+
+            MUTATOR = SemaServer.sema.args_parser.tools.MUTATOR
+            SCDG = SemaServer.sema.args_parser.tools.SCDG
+            CLASSIFIER = SemaServer.sema.args_parser.tools.CLASSIFIER
             
-            mut_args = {}
-            scdg_args = {}
-            class_args = {}
-            fl_args = {}
             exp_args = []
+            SemaServer.sema.args_parser.reset()
             
             # TODO dir per malware
-            scdg_args, exp_args_scdg, exp_args_scdg_str = SemaServer.get_scdg_args(request)   
-            exp_args += scdg_args   
-            class_args, exp_args_class, exp_args_class_str = SemaServer.get_class_args(request)
-            exp_args += class_args  
+            if "mutator_enable" in request.form:
+                SemaServer.sema.args_parser.enable(MUTATOR)
+                mut_args, exp_args_mut, exp_args_mut_str = SemaServer.get_mutator_args(request)   
+                exp_args += exp_args_mut
+            if "scdg_enable" in request.form:
+                SemaServer.sema.args_parser.enable(SCDG)
+                scdg_args, exp_args_scdg, exp_args_scdg_str = SemaServer.get_scdg_args(request)   
+                exp_args += exp_args_scdg 
+            if "class_enable" in request.form: 
+                SemaServer.sema.args_parser.enable(CLASSIFIER)
+                class_args, exp_args_class, exp_args_class_str = SemaServer.get_class_args(request)
+                exp_args += exp_args_class
             if "fl_enable" in request.form: # TODO refactor + implement
                 fl_args, exp_args_fl, exp_args_fl_str = SemaServer.get_fl_args(request)
-                exp_args += fl_args               
-            muta_args, exp_args_muta, exp_args_muta_str = SemaServer.get_mutator_args(request)
-            exp_args += muta_args
+                exp_args += exp_args_fl
                 
             SemaServer.log.info(exp_args)
 
@@ -399,36 +520,44 @@ class SemaServer:
             # Here we link the individual argument about input/output folder so they match
             # Typically: [mutator] -> [scdg] -> [class] 
             ##
-            if args.exp_dir == "output/runs/" and "scdg_enable" in request.form:
-                SemaServer.sema.current_exp_dir = len(glob.glob("src/" + args.exp_dir + "/*")) + 1
-                args.exp_dir = "src/" + args.exp_dir + str(SemaServer.sema.current_exp_dir) + "/"
-                args.dir = "src/" + args.dir + str(SemaServer.sema.current_exp_dir) + "/"
-                args.binaries = args.exp_dir
-            elif args.binaries == "output/runs/" and "class_enable" in request.form:
-                SemaServer.sema.current_exp_dir = len(glob.glob("src/" + args.exp_dir + "/*")) + 1
-                exp_dir = "src/" + args.exp_dir + str(SemaServer.sema.current_exp_dir) + "/"
-                args.binaries = exp_dir
-            elif args.binaries_mutated == "output/runs/" and "mutator_enable" in request.form:
-                pass # TODO bastien
+            if "mutator_enable" in request.form and args[MUTATOR].binaries_mutated == "output/runs/": #FIXME I have no idea What i'm doing
+                if "scdg_enabled" in request.form:
+                    args[SCDG].binary = args[MUTATOR].binaries_mutated
+            elif "scdg_enable" in request.form and args[SCDG].exp_dir == "output/runs/":
+                SemaServer.sema.current_exp_dir = len(glob.glob("src/" + args[SCDG].exp_dir + "/*")) + 1
+                args[SCDG].exp_dir = "src/" + args[SCDG].exp_dir + str(SemaServer.sema.current_exp_dir) + "/"
+                args[SCDG].dir = "src/" + args[SCDG].dir + str(SemaServer.sema.current_exp_dir) + "/"
+                args[CLASSIFIER].binaries = args[SCDG].exp_dir
+            elif "class_enable" in request.form and args[CLASSIFIER].binaries == "output/runs/":
+                SemaServer.sema.current_exp_dir = len(glob.glob("src/" + args[SCDG].exp_dir + "/*")) + 1
+                exp_dir = "src/" + args[SCDG].exp_dir + str(SemaServer.sema.current_exp_dir) + "/"
+                args[CLASSIFIER].binaries = exp_dir
             else:
-                SemaServer.sema.current_exp_dir = int(args.binaries.split("/")[-1]) # TODO
+                SemaServer.sema.current_exp_dir = int(args[CLASSIFIER].binaries.split("/")[-1]) # TODO
                   
             ##
             # Here we start the experiments
             ##  
+            
+            if "mutator_enable" in request.form:
+                SemaServer.sema.tool_mutator.args = args[MUTATOR]
+                SemaServer.sema.args_parser.args_parser_mutator.update_tool(args[MUTATOR])
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_mutator.print_args))
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_mutator.start_mutation))
+
             if "scdg_enable" in request.form:
-                SemaServer.sema.tool_classifier.args = args
-                SemaServer.sema.args_parser.args_parser_scdg.update_tool(args)
+                SemaServer.sema.tool_classifier.args = args[SCDG]
+                SemaServer.sema.args_parser.args_parser_scdg.update_tool(args[SCDG])
                 csv_scdg_file = "src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/" + "scdg.csv"
                 SemaServer.log.info(csv_scdg_file)
-                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_scdg.save_conf, args=([scdg_args,"src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/"])))
-                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_scdg.start_scdg, args=([args, False, csv_scdg_file])))
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_scdg.save_conf, args=([scdg_args,"src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/"]))) #BUG enfait si on peut directement utiliser le dict qu'on génère nous même, pourquoi s'embêter avec argparse ?
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_scdg.start_scdg, args=([args[SCDG], False, csv_scdg_file])))
             
             if "class_enable" in request.form:
-                SemaServer.sema.tool_classifier.args = args
-                SemaServer.sema.args_parser.args_parser_class.update_tool(args)
+                SemaServer.sema.tool_classifier.args = args[CLASSIFIER]
+                SemaServer.sema.args_parser.args_parser_class.update_tool(args[CLASSIFIER])
                 csv_class_file =  "src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/" + "classifier.csv"
-                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_classifier.init, args=([args.exp_dir, [], csv_class_file]))) # TODO familly
+                SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_classifier.init, args=([args[SCDG].exp_dir, [], csv_class_file]))) # TODO familly
                 SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_classifier.save_conf,args=([class_args,"src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/"])))
                 SemaServer.exps.append(threading.Thread(target=SemaServer.sema.tool_classifier.train, args=()))
                 if SemaServer.sema.tool_classifier.mode == "classification":
@@ -440,9 +569,6 @@ class SemaServer:
             if "fl_enable" in request.form:
                 pass
             
-            if "mutator_enable" in request.form:
-                pass # TODO bastien
-            
             try:
                 os.mkdir("src/output/runs/"+str(SemaServer.sema.current_exp_dir)+"/")
                 SemaServer.sema.tool_scdg.current_exp_dir =SemaServer.sema.current_exp_dir
@@ -451,13 +577,13 @@ class SemaServer:
             threading.Thread(target=SemaServer.manage_exps, args=([args])).start()
             
             return render_template('index.html',
-                                actions_binrec=SemaServer.actions_binrec,
+                                actions_mutator=SemaServer.actions_mutator,
                                 actions_scdg=SemaServer.actions_scdg, 
                                 actions_classifier=SemaServer.actions_classifier,
                                 progress=0) # TODO 0rtt
         else:
             return render_template('index.html',
-                                actions_binrec=SemaServer.actions_binrec,
+                                actions_mutator=SemaServer.actions_mutator,
                                 actions_scdg=SemaServer.actions_scdg, 
                                 actions_classifier=SemaServer.actions_classifier,
                                 progress=0)
@@ -622,9 +748,10 @@ class SemaServer:
             SemaServer.download_thread = threading.Thread(target=SemaServer.download_malware, args=([request.form['TAG'].split(' '), request.form['max_sample'], request.form['db']])).start()
         return render_template('downloader.html')
     
-    @app.route('/binrec.html', methods = ['GET', 'POST'])
-    def serve_binrec():
-        return redirect("localhost:8181", code=301)
+    #FIXME should use that anymore
+    # @app.route('/binrec.html', methods = ['GET', 'POST'])
+    # def serve_binrec():
+    #     return redirect("localhost:8181", code=301)
     
     @app.route('/results.html', methods = ['GET', 'POST'])
     def serve_results():

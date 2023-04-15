@@ -15,7 +15,8 @@ RUN  apt update; apt-get --fix-missing -y install \
                 xterm \
                 virt-manager \
                 git \
-                curl
+                curl \
+                docker
 
 # Cuckoo
 RUN apt update; apt-get --fix-missing -y install \
