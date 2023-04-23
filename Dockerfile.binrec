@@ -33,35 +33,31 @@ MAINTAINER christophe.crochet@uclouvain.be
 ########################################################################################"
 
 ENV DEBIAN_FRONTEND noninteractive 
-RUN dpkg --add-architecture i386
-
-RUN sed -i 's/amd64/i386/g' /etc/apt/sources.list
-
-RUN apt-get update
-RUN apt-get install -y libenchant-dev libc6-dev libc6-dev-i386 curl git gcc python3.9 python3.9-dev python3.9-venv clang sudo
-
-RUN adduser --disabled-login --disabled-password myuser
-RUN usermod -aG sudo myuser
-
-
-RUN echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN dpkg --add-architecture i386 && \
+    sed -i 's/amd64/i386/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y libenchant-dev libc6-dev libc6-dev-i386 curl git gcc python3.9 python3.9-dev python3.9-venv clang sudo && \
+    \
+    adduser --disabled-login --disabled-password myuser && \
+    usermod -aG sudo myuser && \
+    echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER myuser
 
 WORKDIR /home/myuser/
 
 #install llvm
-RUN sudo apt-get -y install lsb-release wget software-properties-common gnupg
-RUN wget https://apt.llvm.org/llvm.sh
-RUN chmod +x llvm.sh
-RUN sudo ./llvm.sh 14 all
+RUN sudo apt-get -y install lsb-release wget software-properties-common gnupg && \
+    wget https://apt.llvm.org/llvm.sh && \
+    chmod +x llvm.sh && \
+    sudo ./llvm.sh 14 all
 
-RUN git config --global url."https://".insteadOf git://
 
 # RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; sudo python3.9 get-pip.py
 
-RUN git clone https://github.com/wiauxb/binrec-tob.git
+RUN git config --global url."https://".insteadOf git:// && \
+    git clone https://github.com/wiauxb/binrec-tob.git
 
 WORKDIR /home/myuser/binrec-tob
 
-RUN chmod +x get_just.sh; ./get_just.sh; just install-binrec
+RUN git checkout rest-api; chmod +x get_just.sh; ./get_just.sh; just install-binrec
 

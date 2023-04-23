@@ -35,6 +35,18 @@ build-binrec:
 	git submodule update --recursive
 	docker build --rm -t binrec -f Dockerfile.binrec .
 
+run-binrec-api:
+	docker run  \
+			   --rm \
+			   -v $(PWD)/src/:/app/src/ \
+			   -v $(PWD)/setup.py:/app/setup.py \
+			   -v /app/src/submodules/ \
+			   -v $(PWD)/SemaWebApp/:/app/SemaWebApp/ \
+			   -v $(PWD)/penv-fix/:/penv-fix/ \
+			   -p 8181:8080 \
+			   --network="bridge" \
+			   -it binrec just run-api
+
 run-web:
 	#bash update_etc_hosts.sh
 	#FIXME is this security risk okay ?

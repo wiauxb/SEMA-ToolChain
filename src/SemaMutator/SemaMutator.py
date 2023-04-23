@@ -1,5 +1,6 @@
-import docker, logging
+import docker, logging, requests
 
+import subprocess
 
 class SemaMutator:
 
@@ -21,9 +22,18 @@ class SemaMutator:
         print("="*20)
 
     def start_mutation(self):
-        client = docker.from_env()
         
-        res = client.containers.run("binrec", ["sh", "-c", f"just new-project test {self.binary} && just add-trace test {self.traces} && just recover test"],
-                                    environment=["TERM=linux", "TERMINFO=/etc/terminfo"], remove=True)
-        for l in res.splitlines():
-            SemaMutator.log.info(l)
+        # res = client.containers.run("binrec",
+        #                             ["sh", "-c", f"just new-project test {self.binary} && just add-trace test {self.traces} && just recover test && mv s2e/projects/test/s2e-out/recovered {self.output}"],
+        #                             environment=["TERM=linux", "TERMINFO=/etc/terminfo"],
+        #                             volumes=["/app/src:/app/src"],
+        #                             remove=True)
+        
+        r = requests.post("http://172.17.0.2:8080/add-project", json={"project":"test",
+                                                              "path":"programs/mult_func"})
+        
+        print(r)
+        print("+"*20)
+        print(r.json())
+
+        print("Mutation finished")
