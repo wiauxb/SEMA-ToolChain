@@ -1318,6 +1318,241 @@ class SemaSCDG:
             
         return exploration_tech
 
+    def manage_thread(self, exp_dir, nameFileShort, proj, options, state, cfg, jmp):
+        if jmp not in cfg.kb.functions:
+            self.log.info("jmp NOT IN cfg.kb.functions")    
+            node = cfg.get_any_node(jmp)
+            if node is None:
+                self.log.warning("%r is not in the CFG. Skip calling convention analysis at call sites.", jmp)
+                return
+            in_edges = cfg.graph.in_edges(node, data=True)
+            call_sites_by_function: Dict['Function',List[Tuple[int,int]]] = defaultdict(list)
+            for src, _, data in in_edges:
+                edge_type = data.get('jumpkind', 'Ijk_Call')
+                if edge_type != 'Ijk_Call':
+                    continue
+                if not cfg.kb.functions.contains_addr(src.function_address):
+                    continue
+                caller = cfg.kb.functions[src.function_address]
+                cc_analysis = proj.analyses.CallingConvention(caller, cfg=cfg, analyze_callsites=True)
+                caller = cc_analysis.kb.functions[src.function_address]
+                if caller.is_simprocedure:
+                                # do not analyze SimProcedures
+                    continue
+                call_sites_by_function[caller].append((src.addr, src.instruction_addrs[-1]))
+            call_sites_by_function_list = list(call_sites_by_function.items())[:3]
+            for caller, call_sites in call_sites_by_function_list:
+                print(call_sites)
+                for site in call_sites:
+                    self.run_thread(exp_dir, nameFileShort, proj, options, site)
+                    
+                for b in caller.block_addrs:
+                    print(b)
+                    self.run_thread(exp_dir, nameFileShort, proj, options, [b])
+            self.run_thread(exp_dir, nameFileShort, proj, options, [jmp])
+            return
+        
+        self.log.info("jmp IN cfg.kb.functions")    
+        f = cfg.kb.functions[jmp]
+        f.calling_convention = SimCCStdcall(proj.arch)
+       
+        #f.calling_convention = SimCCStdcall(proj.arch)
+        self.log.info(f.name)
+        #blank_state = proj.factory.blank_state()
+                    
+        prop = proj.analyses.Propagator(func=f, base_state=state)
+        # Collect all the refs
+        proj.analyses.XRefs(func=f, replacements=prop.replacements)
+        #thread_func = cfg.kb.functions[jmp]
+        self.log.info("Thread func:")
+        self.log.info(f)
+        _ = proj.analyses.VariableRecoveryFast(f) # TODO usefull ?
+        cc_analysis = proj.analyses.CallingConvention(f, cfg=cfg, analyze_callsites=True)
+        self.log.info("Thread args:")
+        self.log.info(cc_analysis.prototype.args)  
+        node = cfg.get_any_node(jmp)
+        if node is None:
+            self.log.warning("%r is not in the CFG. Skip calling convention analysis at call sites.", jmp)
+        in_edges = cfg.graph.in_edges(node, data=True)
+        call_sites_by_function: Dict['Function',List[Tuple[int,int]]] = defaultdict(list)
+        for src, _, data in in_edges:
+            print(src)
+            print(data)
+            edge_type = data.get('jumpkind', 'Ijk_Call')
+            print(edge_type)
+            print("")
+            # if edge_type != 'Ijk_Call':
+            #     continue
+            # if not cc_analysis.kb.functions.contains_addr(src.function_address):
+            #     continue
+            caller = cc_analysis.kb.functions[src.function_address]
+            # if caller.is_simprocedure:
+            #                 # do not analyze SimProcedures
+            #     continue
+            call_sites_by_function[caller].append((src.addr, src.instruction_addrs[-1]))
+        call_sites_by_function_list = list(call_sites_by_function.items())[:3]
+        self.log.info("Call sites list:")
+        self.log.info(call_sites_by_function_list)
+        for caller, call_sites in call_sites_by_function_list:
+            self.log.info("Call sites")
+            self.log.info(call_sites)
+            for site in call_sites:
+                self.run_thread(exp_dir, nameFileShort, proj, options, site)
+        self.log.info("Blocks sites list:")
+        self.log.info(f.block_addrs)
+        for b in f.block_addrs:
+            self.log.info("Blocks address")
+            self.log.info(b)
+            self.run_thread(exp_dir, nameFileShort, proj, options,[b])
+
+    def run_thread(self, exp_dir, nameFileShort, proj, options, site, state=None, args=None):
+        #exit()
+        if not state: # pre thread
+            tstate = proj.factory.entry_state(addr=site[0], add_options=options)
+        else:         # post thread
+            tstate=state
+            #tstate.globals["id"] = tstate.globals["id"] + 1
+        
+        if args:
+            nthread = None if args.sthread <= 1 else args.sthread
+        else:
+            nthread = None
+            
+        tsimgr = proj.factory.simulation_manager(tstate,threads=nthread)
+        tsimgr._techniques = []  
+        
+        if not state:
+            tstate.options.discard("LAZY_SOLVES")
+            # CHECK CHRIS : 64*4096*10*10*10* en dessous, modifié pour un test
+            tstate.register_plugin("heap", angr.state_plugins.heap.heap_ptmalloc.SimHeapPTMalloc(heap_size =int(4*2)))
+            
+            self.setup_env_var_plugin(tstate)
+            self.setup_locale_info_plugin(tstate)
+            self.setup_resources_plugin(tstate)
+            self.setup_widechar_plugin(tstate)
+            self.setup_registery_plugin(tstate)
+                                
+            # Create ProcessHeap struct and set heapflages to 0
+            tib_addr = tstate.regs.fs.concat(tstate.solver.BVV(0, 16))
+            peb_addr = tstate.mem[tib_addr + 0x30].dword.resolved
+            ProcessHeap = peb_addr + 0x500
+            tstate.mem[peb_addr + 0x18].dword = ProcessHeap
+            tstate.mem[ProcessHeap+0xc].dword = 0x0  #heapflags windowsvistaorgreater
+            tstate.mem[ProcessHeap+0x40].dword = 0x0 #heapflags else
+            
+            self.hooks.hook(tstate,proj)
+                
+            tstate.inspect.b("simprocedure", when=angr.BP_AFTER, action=self.call_sim.add_call)
+            tstate.inspect.b("simprocedure", when=angr.BP_BEFORE, action=self.call_sim.add_call_debug)
+            tstate.inspect.b("call", when=angr.BP_BEFORE, action=self.call_sim.add_addr_call)
+            tstate.inspect.b("call", when=angr.BP_AFTER, action=self.call_sim.rm_addr_call)
+            
+            tsimgr.stashes["pause"] = []
+            tsimgr.stashes["new_addr"] = []
+            tsimgr.stashes["ExcessLoop"] = []
+            tsimgr.stashes["ExcessStep"] = []          
+            tsimgr.stashes["deadbeef"] = []
+            tsimgr.stashes["lost"] = []
+            
+        self.setup_stash(tsimgr)
+        tsimgr.active[0].globals["is_thread"] = True
+                            
+        exploration_tech_thread = self.get_exploration_tech(args, exp_dir, nameFileShort, tsimgr)
+        tsimgr.use_technique(exploration_tech_thread)
+
+        self.log.info("\n------------------------------\nStart -State of simulation manager :\n "
+                     + str(tsimgr)
+                    + "\n------------------------------")
+                                
+        tsimgr.run()
+        self.build_scdg_fin(exp_dir, nameFileShort, proj.loader.main_object, tstate, tsimgr)
+
+    def setup_env_var_plugin(self, tstate):
+        tstate.register_plugin("plugin_env_var", PluginEnvVar())  # For environment variable mainly
+        tstate.plugin_env_var.env_block = tstate.heap.malloc(32767) 
+        for i in range(32767):
+            c = tstate.solver.BVS("c_env_block{}".format(i), 8)
+            tstate.memory.store(tstate.plugin_env_var.env_block + i, c)
+        
+        windows_env_vars = {
+            "ALLUSERSPROFILE": "C:\\ProgramData",
+            "APPDATA": "C:\\Users\\ElNiak\\AppData\\Roaming",
+            "CommonProgramFiles": "C:\\Program Files\\Common Files",
+            "COMPUTERNAME": "ElNiakComputer",
+            "COMSPEC": "C:\\Windows\\system32\\cmd.exe",
+            "DRIVERDATA": "C:\\Windows\\System32\\Drivers\\DriverData",
+            "HOMEDRIVE": "C:",
+            "HOMEPATH": "\\Users\\ElNiak",
+            "LOCALAPPDATA": "C:\\Users\\ElNiak\\AppData\\Local",
+            "LOGONSERVER": "\\\\[DomainControllerName]",
+            "NUMBER_OF_PROCESSORS": "8",
+            "OS": "Windows_NT",
+            "Path": "C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\",
+            "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBgetenvE;.JS;.JSE;.WSF;.WSH;.MSC",
+            "PROCESSOR_ARCHITECTURE": "AMD64",
+            "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 58 Stepping 9, GenuineIntel",
+            "PROCESSOR_LEVEL": "6",
+            "PROCESSOR_REVISION": "3a09",
+            "ProgramData": "C:\\ProgramData",
+            "ProgramFiles": "C:\\Program Files",
+            "ProgramFiles(x86)": "C:\\Program Files (x86)",
+            "ProgramW6432": "C:\\Program Files",
+            "PSModulePath": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+            "PUBLIC": "C:\\Users\\Public",
+            "SystemDrive": "C:",
+            "SystemRoot": "C:\\Windows",
+            "TEMP": "C:\\Users\\ElNiak\\AppData\\Local\\Temp",
+            "TMP": "C:\\Users\\ElNiak\\AppData\\Local\\Temp",
+            "USERPROFILE": "C:\\Users\\ElNiak",
+            "windir": "C:\\Windows",
+            "QT_NO_CPU_FEATURE":"rdrand",
+            "UNICODEMAP_JP":"unicode-ascii",
+            "QT_LOGGING_TO_CONSOLE":"0",
+            "QT_ASSUME_STDERR_HAS_CONSOLE":"0",
+            "QT_HASH_SEED":"0",
+            "QT_FORCE_STDERR_LOGGING":"0",
+            "QT_MESSAGE_PATTERN":"[%{time yyyyMMdd h:mm:ss.zzz t} %{if-debug}D%{endif}%{if-info}I%{endif}%{if-warning}W%{endif}%{if-critical}C%{endif}%{if-fatal}F%{endif}] %{file}:%{line} - %{message}\0\0"
+        }
+        env_var_str = b""
+        for env_var in windows_env_vars.keys():
+            env_var_val = (env_var + "=")
+            env_var_val += (windows_env_vars[env_var] + "\x00\x00")
+            env_var_str += env_var_val.encode("utf-8")
+            tstate.plugin_env_var.env_var[env_var.upper()] = windows_env_vars[env_var]
+        
+        env_var_bv = tstate.solver.BVV(env_var_str)
+        tstate.memory.store(tstate.plugin_env_var.env_block, env_var_bv)
+        tstate.plugin_env_var.expl_method = self.expl_method
+        
+    def setup_locale_info_plugin(self, tstate):
+        tstate.register_plugin("plugin_locale_info", PluginLocaleInfo())  # For locale info mainly
+        tstate.plugin_locale_info.locale_info_block = tstate.heap.malloc(32767) 
+        for i in range(32767):
+            c = tstate.solver.BVS("c_locale_info_block{}".format(i), 8)
+            tstate.memory.store(tstate.plugin_locale_info.locale_info_block + i, c)
+        tstate.plugin_locale_info.expl_method = self.expl_method
+        
+    def setup_resources_plugin(self, tstate):
+        tstate.register_plugin("plugin_resources", PluginResources())  # For locale info mainly
+        tstate.plugin_resources.res_block = tstate.heap.malloc(32767) 
+        for i in range(32767):
+            c = tstate.solver.BVS("c_res_block{}".format(i), 8)
+            tstate.memory.store(tstate.plugin_resources.res_block + i, c)
+        
+        tstate.plugin_resources.expl_method = self.expl_method
+    
+    def setup_widechar_plugin(self, tstate):
+        tstate.register_plugin("plugin_widechar", PluginWideChar())  # For locale info mainly
+        
+            
+    def setup_registery_plugin(self, tstate):
+        tstate.register_plugin("plugin_registery", PluginRegistery())  # For registeries info mainly
+        tstate.plugin_registery.registery_block = tstate.heap.malloc(32767) 
+        for i in range(32767):
+            c = tstate.solver.BVS("c_registery_block{}".format(i), 8)
+            tstate.memory.store(tstate.plugin_registery.registery_block + i, c)
+
+        tstate.plugin_registery.expl_method = self.expl_method
 
     def setup_stash(self, tsimgr):
         tsimgr.active[0].globals["id"] = 0

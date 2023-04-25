@@ -1,0 +1,123 @@
+[1;32;40mINFO - 2023-04-13 12:32:27,304 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,306 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,310 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,316 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,318 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,323 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,324 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,336 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,340 - [33mangr.engines.vex.lifter[0m - [33mSelf-modifying code is not always correctly optimized by PyVEX. To guarantee correctness, VEX optimizations have been disabled.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,384 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mThe program is accessing memory with an unspecified value. This could indicate unwanted behavior.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,384 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mangr will cope with this by generating an unconstrained symbolic variable and continuing. You can resolve this by:[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,386 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,386 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m1) setting a value to the initial state[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,386 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,387 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m2) adding the state option ZERO_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to make unknown regions hold null[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,387 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m3) adding the state option SYMBOL_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to suppress these messages.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:27,387 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc000800c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,407 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:27,408 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:27] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:30,716 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0010014 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:33,769 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc001801c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:36,850 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020024 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,397 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "GET /results.html HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,499 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,521 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,539 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,540 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,577 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/js/jquery.dataTables.min.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,610 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/js/dataTables.bootstrap4.min.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:38,631 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:38] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,013 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0x30 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,113 - [36mCustomSimProcedure[0m - [36mcustom_hook_static[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,114 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,114 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,114 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,114 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,114 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,115 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,116 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100004, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100008, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810000c, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,117 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100010, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100014, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100018, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810001c, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100020, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100024, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100028, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810002c, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,118 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100030, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,118 - [36mCustomSimProcedure[0m - [36mcustom_hook_no_symbols[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,206 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002032c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,253 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x300>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,282 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002033c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,328 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,378 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020944 with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,424 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x600>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,451 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020954 with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,499 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,550 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f5c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,598 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x600>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,626 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f6c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,672 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,722 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020f7c with 4 unconstrained bytes referenced from 0x8100028 (__libc_start_main+0x0 in extern-address space (0x28))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,768 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x4>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,775 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[<BV32 0x80493eb>, <BV32 0x1>, <BV32 0x7ffeffb0>, <BV32 0x8049420>, <BV32 0x8049490>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,788 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling register edi with 4 unconstrained bytes referenced from 0x8049430 (__libc_csu_init+0x10 in toy_noarg1 (0x8049430))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,878 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[134517739, 1, 2147418032, 134517792, 134517904][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,945 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a01e>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:40,946 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a01c>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,947 - [33mangr.state_plugins.posix[0m - [33mTrying to open unknown file b'text_file1.txt' - created a symbolic file since ALL_FILES_EXIST is set[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:40,975 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc002101c with 4 unconstrained bytes referenced from 0x8100030 (fopen+0x0 in extern-address space (0x30))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,022 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 0x94>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,023 - [36mCustomSimProcedure[0m - [36mSyscall found:  fopen[<BV32 0x804a01e>, <BV32 0x804a01c>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,048 - [36mCustomSimProcedure[0m - [36mSyscall found:  fseek[<BV32 0xc0020f80>, <BV32 0x0>, <BV32 0x2>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,078 - [36mCustomSimProcedure[0m - [36mSyscall found:  ftell[<BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,092 - [36mCustomSimProcedure[0m - [36mSyscall found:  fseek[<BV32 0xc0020f80>, <BV32 0x0>, <BV32 0x0>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,093 - [36mCustomSimProcedure[0m - [36mSyscall found:  rewind[<BV32 0xc0020f80>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:41,149 - [33mangr.state_plugins.heap.heap_base[0m - [33mAllocation request of 2147483647 bytes exceeded maximum of 128 bytes; allocating 128 bytes[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:41,176 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc00210a4 with 4 unconstrained bytes referenced from 0x8100020 (malloc+0x0 in extern-address space (0x20))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,224 - [36mCustomSimProcedure[0m - [36mSyscall found:  malloc[<BV32 if 0x0 <=s filesize_file_1_text_file1.txt_131084_32 then filesize_file_1_text_file1.txt_131084_32 else 0x0>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:41,697 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0021028 with 124 unconstrained bytes referenced from 0x810001c (fread+0x0 in extern-address space (0x1c))[0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:41,698 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc00210b0 with 111 unconstrained bytes referenced from 0x810001c (fread+0x0 in extern-address space (0x1c))[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,909 - [36mCustomSimProcedure[0m - [36mSyscall found:  fread[<BV32 0xc0021020>, <BV32 0x1>, <BV32 if 0x0 <=s filesize_file_1_text_file1.txt_131084_32 then filesize_file_1_text_file1.txt_131084_32 else 0x0>, <BV32 0xc0020f80>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:41,926 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0x804a03d>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:43,815 - [36mCustomSimProcedure[0m - [36mSyscall found:  strlen[<BV32 0xc0021020>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,033 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "GET /results.html?page=0 HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,073 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,076 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,076 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,079 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,081 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/js/jquery.dataTables.min.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,083 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/js/dataTables.bootstrap4.min.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:44,086 - [33mwerkzeug[0m - [33m172.17.0.1 - - [13/Apr/2023 12:32:44] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,114 - [36mCustomSimProcedure[0m - [36mSyscall found:  printf[<BV32 0x804a03d>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,127 - [36mCustomSimProcedure[0m - [36mSyscall found:  close[<BV32 0x3>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,128 - [36mCustomSimProcedure[0m - [36mSyscall found:  fclose[<BV32 0xc0020f80>][0m[0m
+[1;33;40mWARNING - 2023-04-13 12:32:45,216 - [33mangr.state_plugins.heap.heap_ptmalloc[0m - [33mA chunk's P flag is symbolic; assuming it is not set[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,559 - [36mCustomSimProcedure[0m - [36mSyscall found:  free[<BV32 0xc0021020>][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,595 - [36mCustomSimProcedure[0m - [36mSyscall found:  __libc_start_main[134517739, 1, 2147418032, 134517792, 134517904][0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,597 - [32mSemaExplorerCDFS[0m - [32mA new block of execution have been executed with changes in sim_manager.[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,597 - [32mSemaExplorerCDFS[0m - [32mCurrently, simulation manager is :
+<SimulationManager with 1 deadended>[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,597 - [32mSemaExplorerCDFS[0m - [32mpause stash len :0[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,597 - [32mSemaExplorerCDFS[0m - [32mlen(simgr.active) <= 0 or deadended >= self.max_end_state)[0m[0m
+[1;32;40mINFO - 2023-04-13 12:32:45,602 - [37mGraphBuilder[0m - [37mOutput dir :src/output/runs/102//unknown[0m[0m

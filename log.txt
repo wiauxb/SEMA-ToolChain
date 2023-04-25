@@ -1,0 +1,881 @@
+#bash update_etc_hosts.sh
+docker run  \
+		   --rm \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/src/:/app/src/ \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/setup.py:/app/setup.py \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/run_server.sh:/app/run_server.sh \
+		   -v /app/src/submodules/ \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/SemaWebApp/:/app/SemaWebApp/ \
+		   -v /tmp/.X11-unix:/tmp/.X11-unix \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/penv-fix/:/penv-fix/ \
+    		   -e DISPLAY=:0 \
+		   -p 8080:80 \
+		   --network="bridge" \
+		   -it sema-web bash run_server.sh
+Processing /app
+  Preparing metadata (setup.py) ... [?25l- done
+[?25hRequirement already satisfied: pymongo in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (4.3.3)
+Requirement already satisfied: pyzipper in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.6)
+Requirement already satisfied: click==8.0.3 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (8.0.3)
+Requirement already satisfied: task in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.1.0)
+Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from sema-tc==0.1) (2.22.0)
+Requirement already satisfied: graphviz in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.20.1)
+Requirement already satisfied: monkeyhex in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.7.4)
+Requirement already satisfied: protobuf==3.20.* in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.20.3)
+Requirement already satisfied: angr==9.2.21 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (9.2.21)
+Requirement already satisfied: researchpy in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.5)
+Requirement already satisfied: hypothesis in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (6.71.0)
+Requirement already satisfied: seaborn in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.12.2)
+Requirement already satisfied: scipy in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.10.1)
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.2.2)
+Requirement already satisfied: grakel in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.1.9)
+Requirement already satisfied: gensim in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (4.3.1)
+Requirement already satisfied: avatar2 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.4.7)
+Requirement already satisfied: r2pipe in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.8.0)
+Requirement already satisfied: pyinstaller in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.9.0)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.7.1)
+Requirement already satisfied: celery in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.2.7)
+Requirement already satisfied: tenseal in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.14)
+Requirement already satisfied: dill in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.6)
+Requirement already satisfied: cryptography in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (40.0.1)
+Requirement already satisfied: logbook in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.5.3)
+Requirement already satisfied: mmh3 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.1.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.9.4)
+Requirement already satisfied: capstone!=5.0.0rc2,>=3.0.5rc2 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (4.0.2)
+Requirement already satisfied: cffi>=1.14.0 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.15.1)
+Requirement already satisfied: pycparser>=2.18 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.21)
+Requirement already satisfied: sortedcontainers in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.4.0)
+Requirement already satisfied: archinfo==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: claripy==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: ailment==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: GitPython in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (3.1.31)
+Requirement already satisfied: dpkt in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.9.8)
+Requirement already satisfied: unicorn==1.0.2rc4 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.0.2rc4)
+Requirement already satisfied: nampa in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (0.1.1)
+Requirement already satisfied: rpyc in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (5.3.1)
+Requirement already satisfied: progressbar2>=3 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (4.2.0)
+Requirement already satisfied: sympy in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.11.1)
+Requirement already satisfied: pyvex==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: cachetools in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (5.3.0)
+Requirement already satisfied: itanium-demangler in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.1)
+Requirement already satisfied: networkx!=2.8.1,>=2.0 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (3.1)
+Requirement already satisfied: cle==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: CppHeaderParser in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.7.4)
+Requirement already satisfied: mulpyplexer in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (0.9)
+Requirement already satisfied: decorator in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (5.1.1)
+Requirement already satisfied: z3-solver==4.10.2.0 in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (4.10.2.0)
+Requirement already satisfied: pysmt>=0.9.1.dev119 in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (0.9.6.dev40)
+Requirement already satisfied: pefile in /usr/local/lib/python3.8/dist-packages (from cle==9.2.21->angr==9.2.21->sema-tc==0.1) (2023.2.7)
+Requirement already satisfied: pyelftools>=0.27 in /usr/local/lib/python3.8/dist-packages (from cle==9.2.21->angr==9.2.21->sema-tc==0.1) (0.29)
+Requirement already satisfied: bitstring in /usr/local/lib/python3.8/dist-packages (from pyvex==9.2.21->angr==9.2.21->sema-tc==0.1) (4.0.1)
+Requirement already satisfied: keystone-engine in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (0.9.2)
+Requirement already satisfied: pylink-square in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.0.0)
+Requirement already satisfied: npyscreen in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (4.10.5)
+Requirement already satisfied: pygdbmi>=0.10.0.0 in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (0.11.0.0)
+Requirement already satisfied: parse in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.19.0)
+Requirement already satisfied: cached-property in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.5.2)
+Requirement already satisfied: posix-ipc>=1.0.0 in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: pyusb in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.2.1)
+Requirement already satisfied: intervaltree in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (3.1.0)
+Requirement already satisfied: configparser in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (5.3.0)
+Requirement already satisfied: billiard<4.0,>=3.6.4.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (3.6.4.0)
+Requirement already satisfied: vine<6.0,>=5.0.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (5.0.0)
+Requirement already satisfied: click-didyoumean>=0.0.3 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (0.3.0)
+Requirement already satisfied: click-plugins>=1.1.1 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: kombu<6.0,>=5.2.3 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (5.2.4)
+Requirement already satisfied: click-repl>=0.2.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (0.2.0)
+Requirement already satisfied: pytz>=2021.3 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (2023.3)
+Requirement already satisfied: smart-open>=1.8.1 in /usr/local/lib/python3.8/dist-packages (from gensim->sema-tc==0.1) (6.3.0)
+Requirement already satisfied: numpy>=1.18.5 in /usr/local/lib/python3.8/dist-packages (from gensim->sema-tc==0.1) (1.24.2)
+Requirement already satisfied: six>=1.11.0 in /usr/lib/python3/dist-packages (from grakel->sema-tc==0.1) (1.14.0)
+Requirement already satisfied: cython>=0.27.3 in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (0.29.34)
+Requirement already satisfied: future>=0.16.0 in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (0.18.3)
+Requirement already satisfied: joblib in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (1.2.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /usr/local/lib/python3.8/dist-packages (from scikit-learn->sema-tc==0.1) (3.1.0)
+Requirement already satisfied: attrs>=19.2.0 in /usr/local/lib/python3.8/dist-packages (from hypothesis->sema-tc==0.1) (22.2.0)
+Requirement already satisfied: exceptiongroup>=1.0.0 in /usr/local/lib/python3.8/dist-packages (from hypothesis->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: importlib-resources>=3.2.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (5.12.0)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (0.11.0)
+Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (9.5.0)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (4.39.3)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (3.0.9)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (1.4.4)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (23.0)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (1.0.7)
+Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (2.8.2)
+Requirement already satisfied: pyinstaller-hooks-contrib>=2021.4 in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (2023.2)
+Requirement already satisfied: altgraph in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (0.17.3)
+Requirement already satisfied: setuptools>=42.0.0 in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (67.6.1)
+Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in /usr/local/lib/python3.8/dist-packages (from pymongo->sema-tc==0.1) (2.3.0)
+Requirement already satisfied: pycryptodomex in /usr/local/lib/python3.8/dist-packages (from pyzipper->sema-tc==0.1) (3.17)
+Requirement already satisfied: statsmodels in /usr/local/lib/python3.8/dist-packages (from researchpy->sema-tc==0.1) (0.13.5)
+Requirement already satisfied: patsy in /usr/local/lib/python3.8/dist-packages (from researchpy->sema-tc==0.1) (0.5.3)
+Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (from researchpy->sema-tc==0.1) (2.0.0)
+Requirement already satisfied: prompt-toolkit in /usr/local/lib/python3.8/dist-packages (from click-repl>=0.2.0->celery->sema-tc==0.1) (3.0.38)
+Requirement already satisfied: zipp>=3.1.0 in /usr/local/lib/python3.8/dist-packages (from importlib-resources>=3.2.0->matplotlib->sema-tc==0.1) (3.15.0)
+Requirement already satisfied: amqp<6.0.0,>=5.0.9 in /usr/local/lib/python3.8/dist-packages (from kombu<6.0,>=5.2.3->celery->sema-tc==0.1) (5.1.1)
+Requirement already satisfied: tzdata>=2022.1 in /usr/local/lib/python3.8/dist-packages (from pandas->researchpy->sema-tc==0.1) (2023.3)
+Requirement already satisfied: python-utils>=3.0.0 in /usr/local/lib/python3.8/dist-packages (from progressbar2>=3->angr==9.2.21->sema-tc==0.1) (3.5.2)
+Requirement already satisfied: ply in /usr/local/lib/python3.8/dist-packages (from CppHeaderParser->angr==9.2.21->sema-tc==0.1) (3.11)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /usr/local/lib/python3.8/dist-packages (from GitPython->angr==9.2.21->sema-tc==0.1) (4.0.10)
+Requirement already satisfied: plumbum in /usr/local/lib/python3.8/dist-packages (from rpyc->angr==9.2.21->sema-tc==0.1) (1.8.1)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.8/dist-packages (from sympy->angr==9.2.21->sema-tc==0.1) (1.3.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in /usr/local/lib/python3.8/dist-packages (from gitdb<5,>=4.0.1->GitPython->angr==9.2.21->sema-tc==0.1) (5.0.0)
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.8/dist-packages (from prompt-toolkit->click-repl>=0.2.0->celery->sema-tc==0.1) (0.2.6)
+Building wheels for collected packages: sema-tc
+  Building wheel for sema-tc (setup.py) ... [?25l- \ | / - \ | / - \ done
+[?25h  Created wheel for sema-tc: filename=sema_tc-0.1-py3-none-any.whl size=34581679 sha256=35ee0bfa54ffb531db4313d44f07d311d0021054f10766ba2f2b3e0092399189
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ns8a9r2h/wheels/40/5d/89/f38b7a58cbc6f6bdff423c409ca06a097d4abae527d8c17f06
+Successfully built sema-tc
+Installing collected packages: sema-tc
+  Attempting uninstall: sema-tc
+    Found existing installation: sema-tc 0.1
+    Uninstalling sema-tc-0.1:
+      Successfully uninstalled sema-tc-0.1
+Successfully installed sema-tc-0.1
+[33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv[0m[33m
+[0m/app
+_StoreTrueAction(option_strings=['--DFS'], dest='DFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--BFS'], dest='BFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CDFS'], dest='CDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--ThreadCDFS'], dest='ThreadCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CBFS'], dest='CBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--DBFS'], dest='DBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SDFS'], dest='SDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SCDFS'], dest='SCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--gs'], dest='gs', nargs=0, const=True, default=False, type=None, choices=None, help='.GS format', metavar=None)
+_StoreTrueAction(option_strings=['--json'], dest='json', nargs=0, const=True, default=False, type=None, choices=None, help='.JSON format', metavar=None)
+_StoreTrueAction(option_strings=['--symbion'], dest='symbion', nargs=0, const=True, default=False, type=None, choices=None, help='Concolic unpacking method (linux | windows [in progress])', metavar=None)
+_StoreTrueAction(option_strings=['--unipacker'], dest='unipacker', nargs=0, const=True, default=False, type=None, choices=None, help='Emulation unpacking method (windows only)', metavar=None)
+_StoreTrueAction(option_strings=['--packed'], dest='packed', nargs=0, const=True, default=False, type=None, choices=None, help='Is the binary packed ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--concrete_target_is_local'], dest='concrete_target_is_local', nargs=0, const=True, default=False, type=None, choices=None, help='Use a local GDB server instead of using cuckoo (default : False)', metavar=None)
+_StoreAction(option_strings=['--symb_loop'], dest='symb_loop', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Number of iteration allowed for a symbolic loop (default : 3) ', metavar=None)
+_StoreAction(option_strings=['--limit_pause'], dest='limit_pause', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Number of states allowed in pause stash (default : 200)', metavar=None)
+_StoreAction(option_strings=['--max_step'], dest='max_step', nargs=None, const=None, default=50000, type=<class 'int'>, choices=None, help='Maximum number of steps allowed for a state (default : 50 000)', metavar=None)
+_StoreAction(option_strings=['--max_deadend'], dest='max_deadend', nargs=None, const=None, default=600, type=<class 'int'>, choices=None, help='Number of deadended state required to stop (default : 600)', metavar=None)
+_StoreAction(option_strings=['--simul_state'], dest='simul_state', nargs=None, const=None, default=5, type=<class 'int'>, choices=None, help='Number of simultaneous states we explore with simulation manager (default : 5)', metavar=None)
+_StoreAction(option_strings=['--n_args'], dest='n_args', nargs=None, const=None, default=0, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 0)', metavar=None)
+_StoreAction(option_strings=['--conc_loop'], dest='conc_loop', nargs=None, const=None, default=1024, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 1024)', metavar=None)
+_StoreTrueAction(option_strings=['--count_block'], dest='count_block', nargs=0, const=True, default=False, type=None, choices=None, help='Count block (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--sim_file'], dest='sim_file', nargs=0, const=True, default=False, type=None, choices=None, help='Create SimFile with binary  TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--track_command'], dest='track_command', nargs=0, const=True, default=False, type=None, choices=None, help='Track command loop of RATs  (default : False)', metavar=None)
+_StoreAction(option_strings=['--min_size'], dest='min_size', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Minimum size required for a trace to be used in SCDG (default : 3)', metavar=None)
+_StoreTrueAction(option_strings=['--disjoint_union'], dest='disjoint_union', nargs=0, const=True, default=False, type=None, choices=None, help='Do we merge traces or use disjoint union ? (default : merge)', metavar=None)
+_StoreTrueAction(option_strings=['--not_comp_args'], dest='not_comp_args', nargs=0, const=True, default=False, type=None, choices=None, help='Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', metavar=None)
+_StoreTrueAction(option_strings=['--three_edges'], dest='three_edges', nargs=0, const=True, default=False, type=None, choices=None, help='Do we use the three-edges strategy ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--not_ignore_zero'], dest='not_ignore_zero', nargs=0, const=True, default=False, type=None, choices=None, help='Do we ignore zero when building graph ? (default : Discard zero)', metavar=None)
+_StoreAction(option_strings=['--dir'], dest='dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', metavar=None)
+_StoreFalseAction(option_strings=['--discard_SCDG'], dest='discard_SCDG', nargs=0, const=False, default=True, type=None, choices=None, help='Do not keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--eval_time'], dest='eval_time', nargs=0, const=True, default=False, type=None, choices=None, help='Keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--pre_run_thread'], dest='pre_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--runtime_run_thread'], dest='runtime_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--post_run_thread'], dest='post_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--approximate'], dest='approximate', nargs=0, const=True, default=False, type=None, choices=None, help='Symbolic approximation (default : False)', metavar=None)
+_StoreAction(option_strings=['--timeout'], dest='timeout', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Timeout in seconds before ending extraction (default : 200)', metavar=None)
+_StoreTrueAction(option_strings=['--not_resolv_string'], dest='not_resolv_string', nargs=0, const=True, default=False, type=None, choices=None, help='Do we try to resolv references of string (default : False)', metavar=None)
+_StoreAction(option_strings=['--exp_dir'], dest='exp_dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save SCDG extracted (default : output/runs/<exp_run>)', metavar=None)
+_StoreTrueAction(option_strings=['--memory_limit'], dest='memory_limit', nargs=0, const=True, default=False, type=None, choices=None, help='Skip binary experiment when memory > 90%% (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--verbose_scdg'], dest='verbose_scdg', nargs=0, const=True, default=False, type=None, choices=None, help='Verbose output during calls extraction  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--debug_error'], dest='debug_error', nargs=0, const=True, default=False, type=None, choices=None, help='Debug error states (default : False)', metavar=None)
+_StoreAction(option_strings=['--familly'], dest='familly', nargs=None, const=None, default=None, type=None, choices=None, help='Familly of the malware (default : unknown)', metavar=None)
+_StoreAction(option_strings=[], dest='binary', nargs=None, const=None, default=None, type=None, choices=None, help='Name of the binary to analyze', metavar=None)
+_StoreAction(option_strings=['--sthread'], dest='sthread', nargs=None, const=None, default=1, type=<class 'int'>, choices=None, help='Number of thread used (default: 1)', metavar=None)
+[{'SCDG exploration techniques used': [{'name': 'DFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'BFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'ThreadCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'DBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Format to save graph output': [{'name': 'gs', 'help': '.GS format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'json', 'help': '.JSON format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Unpacking method (iff --packed)': [{'name': 'symbion', 'help': 'Concolic unpacking method (linux | windows [in progress])', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'unipacker', 'help': 'Emulation unpacking method (windows only)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}]}, {'Packed malware': [{'name': 'packed', 'help': 'Is the binary packed ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'concrete_target_is_local', 'help': 'Use a local GDB server instead of using cuckoo (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG exploration techniques parameters': [{'name': 'symb_loop', 'help': 'Number of iteration allowed for a symbolic loop (default : 3) ', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'limit_pause', 'help': 'Number of states allowed in pause stash (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'max_step', 'help': 'Maximum number of steps allowed for a state (default : 50 000)', 'type': "<class 'int'>", 'default': 50000, 'is_mutually_exclusive': False}, {'name': 'max_deadend', 'help': 'Number of deadended state required to stop (default : 600)', 'type': "<class 'int'>", 'default': 600, 'is_mutually_exclusive': False}, {'name': 'simul_state', 'help': 'Number of simultaneous states we explore with simulation manager (default : 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}], 'Binary parameters': [{'name': 'n_args', 'help': 'Number of symbolic arguments given to the binary (default : 0)', 'type': "<class 'int'>", 'default': 0, 'is_mutually_exclusive': False}, {'name': 'conc_loop', 'help': 'Number of symbolic arguments given to the binary (default : 1024)', 'type': "<class 'int'>", 'default': 1024, 'is_mutually_exclusive': False}]}, {'RATs custom parameters': [{'name': 'count_block', 'help': 'Count block (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'sim_file', 'help': 'Create SimFile with binary  TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'track_command', 'help': 'Track command loop of RATs  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG creation parameter': [{'name': 'min_size', 'help': 'Minimum size required for a trace to be used in SCDG (default : 3)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'disjoint_union', 'help': 'Do we merge traces or use disjoint union ? (default : merge)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_comp_args', 'help': 'Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'three_edges', 'help': 'Do we use the three-edges strategy ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_ignore_zero', 'help': 'Do we ignore zero when building graph ? (default : Discard zero)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'dir', 'help': ' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'discard_SCDG', 'help': 'Do not keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'eval_time', 'help': 'Keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'Thread parameter': [{'name': 'pre_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'runtime_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'post_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'approximate', 'help': 'Symbolic approximation (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'timeout', 'help': 'Timeout in seconds before ending extraction (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'not_resolv_string', 'help': 'Do we try to resolv references of string (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'exp_dir', 'help': ' Directory to save SCDG extracted (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'memory_limit', 'help': 'Skip binary experiment when memory > 90%% (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'verbose_scdg', 'help': 'Verbose output during calls extraction  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'debug_error', 'help': 'Debug error states (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'familly', 'help': 'Familly of the malware (default : unknown)', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'binary', 'help': 'Name of the binary to analyze', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'sthread', 'help': 'Number of thread used (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}]}]
+[{'Operation mode': [{'name': 'classification', 'help': 'By malware family', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'detection', 'help': 'Cleanware vs Malware', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Classifier used': [{'name': 'wl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'inria', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'dl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'gspan', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Global classifiers parameters': [{'name': 'threshold', 'help': 'Threshold used for the classifier [0..1] (default : 0.45)', 'type': "<class 'float'>", 'default': 0.45, 'is_mutually_exclusive': False}]}, {'Gspan options': [{'name': 'biggest_subgraph', 'help': 'Biggest subgraph consider for Gspan (default: 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'support', 'help': 'Support used for the gpsan classifier [0..1] (default : 0.75)', 'type': "<class 'float'>", 'default': 0.75, 'is_mutually_exclusive': False}, {'name': 'ctimeout', 'help': 'Timeout for gspan classifier (default : 3sec)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}], 'Deep Learning options': [{'name': 'epoch', 'help': 'Only for deep learning model: number of epoch (default: 5)\n Always 1 for FL model', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'sepoch', 'help': 'Only for deep learning model: starting epoch (default: 1)\n', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}, {'name': 'data_scale', 'help': 'Only for deep learning model: data scale value (default: 0.9)', 'type': "<class 'float'>", 'default': 0.9, 'is_mutually_exclusive': False}, {'name': 'vector_size', 'help': 'Only for deep learning model: Size of the vector used (default: 4)', 'type': "<class 'int'>", 'default': 4, 'is_mutually_exclusive': False}, {'name': 'batch_size', 'help': 'Only for deep learning model: Batch size for the model (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}], 'Malware familly': [{'name': 'bancteian', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'delf', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'FeakerStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'gandcrab', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'ircbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'lamer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'nitol', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RedLineStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sfone', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sillyp2p', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'simbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'Sodinokibi', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sytro', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'upatre', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'wabot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RemcosRAT', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'verbose_classifier', 'help': 'Verbose output during train/classification  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'train', 'help': 'Launch training process, else classify/detect new sample with previously computed model', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'nthread', 'help': 'Number of thread used (default: max)', 'type': "<class 'int'>", 'default': 12, 'is_mutually_exclusive': False}, {'name': 'binaries', 'help': "Name of the folder containing binary'signatures to analyze (Default: output/runs/, only that for ToolChain)", 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}]}]
+172.17.0.2
+fuck
+ * Serving Flask app 'SemaServer'
+ * Debug mode: on
+INFO    | 2023-04-08 15:11:59,377 | [33mwerkzeug[0m | [33m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.17.0.2:80[0m
+INFO    | 2023-04-08 15:11:59,377 | [33mwerkzeug[0m | [33m[33mPress CTRL+C to quit[0m[0m
+INFO    | 2023-04-08 15:11:59,378 | [33mwerkzeug[0m | [33m * Restarting with stat[0m
+/app
+_StoreTrueAction(option_strings=['--DFS'], dest='DFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--BFS'], dest='BFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CDFS'], dest='CDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--ThreadCDFS'], dest='ThreadCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CBFS'], dest='CBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--DBFS'], dest='DBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SDFS'], dest='SDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SCDFS'], dest='SCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--gs'], dest='gs', nargs=0, const=True, default=False, type=None, choices=None, help='.GS format', metavar=None)
+_StoreTrueAction(option_strings=['--json'], dest='json', nargs=0, const=True, default=False, type=None, choices=None, help='.JSON format', metavar=None)
+_StoreTrueAction(option_strings=['--symbion'], dest='symbion', nargs=0, const=True, default=False, type=None, choices=None, help='Concolic unpacking method (linux | windows [in progress])', metavar=None)
+_StoreTrueAction(option_strings=['--unipacker'], dest='unipacker', nargs=0, const=True, default=False, type=None, choices=None, help='Emulation unpacking method (windows only)', metavar=None)
+_StoreTrueAction(option_strings=['--packed'], dest='packed', nargs=0, const=True, default=False, type=None, choices=None, help='Is the binary packed ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--concrete_target_is_local'], dest='concrete_target_is_local', nargs=0, const=True, default=False, type=None, choices=None, help='Use a local GDB server instead of using cuckoo (default : False)', metavar=None)
+_StoreAction(option_strings=['--symb_loop'], dest='symb_loop', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Number of iteration allowed for a symbolic loop (default : 3) ', metavar=None)
+_StoreAction(option_strings=['--limit_pause'], dest='limit_pause', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Number of states allowed in pause stash (default : 200)', metavar=None)
+_StoreAction(option_strings=['--max_step'], dest='max_step', nargs=None, const=None, default=50000, type=<class 'int'>, choices=None, help='Maximum number of steps allowed for a state (default : 50 000)', metavar=None)
+_StoreAction(option_strings=['--max_deadend'], dest='max_deadend', nargs=None, const=None, default=600, type=<class 'int'>, choices=None, help='Number of deadended state required to stop (default : 600)', metavar=None)
+_StoreAction(option_strings=['--simul_state'], dest='simul_state', nargs=None, const=None, default=5, type=<class 'int'>, choices=None, help='Number of simultaneous states we explore with simulation manager (default : 5)', metavar=None)
+_StoreAction(option_strings=['--n_args'], dest='n_args', nargs=None, const=None, default=0, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 0)', metavar=None)
+_StoreAction(option_strings=['--conc_loop'], dest='conc_loop', nargs=None, const=None, default=1024, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 1024)', metavar=None)
+_StoreTrueAction(option_strings=['--count_block'], dest='count_block', nargs=0, const=True, default=False, type=None, choices=None, help='Count block (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--sim_file'], dest='sim_file', nargs=0, const=True, default=False, type=None, choices=None, help='Create SimFile with binary  TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--track_command'], dest='track_command', nargs=0, const=True, default=False, type=None, choices=None, help='Track command loop of RATs  (default : False)', metavar=None)
+_StoreAction(option_strings=['--min_size'], dest='min_size', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Minimum size required for a trace to be used in SCDG (default : 3)', metavar=None)
+_StoreTrueAction(option_strings=['--disjoint_union'], dest='disjoint_union', nargs=0, const=True, default=False, type=None, choices=None, help='Do we merge traces or use disjoint union ? (default : merge)', metavar=None)
+_StoreTrueAction(option_strings=['--not_comp_args'], dest='not_comp_args', nargs=0, const=True, default=False, type=None, choices=None, help='Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', metavar=None)
+_StoreTrueAction(option_strings=['--three_edges'], dest='three_edges', nargs=0, const=True, default=False, type=None, choices=None, help='Do we use the three-edges strategy ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--not_ignore_zero'], dest='not_ignore_zero', nargs=0, const=True, default=False, type=None, choices=None, help='Do we ignore zero when building graph ? (default : Discard zero)', metavar=None)
+_StoreAction(option_strings=['--dir'], dest='dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', metavar=None)
+_StoreFalseAction(option_strings=['--discard_SCDG'], dest='discard_SCDG', nargs=0, const=False, default=True, type=None, choices=None, help='Do not keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--eval_time'], dest='eval_time', nargs=0, const=True, default=False, type=None, choices=None, help='Keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--pre_run_thread'], dest='pre_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--runtime_run_thread'], dest='runtime_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--post_run_thread'], dest='post_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--approximate'], dest='approximate', nargs=0, const=True, default=False, type=None, choices=None, help='Symbolic approximation (default : False)', metavar=None)
+_StoreAction(option_strings=['--timeout'], dest='timeout', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Timeout in seconds before ending extraction (default : 200)', metavar=None)
+_StoreTrueAction(option_strings=['--not_resolv_string'], dest='not_resolv_string', nargs=0, const=True, default=False, type=None, choices=None, help='Do we try to resolv references of string (default : False)', metavar=None)
+_StoreAction(option_strings=['--exp_dir'], dest='exp_dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save SCDG extracted (default : output/runs/<exp_run>)', metavar=None)
+_StoreTrueAction(option_strings=['--memory_limit'], dest='memory_limit', nargs=0, const=True, default=False, type=None, choices=None, help='Skip binary experiment when memory > 90%% (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--verbose_scdg'], dest='verbose_scdg', nargs=0, const=True, default=False, type=None, choices=None, help='Verbose output during calls extraction  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--debug_error'], dest='debug_error', nargs=0, const=True, default=False, type=None, choices=None, help='Debug error states (default : False)', metavar=None)
+_StoreAction(option_strings=['--familly'], dest='familly', nargs=None, const=None, default=None, type=None, choices=None, help='Familly of the malware (default : unknown)', metavar=None)
+_StoreAction(option_strings=[], dest='binary', nargs=None, const=None, default=None, type=None, choices=None, help='Name of the binary to analyze', metavar=None)
+_StoreAction(option_strings=['--sthread'], dest='sthread', nargs=None, const=None, default=1, type=<class 'int'>, choices=None, help='Number of thread used (default: 1)', metavar=None)
+[{'SCDG exploration techniques used': [{'name': 'DFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'BFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'ThreadCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'DBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Format to save graph output': [{'name': 'gs', 'help': '.GS format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'json', 'help': '.JSON format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Unpacking method (iff --packed)': [{'name': 'symbion', 'help': 'Concolic unpacking method (linux | windows [in progress])', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'unipacker', 'help': 'Emulation unpacking method (windows only)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}]}, {'Packed malware': [{'name': 'packed', 'help': 'Is the binary packed ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'concrete_target_is_local', 'help': 'Use a local GDB server instead of using cuckoo (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG exploration techniques parameters': [{'name': 'symb_loop', 'help': 'Number of iteration allowed for a symbolic loop (default : 3) ', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'limit_pause', 'help': 'Number of states allowed in pause stash (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'max_step', 'help': 'Maximum number of steps allowed for a state (default : 50 000)', 'type': "<class 'int'>", 'default': 50000, 'is_mutually_exclusive': False}, {'name': 'max_deadend', 'help': 'Number of deadended state required to stop (default : 600)', 'type': "<class 'int'>", 'default': 600, 'is_mutually_exclusive': False}, {'name': 'simul_state', 'help': 'Number of simultaneous states we explore with simulation manager (default : 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}], 'Binary parameters': [{'name': 'n_args', 'help': 'Number of symbolic arguments given to the binary (default : 0)', 'type': "<class 'int'>", 'default': 0, 'is_mutually_exclusive': False}, {'name': 'conc_loop', 'help': 'Number of symbolic arguments given to the binary (default : 1024)', 'type': "<class 'int'>", 'default': 1024, 'is_mutually_exclusive': False}]}, {'RATs custom parameters': [{'name': 'count_block', 'help': 'Count block (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'sim_file', 'help': 'Create SimFile with binary  TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'track_command', 'help': 'Track command loop of RATs  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG creation parameter': [{'name': 'min_size', 'help': 'Minimum size required for a trace to be used in SCDG (default : 3)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'disjoint_union', 'help': 'Do we merge traces or use disjoint union ? (default : merge)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_comp_args', 'help': 'Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'three_edges', 'help': 'Do we use the three-edges strategy ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_ignore_zero', 'help': 'Do we ignore zero when building graph ? (default : Discard zero)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'dir', 'help': ' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'discard_SCDG', 'help': 'Do not keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'eval_time', 'help': 'Keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'Thread parameter': [{'name': 'pre_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'runtime_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'post_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'approximate', 'help': 'Symbolic approximation (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'timeout', 'help': 'Timeout in seconds before ending extraction (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'not_resolv_string', 'help': 'Do we try to resolv references of string (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'exp_dir', 'help': ' Directory to save SCDG extracted (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'memory_limit', 'help': 'Skip binary experiment when memory > 90%% (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'verbose_scdg', 'help': 'Verbose output during calls extraction  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'debug_error', 'help': 'Debug error states (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'familly', 'help': 'Familly of the malware (default : unknown)', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'binary', 'help': 'Name of the binary to analyze', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'sthread', 'help': 'Number of thread used (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}]}]
+[{'Operation mode': [{'name': 'classification', 'help': 'By malware family', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'detection', 'help': 'Cleanware vs Malware', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Classifier used': [{'name': 'wl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'inria', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'dl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'gspan', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Global classifiers parameters': [{'name': 'threshold', 'help': 'Threshold used for the classifier [0..1] (default : 0.45)', 'type': "<class 'float'>", 'default': 0.45, 'is_mutually_exclusive': False}]}, {'Gspan options': [{'name': 'biggest_subgraph', 'help': 'Biggest subgraph consider for Gspan (default: 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'support', 'help': 'Support used for the gpsan classifier [0..1] (default : 0.75)', 'type': "<class 'float'>", 'default': 0.75, 'is_mutually_exclusive': False}, {'name': 'ctimeout', 'help': 'Timeout for gspan classifier (default : 3sec)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}], 'Deep Learning options': [{'name': 'epoch', 'help': 'Only for deep learning model: number of epoch (default: 5)\n Always 1 for FL model', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'sepoch', 'help': 'Only for deep learning model: starting epoch (default: 1)\n', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}, {'name': 'data_scale', 'help': 'Only for deep learning model: data scale value (default: 0.9)', 'type': "<class 'float'>", 'default': 0.9, 'is_mutually_exclusive': False}, {'name': 'vector_size', 'help': 'Only for deep learning model: Size of the vector used (default: 4)', 'type': "<class 'int'>", 'default': 4, 'is_mutually_exclusive': False}, {'name': 'batch_size', 'help': 'Only for deep learning model: Batch size for the model (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}], 'Malware familly': [{'name': 'bancteian', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'delf', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'FeakerStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'gandcrab', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'ircbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'lamer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'nitol', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RedLineStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sfone', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sillyp2p', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'simbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'Sodinokibi', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sytro', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'upatre', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'wabot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RemcosRAT', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'verbose_classifier', 'help': 'Verbose output during train/classification  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'train', 'help': 'Launch training process, else classify/detect new sample with previously computed model', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'nthread', 'help': 'Number of thread used (default: max)', 'type': "<class 'int'>", 'default': 12, 'is_mutually_exclusive': False}, {'name': 'binaries', 'help': "Name of the folder containing binary'signatures to analyze (Default: output/runs/, only that for ToolChain)", 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}]}]
+172.17.0.2
+fuck
+WARNING | 2023-04-08 15:12:02,263 | [33mwerkzeug[0m | [33m * Debugger is active![0m
+INFO    | 2023-04-08 15:12:02,263 | [33mwerkzeug[0m | [33m * Debugger PIN: 505-071-936[0m
+INFO    | 2023-04-08 15:12:24,364 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:12:24] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:12:24,366 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:12:24] "GET /progress-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:12:54,360 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:12:54] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:12:54,362 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:12:54] "GET /progress-scdg HTTP/1.1" 200 -[0m
+ImmutableMultiDict([('scdg_enable', 'scdg_enable'), ('SCDG exploration techniques used', 'CDFS'), ('Format to save graph output', 'gs'), ('symb_loop', '3'), ('limit_pause', '200'), ('max_step', '50000'), ('max_deadend', '600'), ('simul_state', '5'), ('n_args', '0'), ('conc_loop', '1024'), ('min_size', '3'), ('dir', 'output/runs/'), ('discard_SCDG', 'discard_SCDG'), ('timeout', '200'), ('exp_dir', 'output/runs/'), ('binary', '/src/databases/malware-linux/mirai/mirai500'), ('sthread', '1'), ('threshold', '0.5'), ('biggest_subgraph', '5'), ('support', '0.75'), ('ctimeout', '3'), ('epoch', '5'), ('sepoch', '1'), ('data_scale', '1'), ('vector_size', '4'), ('batch_size', '1'), ('bancteian', 'bancteian'), ('delf', 'delf'), ('FeakerStealer', 'FeakerStealer'), ('gandcrab', 'gandcrab'), ('ircbot', 'ircbot'), ('lamer', 'lamer'), ('nitol', 'nitol'), ('RedLineStealer', 'RedLineStealer'), ('sfone', 'sfone'), ('sillyp2p', 'sillyp2p'), ('simbot', 'simbot'), ('Sodinokibi', 'Sodinokibi'), ('sytro', 'sytro'), ('upatre', 'upatre'), ('wabot', 'wabot'), ('RemcosRAT', 'RemcosRAT'), ('nthread', '12'), ('binaries', 'output/runs/')])
+next is binary
+/src/databases/malware-linux/mirai/mirai500
+['', '/databases/malware-linux/mirai/mirai500']
+['output/runs/']
+['--CDFS', '--gs', '--symb_loop', '3', '--limit_pause', '200', '--max_step', '50000', '--max_deadend', '600', '--simul_state', '5', '--n_args', '0', '--conc_loop', '1024', '--min_size', '3', '--dir', 'output/runs/', '--discard_SCDG', '--timeout', '200', '--exp_dir', 'output/runs/', '--sthread', '1', '/app/src/databases/malware-linux/mirai/mirai500', '--threshold', '0.5', '--biggest_subgraph', '5', '--support', '0.75', '--ctimeout', '3', '--epoch', '5', '--sepoch', '1', '--data_scale', '1', '--vector_size', '4', '--batch_size', '1', '--bancteian', '--delf', '--FeakerStealer', '--gandcrab', '--ircbot', '--lamer', '--nitol', '--RedLineStealer', '--sfone', '--sillyp2p', '--simbot', '--Sodinokibi', '--sytro', '--upatre', '--wabot', '--RemcosRAT', '--nthread', '12', '/app/src/output/runs/']
+Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='/app/src/output/runs/', binary='/app/src/databases/malware-linux/mirai/mirai500', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=False, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='output/runs/', discard_SCDG=False, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='output/runs/', familly=None, gandcrab=False, gs=True, gspan=False, inria=False, ircbot=False, json=False, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=False, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)
+src/output/runs/84/scdg.csv
+/app/src/databases/malware-linux/mirai/mirai500
+[1;32;40mINFO - 2023-04-08 15:13:02,105 - SemaSCDG - You decide to analyse a single binary: /app/src/databases/malware-linux/mirai/mirai500[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,123 - SemaSCDG - Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='src/output/runs/84/', binary='/app/src/databases/malware-linux/mirai/mirai500', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=False, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='src/output/runs/84/', discard_SCDG=False, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='src/output/runs/84/unknown/', familly=None, gandcrab=False, gs=True, gspan=False, inria=False, ircbot=False, json=False, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=False, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)[0m
+INFO    | 2023-04-08 15:13:02,152 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "POST /index.html HTTP/1.1" 200 -[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,153 - SemaSCDG - src/output/runs/84/scdg.csv[0m
+src/output/runs/84/unknown//mirai500/ src/output/runs/84/
+[1;32;40mINFO - 2023-04-08 15:13:02,153 - SemaSCDG - 
+-----------------------------------------
+--- Building SCDG of unknown/mirai500 ---
+-----------------------------------------[0m
+WARNING | 2023-04-08 15:13:02,160 | [34mangr.project[0m | [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Libraries used are :
+set()[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - OS recognized as : UNIX - System V[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - CPU architecture recognized as : <Arch X86 (LE)>[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Entry point of the binary recognized as : 134513000[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Min/Max addresses of the binary recognized as : <Loaded mirai500, maps [0x8048000:0x8307fff]>[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Stack executable ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Binary position-independent ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,161 - SemaSCDG - Exploration method:  CDFS[0m
+[1;32;40mINFO - 2023-04-08 15:13:02,162 - SemaSCDG - Entry_state address = None[0m
+INFO    | 2023-04-08 15:13:02,176 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,215 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,233 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,233 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,250 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,273 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,405 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,412 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,418 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:02,462 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:13:02,489 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:02] "GET /progress-scdg HTTP/1.1" 200 -[0m
+[1;32;40mINFO - 2023-04-08 15:13:14,383 - SemaSCDG - ('Page is already mapped', 134512640)[0m
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 179, in _initialize_page
+    backer_start, backer = next(backer_iter)
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 58, in _initialize_page
+    backer_start, backer = next(backer_iter)
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 266, in permissions
+    page = self._get_page(pageno, permissions is not None, allow_default=False, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/privileged_mixin.py", line 17, in _get_page
+    page = super()._get_page(pageno, writing, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 70, in _get_page
+    page = self._initialize_page(pageno, force_default=force_default, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/stack_allocation_mixin.py", line 63, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 181, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 60, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 224, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/privileged_mixin.py", line 30, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 86, in _initialize_page
+    raise SimMemoryError("I have been instructed not to create a default page")
+angr.errors.SimMemoryError: I have been instructed not to create a default page
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_base.py", line 126, in init_state
+    self.state.memory.permissions(self.heap_base)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/address_concretization_mixin.py", line 368, in permissions
+    return super().permissions(addr, permissions=permissions, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 268, in permissions
+    raise SimMemoryError("%#x is not mapped" % addr) from e
+angr.errors.SimMemoryError: 0xc0000000 is not mapped
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1458, in start_scdg
+    self.build_scdg(args,is_fl=is_fl,csv_file=csv_file)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 415, in build_scdg
+    state.register_plugin(
+  File "/usr/local/lib/python3.8/dist-packages/angr/sim_state.py", line 415, in register_plugin
+    self._set_plugin_state(plugin, inhibit_init=inhibit_init)
+  File "/usr/local/lib/python3.8/dist-packages/angr/sim_state.py", line 428, in _set_plugin_state
+    plugin.init_state()
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_ptmalloc.py", line 588, in init_state
+    super().init_state()
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_base.py", line 129, in init_state
+    self.state.memory.map_region(self.heap_base, self.heap_size, 3)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/address_concretization_mixin.py", line 377, in map_region
+    return super().map_region(addr, length, permissions, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 286, in map_region
+    self._map_page(pageno, permissions, init_zero=init_zero, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 314, in _map_page
+    raise SimMemoryError("Page is already mapped", pageno * self.page_size)
+angr.errors.SimMemoryError: ('Page is already mapped', 134512640)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1461, in start_scdg
+    self.log.info("Error: "+file+" is not a valid binary")
+UnboundLocalError: local variable 'file' referenced before assignment
+ImmutableMultiDict([('scdg_enable', 'scdg_enable'), ('SCDG exploration techniques used', 'CDFS'), ('Format to save graph output', 'gs'), ('symb_loop', '3'), ('limit_pause', '200'), ('max_step', '50000'), ('max_deadend', '600'), ('simul_state', '5'), ('n_args', '0'), ('conc_loop', '1024'), ('min_size', '3'), ('dir', 'output/runs/'), ('discard_SCDG', 'discard_SCDG'), ('timeout', '200'), ('exp_dir', 'output/runs/'), ('binary', '/src/databases/malware-linux/mirai/mirai500'), ('sthread', '1'), ('threshold', '0.5'), ('biggest_subgraph', '5'), ('support', '0.75'), ('ctimeout', '3'), ('epoch', '5'), ('sepoch', '1'), ('data_scale', '1'), ('vector_size', '4'), ('batch_size', '1'), ('bancteian', 'bancteian'), ('delf', 'delf'), ('FeakerStealer', 'FeakerStealer'), ('gandcrab', 'gandcrab'), ('ircbot', 'ircbot'), ('lamer', 'lamer'), ('nitol', 'nitol'), ('RedLineStealer', 'RedLineStealer'), ('sfone', 'sfone'), ('sillyp2p', 'sillyp2p'), ('simbot', 'simbot'), ('Sodinokibi', 'Sodinokibi'), ('sytro', 'sytro'), ('upatre', 'upatre'), ('wabot', 'wabot'), ('RemcosRAT', 'RemcosRAT'), ('nthread', '12'), ('binaries', 'output/runs/')])
+next is binary
+/src/databases/malware-linux/mirai/mirai500
+['', '/databases/malware-linux/mirai/mirai500']
+['output/runs/']
+['--CDFS', '--gs', '--symb_loop', '3', '--limit_pause', '200', '--max_step', '50000', '--max_deadend', '600', '--simul_state', '5', '--n_args', '0', '--conc_loop', '1024', '--min_size', '3', '--dir', 'output/runs/', '--discard_SCDG', '--timeout', '200', '--exp_dir', 'output/runs/', '--sthread', '1', '/app/src/databases/malware-linux/mirai/mirai500', '--threshold', '0.5', '--biggest_subgraph', '5', '--support', '0.75', '--ctimeout', '3', '--epoch', '5', '--sepoch', '1', '--data_scale', '1', '--vector_size', '4', '--batch_size', '1', '--bancteian', '--delf', '--FeakerStealer', '--gandcrab', '--ircbot', '--lamer', '--nitol', '--RedLineStealer', '--sfone', '--sillyp2p', '--simbot', '--Sodinokibi', '--sytro', '--upatre', '--wabot', '--RemcosRAT', '--nthread', '12', '/app/src/output/runs/']
+Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='/app/src/output/runs/', binary='/app/src/databases/malware-linux/mirai/mirai500', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=False, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='output/runs/', discard_SCDG=False, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='output/runs/', familly=None, gandcrab=False, gs=True, gspan=False, inria=False, ircbot=False, json=False, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=False, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)
+src/output/runs/85/scdg.csv
+INFO    | 2023-04-08 15:13:23,603 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:23] "POST /index.html HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:13:24,144 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,184 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,191 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,207 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,247 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,248 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,273 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,338 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-08 15:13:24,338 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:13:24,350 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "GET /progress-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:13:24,356 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:24] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m
+/app/src/databases/malware-linux/mirai/mirai500
+[1;32;40mINFO - 2023-04-08 15:13:25,534 - SemaSCDG - You decide to analyse a single binary: /app/src/databases/malware-linux/mirai/mirai500[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,534 - SemaSCDG - You decide to analyse a single binary: /app/src/databases/malware-linux/mirai/mirai500[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,536 - SemaSCDG - Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='src/output/runs/85/', binary='/app/src/databases/malware-linux/mirai/mirai500', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=False, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='src/output/runs/85/', discard_SCDG=False, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='src/output/runs/85/unknown/', familly=None, gandcrab=False, gs=True, gspan=False, inria=False, ircbot=False, json=False, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=False, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,536 - SemaSCDG - Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='src/output/runs/85/', binary='/app/src/databases/malware-linux/mirai/mirai500', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=False, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='src/output/runs/85/', discard_SCDG=False, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='src/output/runs/85/unknown/', familly=None, gandcrab=False, gs=True, gspan=False, inria=False, ircbot=False, json=False, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=False, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,537 - SemaSCDG - src/output/runs/85/scdg.csv[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,537 - SemaSCDG - src/output/runs/85/scdg.csv[0m
+src/output/runs/85/unknown//mirai500/ src/output/runs/85/
+[1;32;40mINFO - 2023-04-08 15:13:25,537 - SemaSCDG - 
+-----------------------------------------
+--- Building SCDG of unknown/mirai500 ---
+-----------------------------------------[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,537 - SemaSCDG - 
+-----------------------------------------
+--- Building SCDG of unknown/mirai500 ---
+-----------------------------------------[0m
+WARNING | 2023-04-08 15:13:25,543 | [34mangr.project[0m | [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - Libraries used are :
+set()[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - Libraries used are :
+set()[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - OS recognized as : UNIX - System V[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - OS recognized as : UNIX - System V[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - CPU architecture recognized as : <Arch X86 (LE)>[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,544 - SemaSCDG - CPU architecture recognized as : <Arch X86 (LE)>[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Entry point of the binary recognized as : 134513000[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Entry point of the binary recognized as : 134513000[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Min/Max addresses of the binary recognized as : <Loaded mirai500, maps [0x8048000:0x8307fff]>[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Min/Max addresses of the binary recognized as : <Loaded mirai500, maps [0x8048000:0x8307fff]>[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Stack executable ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Stack executable ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Binary position-independent ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Binary position-independent ?  False[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Exploration method:  CDFS[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Exploration method:  CDFS[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Entry_state address = None[0m
+[1;32;40mINFO - 2023-04-08 15:13:25,545 - SemaSCDG - Entry_state address = None[0m
+[1;32;40mINFO - 2023-04-08 15:13:37,072 - SemaSCDG - ('Page is already mapped', 134512640)[0m
+[1;32;40mINFO - 2023-04-08 15:13:37,072 - SemaSCDG - ('Page is already mapped', 134512640)[0m
+Exception in thread Thread-24:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 179, in _initialize_page
+    backer_start, backer = next(backer_iter)
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 58, in _initialize_page
+    backer_start, backer = next(backer_iter)
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 266, in permissions
+    page = self._get_page(pageno, permissions is not None, allow_default=False, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/privileged_mixin.py", line 17, in _get_page
+    page = super()._get_page(pageno, writing, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 70, in _get_page
+    page = self._initialize_page(pageno, force_default=force_default, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/stack_allocation_mixin.py", line 63, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 181, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 60, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py", line 224, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/privileged_mixin.py", line 30, in _initialize_page
+    return super()._initialize_page(pageno, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 86, in _initialize_page
+    raise SimMemoryError("I have been instructed not to create a default page")
+angr.errors.SimMemoryError: I have been instructed not to create a default page
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_base.py", line 126, in init_state
+    self.state.memory.permissions(self.heap_base)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/address_concretization_mixin.py", line 368, in permissions
+    return super().permissions(addr, permissions=permissions, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 268, in permissions
+    raise SimMemoryError("%#x is not mapped" % addr) from e
+angr.errors.SimMemoryError: 0xc0000000 is not mapped
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1458, in start_scdg
+    self.build_scdg(args,is_fl=is_fl,csv_file=csv_file)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 415, in build_scdg
+    state.register_plugin(
+  File "/usr/local/lib/python3.8/dist-packages/angr/sim_state.py", line 415, in register_plugin
+    self._set_plugin_state(plugin, inhibit_init=inhibit_init)
+  File "/usr/local/lib/python3.8/dist-packages/angr/sim_state.py", line 428, in _set_plugin_state
+    plugin.init_state()
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_ptmalloc.py", line 588, in init_state
+    super().init_state()
+  File "/usr/local/lib/python3.8/dist-packages/angr/state_plugins/heap/heap_base.py", line 129, in init_state
+    self.state.memory.map_region(self.heap_base, self.heap_size, 3)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/address_concretization_mixin.py", line 377, in map_region
+    return super().map_region(addr, length, permissions, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 286, in map_region
+    self._map_page(pageno, permissions, init_zero=init_zero, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py", line 314, in _map_page
+    raise SimMemoryError("Page is already mapped", pageno * self.page_size)
+angr.errors.SimMemoryError: ('Page is already mapped', 134512640)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1461, in start_scdg
+    self.log.info("Error: "+file+" is not a valid binary")
+UnboundLocalError: local variable 'file' referenced before assignment
+INFO    | 2023-04-08 15:13:54,339 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:54] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-08 15:13:54,340 | [33mwerkzeug[0m | [33m172.17.0.1 - - [08/Apr/2023 15:13:54] "GET /progress-scdg HTTP/1.1" 200 -[0m
+
+#bash update_etc_hosts.sh
+docker run  \
+		   --rm \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/src/:/app/src/ \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/setup.py:/app/setup.py \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/run_server.sh:/app/run_server.sh \
+		   -v /app/src/submodules/ \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/SemaWebApp/:/app/SemaWebApp/ \
+		   -v /tmp/.X11-unix:/tmp/.X11-unix \
+		   -v /home/arnold/UCL/Mémoire/SEMA-ToolChain/penv-fix/:/penv-fix/ \
+    		   -e DISPLAY=:0 \
+		   -p 8080:80 \
+		   --network="bridge" \
+		   -it sema-web bash run_server.sh
+Processing /app
+  Preparing metadata (setup.py) ... [?25l- done
+[?25hRequirement already satisfied: pymongo in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (4.3.3)
+Collecting pandas==1.5.3
+  Downloading pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.2 MB)
+[?25l     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/12.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K     [91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.2/12.2 MB[0m [31m5.0 MB/s[0m eta [36m0:00:03[0m[2K     [91m━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.5/12.2 MB[0m [31m7.4 MB/s[0m eta [36m0:00:02[0m[2K     [91m━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.5/12.2 MB[0m [31m5.2 MB/s[0m eta [36m0:00:03[0m[2K     [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.0/12.2 MB[0m [31m6.8 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.4/12.2 MB[0m [31m7.6 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.9/12.2 MB[0m [31m8.8 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.4/12.2 MB[0m [31m9.1 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m2.8/12.2 MB[0m [31m9.1 MB/s[0m eta [36m0:00:02[0m[2K     [91m━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/12.2 MB[0m [31m9.2 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.5/12.2 MB[0m [31m9.2 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.9/12.2 MB[0m [31m9.3 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.3/12.2 MB[0m [31m9.3 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m4.7/12.2 MB[0m [31m9.3 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.1/12.2 MB[0m [31m9.3 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m5.5/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━[0m [32m5.9/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━[0m [32m6.3/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m6.6/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━[0m [32m7.0/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m7.3/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m7.7/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━[0m [32m8.1/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━[0m [32m8.5/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━[0m [32m8.9/12.2 MB[0m [31m9.5 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━[0m [32m9.2/12.2 MB[0m [31m9.5 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━[0m [32m9.5/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m9.9/12.2 MB[0m [31m9.4 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m10.3/12.2 MB[0m [31m9.5 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━[0m [32m10.7/12.2 MB[0m [31m9.8 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━[0m [32m11.1/12.2 MB[0m [31m9.8 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━[0m [32m11.5/12.2 MB[0m [31m9.8 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m [32m11.9/12.2 MB[0m [31m9.7 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m12.2/12.2 MB[0m [31m9.7 MB/s[0m eta [36m0:00:01[0m[2K     [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m12.2/12.2 MB[0m [31m9.7 MB/s[0m eta [36m0:00:01[0m[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m12.2/12.2 MB[0m [31m9.3 MB/s[0m eta [36m0:00:00[0m
+[?25hRequirement already satisfied: pyzipper in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.6)
+Requirement already satisfied: click==8.0.3 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (8.0.3)
+Requirement already satisfied: task in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.1.0)
+Requirement already satisfied: requests in /usr/lib/python3/dist-packages (from sema-tc==0.1) (2.22.0)
+Requirement already satisfied: graphviz in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.20.1)
+Requirement already satisfied: monkeyhex in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.7.4)
+Requirement already satisfied: protobuf==3.20.* in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.20.3)
+Requirement already satisfied: angr==9.2.21 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (9.2.21)
+Requirement already satisfied: researchpy in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.5)
+Requirement already satisfied: hypothesis in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (6.71.0)
+Requirement already satisfied: seaborn in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.12.2)
+Requirement already satisfied: scipy in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.10.1)
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.2.2)
+Requirement already satisfied: grakel in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.1.9)
+Requirement already satisfied: gensim in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (4.3.1)
+Requirement already satisfied: avatar2 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.4.7)
+Requirement already satisfied: r2pipe in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.8.0)
+Requirement already satisfied: pyinstaller in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.9.0)
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.7.1)
+Requirement already satisfied: celery in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.2.7)
+Requirement already satisfied: tenseal in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.14)
+Requirement already satisfied: dill in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (0.3.6)
+Requirement already satisfied: cryptography in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (40.0.1)
+Requirement already satisfied: logbook in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (1.5.3)
+Requirement already satisfied: mmh3 in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (3.1.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.8/dist-packages (from sema-tc==0.1) (5.9.4)
+Requirement already satisfied: itanium-demangler in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.1)
+Requirement already satisfied: pycparser>=2.18 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.21)
+Requirement already satisfied: networkx!=2.8.1,>=2.0 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (3.1)
+Requirement already satisfied: sortedcontainers in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.4.0)
+Requirement already satisfied: cffi>=1.14.0 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.15.1)
+Requirement already satisfied: mulpyplexer in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (0.9)
+Requirement already satisfied: capstone!=5.0.0rc2,>=3.0.5rc2 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (4.0.2)
+Requirement already satisfied: progressbar2>=3 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (4.2.0)
+Requirement already satisfied: cle==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: pyvex==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: sympy in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.11.1)
+Requirement already satisfied: archinfo==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: claripy==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: CppHeaderParser in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (2.7.4)
+Requirement already satisfied: cachetools in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (5.3.0)
+Requirement already satisfied: ailment==9.2.21 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (9.2.21)
+Requirement already satisfied: rpyc in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (5.3.1)
+Requirement already satisfied: nampa in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (0.1.1)
+Requirement already satisfied: GitPython in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (3.1.31)
+Requirement already satisfied: dpkt in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.9.8)
+Requirement already satisfied: unicorn==1.0.2rc4 in /usr/local/lib/python3.8/dist-packages (from angr==9.2.21->sema-tc==0.1) (1.0.2rc4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.8/dist-packages (from pandas==1.5.3->sema-tc==0.1) (2023.3)
+Requirement already satisfied: numpy>=1.20.3 in /usr/local/lib/python3.8/dist-packages (from pandas==1.5.3->sema-tc==0.1) (1.24.2)
+Requirement already satisfied: python-dateutil>=2.8.1 in /usr/local/lib/python3.8/dist-packages (from pandas==1.5.3->sema-tc==0.1) (2.8.2)
+Requirement already satisfied: decorator in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (5.1.1)
+Requirement already satisfied: pysmt>=0.9.1.dev119 in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (0.9.6.dev40)
+Requirement already satisfied: z3-solver==4.10.2.0 in /usr/local/lib/python3.8/dist-packages (from claripy==9.2.21->angr==9.2.21->sema-tc==0.1) (4.10.2.0)
+Requirement already satisfied: pefile in /usr/local/lib/python3.8/dist-packages (from cle==9.2.21->angr==9.2.21->sema-tc==0.1) (2023.2.7)
+Requirement already satisfied: pyelftools>=0.27 in /usr/local/lib/python3.8/dist-packages (from cle==9.2.21->angr==9.2.21->sema-tc==0.1) (0.29)
+Requirement already satisfied: bitstring in /usr/local/lib/python3.8/dist-packages (from pyvex==9.2.21->angr==9.2.21->sema-tc==0.1) (4.0.1)
+Requirement already satisfied: cached-property in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.5.2)
+Requirement already satisfied: pygdbmi>=0.10.0.0 in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (0.11.0.0)
+Requirement already satisfied: parse in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.19.0)
+Requirement already satisfied: pyusb in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.2.1)
+Requirement already satisfied: intervaltree in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (3.1.0)
+Requirement already satisfied: npyscreen in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (4.10.5)
+Requirement already satisfied: pylink-square in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.0.0)
+Requirement already satisfied: posix-ipc>=1.0.0 in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: configparser in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (5.3.0)
+Requirement already satisfied: keystone-engine in /usr/local/lib/python3.8/dist-packages (from avatar2->sema-tc==0.1) (0.9.2)
+Requirement already satisfied: kombu<6.0,>=5.2.3 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (5.2.4)
+Requirement already satisfied: click-didyoumean>=0.0.3 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (0.3.0)
+Requirement already satisfied: billiard<4.0,>=3.6.4.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (3.6.4.0)
+Requirement already satisfied: click-plugins>=1.1.1 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: click-repl>=0.2.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (0.2.0)
+Requirement already satisfied: vine<6.0,>=5.0.0 in /usr/local/lib/python3.8/dist-packages (from celery->sema-tc==0.1) (5.0.0)
+Requirement already satisfied: smart-open>=1.8.1 in /usr/local/lib/python3.8/dist-packages (from gensim->sema-tc==0.1) (6.3.0)
+Requirement already satisfied: joblib in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (1.2.0)
+Requirement already satisfied: future>=0.16.0 in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (0.18.3)
+Requirement already satisfied: cython>=0.27.3 in /usr/local/lib/python3.8/dist-packages (from grakel->sema-tc==0.1) (0.29.34)
+Requirement already satisfied: six>=1.11.0 in /usr/lib/python3/dist-packages (from grakel->sema-tc==0.1) (1.14.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /usr/local/lib/python3.8/dist-packages (from scikit-learn->sema-tc==0.1) (3.1.0)
+Requirement already satisfied: attrs>=19.2.0 in /usr/local/lib/python3.8/dist-packages (from hypothesis->sema-tc==0.1) (22.2.0)
+Requirement already satisfied: exceptiongroup>=1.0.0 in /usr/local/lib/python3.8/dist-packages (from hypothesis->sema-tc==0.1) (1.1.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (4.39.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (0.11.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (3.0.9)
+Requirement already satisfied: pillow>=6.2.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (9.5.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (1.4.4)
+Requirement already satisfied: importlib-resources>=3.2.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (5.12.0)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (23.0)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.8/dist-packages (from matplotlib->sema-tc==0.1) (1.0.7)
+Requirement already satisfied: setuptools>=42.0.0 in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (67.6.1)
+Requirement already satisfied: pyinstaller-hooks-contrib>=2021.4 in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (2023.2)
+Requirement already satisfied: altgraph in /usr/local/lib/python3.8/dist-packages (from pyinstaller->sema-tc==0.1) (0.17.3)
+Requirement already satisfied: dnspython<3.0.0,>=1.16.0 in /usr/local/lib/python3.8/dist-packages (from pymongo->sema-tc==0.1) (2.3.0)
+Requirement already satisfied: pycryptodomex in /usr/local/lib/python3.8/dist-packages (from pyzipper->sema-tc==0.1) (3.17)
+Requirement already satisfied: patsy in /usr/local/lib/python3.8/dist-packages (from researchpy->sema-tc==0.1) (0.5.3)
+Requirement already satisfied: statsmodels in /usr/local/lib/python3.8/dist-packages (from researchpy->sema-tc==0.1) (0.13.5)
+Requirement already satisfied: prompt-toolkit in /usr/local/lib/python3.8/dist-packages (from click-repl>=0.2.0->celery->sema-tc==0.1) (3.0.38)
+Requirement already satisfied: zipp>=3.1.0 in /usr/local/lib/python3.8/dist-packages (from importlib-resources>=3.2.0->matplotlib->sema-tc==0.1) (3.15.0)
+Requirement already satisfied: amqp<6.0.0,>=5.0.9 in /usr/local/lib/python3.8/dist-packages (from kombu<6.0,>=5.2.3->celery->sema-tc==0.1) (5.1.1)
+Requirement already satisfied: python-utils>=3.0.0 in /usr/local/lib/python3.8/dist-packages (from progressbar2>=3->angr==9.2.21->sema-tc==0.1) (3.5.2)
+Requirement already satisfied: ply in /usr/local/lib/python3.8/dist-packages (from CppHeaderParser->angr==9.2.21->sema-tc==0.1) (3.11)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /usr/local/lib/python3.8/dist-packages (from GitPython->angr==9.2.21->sema-tc==0.1) (4.0.10)
+Requirement already satisfied: plumbum in /usr/local/lib/python3.8/dist-packages (from rpyc->angr==9.2.21->sema-tc==0.1) (1.8.1)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.8/dist-packages (from sympy->angr==9.2.21->sema-tc==0.1) (1.3.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in /usr/local/lib/python3.8/dist-packages (from gitdb<5,>=4.0.1->GitPython->angr==9.2.21->sema-tc==0.1) (5.0.0)
+Requirement already satisfied: wcwidth in /usr/local/lib/python3.8/dist-packages (from prompt-toolkit->click-repl>=0.2.0->celery->sema-tc==0.1) (0.2.6)
+Building wheels for collected packages: sema-tc
+  Building wheel for sema-tc (setup.py) ... [?25l- \ | / - \ | / - done
+[?25h  Created wheel for sema-tc: filename=sema_tc-0.1-py3-none-any.whl size=34581593 sha256=3c1fdd9a98182c2d1a5d3d847f2332e70b69089da25fcf1e815677748c8d6af6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bm3_032y/wheels/40/5d/89/f38b7a58cbc6f6bdff423c409ca06a097d4abae527d8c17f06
+Successfully built sema-tc
+Installing collected packages: pandas, sema-tc
+  Attempting uninstall: pandas
+    Found existing installation: pandas 2.0.0
+    Uninstalling pandas-2.0.0:
+      Successfully uninstalled pandas-2.0.0
+  Attempting uninstall: sema-tc
+    Found existing installation: sema-tc 0.1
+    Uninstalling sema-tc-0.1:
+      Successfully uninstalled sema-tc-0.1
+Successfully installed pandas-1.5.3 sema-tc-0.1
+[33mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv[0m[33m
+[0m/app
+_StoreTrueAction(option_strings=['--DFS'], dest='DFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--BFS'], dest='BFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CDFS'], dest='CDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--ThreadCDFS'], dest='ThreadCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CBFS'], dest='CBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--DBFS'], dest='DBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SDFS'], dest='SDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SCDFS'], dest='SCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--gs'], dest='gs', nargs=0, const=True, default=False, type=None, choices=None, help='.GS format', metavar=None)
+_StoreTrueAction(option_strings=['--json'], dest='json', nargs=0, const=True, default=False, type=None, choices=None, help='.JSON format', metavar=None)
+_StoreTrueAction(option_strings=['--symbion'], dest='symbion', nargs=0, const=True, default=False, type=None, choices=None, help='Concolic unpacking method (linux | windows [in progress])', metavar=None)
+_StoreTrueAction(option_strings=['--unipacker'], dest='unipacker', nargs=0, const=True, default=False, type=None, choices=None, help='Emulation unpacking method (windows only)', metavar=None)
+_StoreTrueAction(option_strings=['--packed'], dest='packed', nargs=0, const=True, default=False, type=None, choices=None, help='Is the binary packed ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--concrete_target_is_local'], dest='concrete_target_is_local', nargs=0, const=True, default=False, type=None, choices=None, help='Use a local GDB server instead of using cuckoo (default : False)', metavar=None)
+_StoreAction(option_strings=['--symb_loop'], dest='symb_loop', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Number of iteration allowed for a symbolic loop (default : 3) ', metavar=None)
+_StoreAction(option_strings=['--limit_pause'], dest='limit_pause', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Number of states allowed in pause stash (default : 200)', metavar=None)
+_StoreAction(option_strings=['--max_step'], dest='max_step', nargs=None, const=None, default=50000, type=<class 'int'>, choices=None, help='Maximum number of steps allowed for a state (default : 50 000)', metavar=None)
+_StoreAction(option_strings=['--max_deadend'], dest='max_deadend', nargs=None, const=None, default=600, type=<class 'int'>, choices=None, help='Number of deadended state required to stop (default : 600)', metavar=None)
+_StoreAction(option_strings=['--simul_state'], dest='simul_state', nargs=None, const=None, default=5, type=<class 'int'>, choices=None, help='Number of simultaneous states we explore with simulation manager (default : 5)', metavar=None)
+_StoreAction(option_strings=['--n_args'], dest='n_args', nargs=None, const=None, default=0, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 0)', metavar=None)
+_StoreAction(option_strings=['--conc_loop'], dest='conc_loop', nargs=None, const=None, default=1024, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 1024)', metavar=None)
+_StoreTrueAction(option_strings=['--count_block'], dest='count_block', nargs=0, const=True, default=False, type=None, choices=None, help='Count block (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--sim_file'], dest='sim_file', nargs=0, const=True, default=False, type=None, choices=None, help='Create SimFile with binary  TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--track_command'], dest='track_command', nargs=0, const=True, default=False, type=None, choices=None, help='Track command loop of RATs  (default : False)', metavar=None)
+_StoreAction(option_strings=['--min_size'], dest='min_size', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Minimum size required for a trace to be used in SCDG (default : 3)', metavar=None)
+_StoreTrueAction(option_strings=['--disjoint_union'], dest='disjoint_union', nargs=0, const=True, default=False, type=None, choices=None, help='Do we merge traces or use disjoint union ? (default : merge)', metavar=None)
+_StoreTrueAction(option_strings=['--not_comp_args'], dest='not_comp_args', nargs=0, const=True, default=False, type=None, choices=None, help='Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', metavar=None)
+_StoreTrueAction(option_strings=['--three_edges'], dest='three_edges', nargs=0, const=True, default=False, type=None, choices=None, help='Do we use the three-edges strategy ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--not_ignore_zero'], dest='not_ignore_zero', nargs=0, const=True, default=False, type=None, choices=None, help='Do we ignore zero when building graph ? (default : Discard zero)', metavar=None)
+_StoreAction(option_strings=['--dir'], dest='dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', metavar=None)
+_StoreFalseAction(option_strings=['--discard_SCDG'], dest='discard_SCDG', nargs=0, const=False, default=True, type=None, choices=None, help='Do not keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--eval_time'], dest='eval_time', nargs=0, const=True, default=False, type=None, choices=None, help='Keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--pre_run_thread'], dest='pre_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--runtime_run_thread'], dest='runtime_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--post_run_thread'], dest='post_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--approximate'], dest='approximate', nargs=0, const=True, default=False, type=None, choices=None, help='Symbolic approximation (default : False)', metavar=None)
+_StoreAction(option_strings=['--timeout'], dest='timeout', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Timeout in seconds before ending extraction (default : 200)', metavar=None)
+_StoreTrueAction(option_strings=['--not_resolv_string'], dest='not_resolv_string', nargs=0, const=True, default=False, type=None, choices=None, help='Do we try to resolv references of string (default : False)', metavar=None)
+_StoreAction(option_strings=['--exp_dir'], dest='exp_dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save SCDG extracted (default : output/runs/<exp_run>)', metavar=None)
+_StoreTrueAction(option_strings=['--memory_limit'], dest='memory_limit', nargs=0, const=True, default=False, type=None, choices=None, help='Skip binary experiment when memory > 90%% (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--verbose_scdg'], dest='verbose_scdg', nargs=0, const=True, default=False, type=None, choices=None, help='Verbose output during calls extraction  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--debug_error'], dest='debug_error', nargs=0, const=True, default=False, type=None, choices=None, help='Debug error states (default : False)', metavar=None)
+_StoreAction(option_strings=['--familly'], dest='familly', nargs=None, const=None, default=None, type=None, choices=None, help='Familly of the malware (default : unknown)', metavar=None)
+_StoreAction(option_strings=[], dest='binary', nargs=None, const=None, default=None, type=None, choices=None, help='Name of the binary to analyze', metavar=None)
+_StoreAction(option_strings=['--sthread'], dest='sthread', nargs=None, const=None, default=1, type=<class 'int'>, choices=None, help='Number of thread used (default: 1)', metavar=None)
+[{'SCDG exploration techniques used': [{'name': 'DFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'BFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'ThreadCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'DBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Format to save graph output': [{'name': 'gs', 'help': '.GS format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'json', 'help': '.JSON format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Unpacking method (iff --packed)': [{'name': 'symbion', 'help': 'Concolic unpacking method (linux | windows [in progress])', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'unipacker', 'help': 'Emulation unpacking method (windows only)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}]}, {'Packed malware': [{'name': 'packed', 'help': 'Is the binary packed ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'concrete_target_is_local', 'help': 'Use a local GDB server instead of using cuckoo (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG exploration techniques parameters': [{'name': 'symb_loop', 'help': 'Number of iteration allowed for a symbolic loop (default : 3) ', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'limit_pause', 'help': 'Number of states allowed in pause stash (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'max_step', 'help': 'Maximum number of steps allowed for a state (default : 50 000)', 'type': "<class 'int'>", 'default': 50000, 'is_mutually_exclusive': False}, {'name': 'max_deadend', 'help': 'Number of deadended state required to stop (default : 600)', 'type': "<class 'int'>", 'default': 600, 'is_mutually_exclusive': False}, {'name': 'simul_state', 'help': 'Number of simultaneous states we explore with simulation manager (default : 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}], 'Binary parameters': [{'name': 'n_args', 'help': 'Number of symbolic arguments given to the binary (default : 0)', 'type': "<class 'int'>", 'default': 0, 'is_mutually_exclusive': False}, {'name': 'conc_loop', 'help': 'Number of symbolic arguments given to the binary (default : 1024)', 'type': "<class 'int'>", 'default': 1024, 'is_mutually_exclusive': False}]}, {'RATs custom parameters': [{'name': 'count_block', 'help': 'Count block (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'sim_file', 'help': 'Create SimFile with binary  TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'track_command', 'help': 'Track command loop of RATs  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG creation parameter': [{'name': 'min_size', 'help': 'Minimum size required for a trace to be used in SCDG (default : 3)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'disjoint_union', 'help': 'Do we merge traces or use disjoint union ? (default : merge)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_comp_args', 'help': 'Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'three_edges', 'help': 'Do we use the three-edges strategy ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_ignore_zero', 'help': 'Do we ignore zero when building graph ? (default : Discard zero)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'dir', 'help': ' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'discard_SCDG', 'help': 'Do not keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'eval_time', 'help': 'Keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'Thread parameter': [{'name': 'pre_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'runtime_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'post_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'approximate', 'help': 'Symbolic approximation (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'timeout', 'help': 'Timeout in seconds before ending extraction (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'not_resolv_string', 'help': 'Do we try to resolv references of string (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'exp_dir', 'help': ' Directory to save SCDG extracted (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'memory_limit', 'help': 'Skip binary experiment when memory > 90%% (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'verbose_scdg', 'help': 'Verbose output during calls extraction  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'debug_error', 'help': 'Debug error states (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'familly', 'help': 'Familly of the malware (default : unknown)', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'binary', 'help': 'Name of the binary to analyze', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'sthread', 'help': 'Number of thread used (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}]}]
+[{'Operation mode': [{'name': 'classification', 'help': 'By malware family', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'detection', 'help': 'Cleanware vs Malware', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Classifier used': [{'name': 'wl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'inria', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'dl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'gspan', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Global classifiers parameters': [{'name': 'threshold', 'help': 'Threshold used for the classifier [0..1] (default : 0.45)', 'type': "<class 'float'>", 'default': 0.45, 'is_mutually_exclusive': False}]}, {'Gspan options': [{'name': 'biggest_subgraph', 'help': 'Biggest subgraph consider for Gspan (default: 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'support', 'help': 'Support used for the gpsan classifier [0..1] (default : 0.75)', 'type': "<class 'float'>", 'default': 0.75, 'is_mutually_exclusive': False}, {'name': 'ctimeout', 'help': 'Timeout for gspan classifier (default : 3sec)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}], 'Deep Learning options': [{'name': 'epoch', 'help': 'Only for deep learning model: number of epoch (default: 5)\n Always 1 for FL model', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'sepoch', 'help': 'Only for deep learning model: starting epoch (default: 1)\n', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}, {'name': 'data_scale', 'help': 'Only for deep learning model: data scale value (default: 0.9)', 'type': "<class 'float'>", 'default': 0.9, 'is_mutually_exclusive': False}, {'name': 'vector_size', 'help': 'Only for deep learning model: Size of the vector used (default: 4)', 'type': "<class 'int'>", 'default': 4, 'is_mutually_exclusive': False}, {'name': 'batch_size', 'help': 'Only for deep learning model: Batch size for the model (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}], 'Malware familly': [{'name': 'bancteian', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'delf', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'FeakerStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'gandcrab', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'ircbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'lamer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'nitol', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RedLineStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sfone', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sillyp2p', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'simbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'Sodinokibi', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sytro', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'upatre', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'wabot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RemcosRAT', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'verbose_classifier', 'help': 'Verbose output during train/classification  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'train', 'help': 'Launch training process, else classify/detect new sample with previously computed model', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'nthread', 'help': 'Number of thread used (default: max)', 'type': "<class 'int'>", 'default': 12, 'is_mutually_exclusive': False}, {'name': 'binaries', 'help': "Name of the folder containing binary'signatures to analyze (Default: output/runs/, only that for ToolChain)", 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}]}]
+172.17.0.2
+fuck
+ * Serving Flask app 'SemaServer'
+ * Debug mode: on
+INFO    | 2023-04-14 09:23:10,740 | [33mwerkzeug[0m | [33m[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.17.0.2:80[0m
+INFO    | 2023-04-14 09:23:10,740 | [33mwerkzeug[0m | [33m[33mPress CTRL+C to quit[0m[0m
+INFO    | 2023-04-14 09:23:10,741 | [33mwerkzeug[0m | [33m * Restarting with stat[0m
+/app
+_StoreTrueAction(option_strings=['--DFS'], dest='DFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--BFS'], dest='BFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CDFS'], dest='CDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--ThreadCDFS'], dest='ThreadCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--CBFS'], dest='CBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--DBFS'], dest='DBFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SDFS'], dest='SDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--SCDFS'], dest='SCDFS', nargs=0, const=True, default=False, type=None, choices=None, help='TODO', metavar=None)
+_StoreTrueAction(option_strings=['--gs'], dest='gs', nargs=0, const=True, default=False, type=None, choices=None, help='.GS format', metavar=None)
+_StoreTrueAction(option_strings=['--json'], dest='json', nargs=0, const=True, default=False, type=None, choices=None, help='.JSON format', metavar=None)
+_StoreTrueAction(option_strings=['--symbion'], dest='symbion', nargs=0, const=True, default=False, type=None, choices=None, help='Concolic unpacking method (linux | windows [in progress])', metavar=None)
+_StoreTrueAction(option_strings=['--unipacker'], dest='unipacker', nargs=0, const=True, default=False, type=None, choices=None, help='Emulation unpacking method (windows only)', metavar=None)
+_StoreTrueAction(option_strings=['--packed'], dest='packed', nargs=0, const=True, default=False, type=None, choices=None, help='Is the binary packed ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--concrete_target_is_local'], dest='concrete_target_is_local', nargs=0, const=True, default=False, type=None, choices=None, help='Use a local GDB server instead of using cuckoo (default : False)', metavar=None)
+_StoreAction(option_strings=['--symb_loop'], dest='symb_loop', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Number of iteration allowed for a symbolic loop (default : 3) ', metavar=None)
+_StoreAction(option_strings=['--limit_pause'], dest='limit_pause', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Number of states allowed in pause stash (default : 200)', metavar=None)
+_StoreAction(option_strings=['--max_step'], dest='max_step', nargs=None, const=None, default=50000, type=<class 'int'>, choices=None, help='Maximum number of steps allowed for a state (default : 50 000)', metavar=None)
+_StoreAction(option_strings=['--max_deadend'], dest='max_deadend', nargs=None, const=None, default=600, type=<class 'int'>, choices=None, help='Number of deadended state required to stop (default : 600)', metavar=None)
+_StoreAction(option_strings=['--simul_state'], dest='simul_state', nargs=None, const=None, default=5, type=<class 'int'>, choices=None, help='Number of simultaneous states we explore with simulation manager (default : 5)', metavar=None)
+_StoreAction(option_strings=['--n_args'], dest='n_args', nargs=None, const=None, default=0, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 0)', metavar=None)
+_StoreAction(option_strings=['--conc_loop'], dest='conc_loop', nargs=None, const=None, default=1024, type=<class 'int'>, choices=None, help='Number of symbolic arguments given to the binary (default : 1024)', metavar=None)
+_StoreTrueAction(option_strings=['--count_block'], dest='count_block', nargs=0, const=True, default=False, type=None, choices=None, help='Count block (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--sim_file'], dest='sim_file', nargs=0, const=True, default=False, type=None, choices=None, help='Create SimFile with binary  TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--track_command'], dest='track_command', nargs=0, const=True, default=False, type=None, choices=None, help='Track command loop of RATs  (default : False)', metavar=None)
+_StoreAction(option_strings=['--min_size'], dest='min_size', nargs=None, const=None, default=3, type=<class 'int'>, choices=None, help='Minimum size required for a trace to be used in SCDG (default : 3)', metavar=None)
+_StoreTrueAction(option_strings=['--disjoint_union'], dest='disjoint_union', nargs=0, const=True, default=False, type=None, choices=None, help='Do we merge traces or use disjoint union ? (default : merge)', metavar=None)
+_StoreTrueAction(option_strings=['--not_comp_args'], dest='not_comp_args', nargs=0, const=True, default=False, type=None, choices=None, help='Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', metavar=None)
+_StoreTrueAction(option_strings=['--three_edges'], dest='three_edges', nargs=0, const=True, default=False, type=None, choices=None, help='Do we use the three-edges strategy ? (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--not_ignore_zero'], dest='not_ignore_zero', nargs=0, const=True, default=False, type=None, choices=None, help='Do we ignore zero when building graph ? (default : Discard zero)', metavar=None)
+_StoreAction(option_strings=['--dir'], dest='dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', metavar=None)
+_StoreFalseAction(option_strings=['--discard_SCDG'], dest='discard_SCDG', nargs=0, const=False, default=True, type=None, choices=None, help='Do not keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--eval_time'], dest='eval_time', nargs=0, const=True, default=False, type=None, choices=None, help='Keep intermediate SCDG in file  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--pre_run_thread'], dest='pre_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--runtime_run_thread'], dest='runtime_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--post_run_thread'], dest='post_run_thread', nargs=0, const=True, default=False, type=None, choices=None, help='TODO (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--approximate'], dest='approximate', nargs=0, const=True, default=False, type=None, choices=None, help='Symbolic approximation (default : False)', metavar=None)
+_StoreAction(option_strings=['--timeout'], dest='timeout', nargs=None, const=None, default=200, type=<class 'int'>, choices=None, help='Timeout in seconds before ending extraction (default : 200)', metavar=None)
+_StoreTrueAction(option_strings=['--not_resolv_string'], dest='not_resolv_string', nargs=0, const=True, default=False, type=None, choices=None, help='Do we try to resolv references of string (default : False)', metavar=None)
+_StoreAction(option_strings=['--exp_dir'], dest='exp_dir', nargs=None, const=None, default='output/runs/', type=None, choices=None, help=' Directory to save SCDG extracted (default : output/runs/<exp_run>)', metavar=None)
+_StoreTrueAction(option_strings=['--memory_limit'], dest='memory_limit', nargs=0, const=True, default=False, type=None, choices=None, help='Skip binary experiment when memory > 90%% (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--verbose_scdg'], dest='verbose_scdg', nargs=0, const=True, default=False, type=None, choices=None, help='Verbose output during calls extraction  (default : False)', metavar=None)
+_StoreTrueAction(option_strings=['--debug_error'], dest='debug_error', nargs=0, const=True, default=False, type=None, choices=None, help='Debug error states (default : False)', metavar=None)
+_StoreAction(option_strings=['--familly'], dest='familly', nargs=None, const=None, default=None, type=None, choices=None, help='Familly of the malware (default : unknown)', metavar=None)
+_StoreAction(option_strings=[], dest='binary', nargs=None, const=None, default=None, type=None, choices=None, help='Name of the binary to analyze', metavar=None)
+_StoreAction(option_strings=['--sthread'], dest='sthread', nargs=None, const=None, default=1, type=<class 'int'>, choices=None, help='Number of thread used (default: 1)', metavar=None)
+[{'SCDG exploration techniques used': [{'name': 'DFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'BFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'ThreadCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'CBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'DBFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'SCDFS', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Format to save graph output': [{'name': 'gs', 'help': '.GS format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'json', 'help': '.JSON format', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Unpacking method (iff --packed)': [{'name': 'symbion', 'help': 'Concolic unpacking method (linux | windows [in progress])', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'unipacker', 'help': 'Emulation unpacking method (windows only)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}]}, {'Packed malware': [{'name': 'packed', 'help': 'Is the binary packed ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'concrete_target_is_local', 'help': 'Use a local GDB server instead of using cuckoo (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG exploration techniques parameters': [{'name': 'symb_loop', 'help': 'Number of iteration allowed for a symbolic loop (default : 3) ', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'limit_pause', 'help': 'Number of states allowed in pause stash (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'max_step', 'help': 'Maximum number of steps allowed for a state (default : 50 000)', 'type': "<class 'int'>", 'default': 50000, 'is_mutually_exclusive': False}, {'name': 'max_deadend', 'help': 'Number of deadended state required to stop (default : 600)', 'type': "<class 'int'>", 'default': 600, 'is_mutually_exclusive': False}, {'name': 'simul_state', 'help': 'Number of simultaneous states we explore with simulation manager (default : 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}], 'Binary parameters': [{'name': 'n_args', 'help': 'Number of symbolic arguments given to the binary (default : 0)', 'type': "<class 'int'>", 'default': 0, 'is_mutually_exclusive': False}, {'name': 'conc_loop', 'help': 'Number of symbolic arguments given to the binary (default : 1024)', 'type': "<class 'int'>", 'default': 1024, 'is_mutually_exclusive': False}]}, {'RATs custom parameters': [{'name': 'count_block', 'help': 'Count block (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'sim_file', 'help': 'Create SimFile with binary  TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'track_command', 'help': 'Track command loop of RATs  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'SCDG creation parameter': [{'name': 'min_size', 'help': 'Minimum size required for a trace to be used in SCDG (default : 3)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}, {'name': 'disjoint_union', 'help': 'Do we merge traces or use disjoint union ? (default : merge)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_comp_args', 'help': 'Do we compare arguments to add new nodes when building graph ? (default : comparison enabled)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'three_edges', 'help': 'Do we use the three-edges strategy ? (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'not_ignore_zero', 'help': 'Do we ignore zero when building graph ? (default : Discard zero)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'dir', 'help': ' Directory to save outputs graph for gspan  (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'discard_SCDG', 'help': 'Do not keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'eval_time', 'help': 'Keep intermediate SCDG in file  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}], 'Thread parameter': [{'name': 'pre_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'runtime_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'post_run_thread', 'help': 'TODO (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'approximate', 'help': 'Symbolic approximation (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'timeout', 'help': 'Timeout in seconds before ending extraction (default : 200)', 'type': "<class 'int'>", 'default': 200, 'is_mutually_exclusive': False}, {'name': 'not_resolv_string', 'help': 'Do we try to resolv references of string (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'exp_dir', 'help': ' Directory to save SCDG extracted (default : output/runs/<exp_run>)', 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}, {'name': 'memory_limit', 'help': 'Skip binary experiment when memory > 90%% (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'verbose_scdg', 'help': 'Verbose output during calls extraction  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'debug_error', 'help': 'Debug error states (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'familly', 'help': 'Familly of the malware (default : unknown)', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'binary', 'help': 'Name of the binary to analyze', 'type': 'None', 'default': None, 'is_mutually_exclusive': False}, {'name': 'sthread', 'help': 'Number of thread used (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}]}]
+[{'Operation mode': [{'name': 'classification', 'help': 'By malware family', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'detection', 'help': 'Cleanware vs Malware', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Classifier used': [{'name': 'wl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'inria', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'dl', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}, {'name': 'gspan', 'help': 'TODO', 'type': 'bool', 'default': False, 'is_mutually_exclusive': True}], 'Global classifiers parameters': [{'name': 'threshold', 'help': 'Threshold used for the classifier [0..1] (default : 0.45)', 'type': "<class 'float'>", 'default': 0.45, 'is_mutually_exclusive': False}]}, {'Gspan options': [{'name': 'biggest_subgraph', 'help': 'Biggest subgraph consider for Gspan (default: 5)', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'support', 'help': 'Support used for the gpsan classifier [0..1] (default : 0.75)', 'type': "<class 'float'>", 'default': 0.75, 'is_mutually_exclusive': False}, {'name': 'ctimeout', 'help': 'Timeout for gspan classifier (default : 3sec)', 'type': "<class 'int'>", 'default': 3, 'is_mutually_exclusive': False}], 'Deep Learning options': [{'name': 'epoch', 'help': 'Only for deep learning model: number of epoch (default: 5)\n Always 1 for FL model', 'type': "<class 'int'>", 'default': 5, 'is_mutually_exclusive': False}, {'name': 'sepoch', 'help': 'Only for deep learning model: starting epoch (default: 1)\n', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}, {'name': 'data_scale', 'help': 'Only for deep learning model: data scale value (default: 0.9)', 'type': "<class 'float'>", 'default': 0.9, 'is_mutually_exclusive': False}, {'name': 'vector_size', 'help': 'Only for deep learning model: Size of the vector used (default: 4)', 'type': "<class 'int'>", 'default': 4, 'is_mutually_exclusive': False}, {'name': 'batch_size', 'help': 'Only for deep learning model: Batch size for the model (default: 1)', 'type': "<class 'int'>", 'default': 1, 'is_mutually_exclusive': False}], 'Malware familly': [{'name': 'bancteian', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'delf', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'FeakerStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'gandcrab', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'ircbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'lamer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'nitol', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RedLineStealer', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sfone', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sillyp2p', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'simbot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'Sodinokibi', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'sytro', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'upatre', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'wabot', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}, {'name': 'RemcosRAT', 'help': None, 'type': 'bool', 'default': True, 'is_mutually_exclusive': False}]}, {'Global parameter': [{'name': 'verbose_classifier', 'help': 'Verbose output during train/classification  (default : False)', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'train', 'help': 'Launch training process, else classify/detect new sample with previously computed model', 'type': 'bool', 'default': False, 'is_mutually_exclusive': False}, {'name': 'nthread', 'help': 'Number of thread used (default: max)', 'type': "<class 'int'>", 'default': 12, 'is_mutually_exclusive': False}, {'name': 'binaries', 'help': "Name of the folder containing binary'signatures to analyze (Default: output/runs/, only that for ToolChain)", 'type': 'None', 'default': 'output/runs/', 'is_mutually_exclusive': False}]}]
+172.17.0.2
+fuck
+WARNING | 2023-04-14 09:23:13,423 | [33mwerkzeug[0m | [33m * Debugger is active![0m
+INFO    | 2023-04-14 09:23:13,424 | [33mwerkzeug[0m | [33m * Debugger PIN: 204-761-936[0m
+INFO    | 2023-04-14 09:23:18,281 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[32mGET / HTTP/1.1[0m" 302 -[0m
+INFO    | 2023-04-14 09:23:18,338 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /index.html HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,365 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:18,367 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:18,368 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:18,370 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /static/js/scripts.js HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,371 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /static/js/datatables-simple-demo.js HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,377 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:18,377 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:18,430 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /static/css/images/rainbow.png HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,430 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /static/css/images/nyanCat.png HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,496 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:18,497 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:18] "GET /progress-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:48,484 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:48] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:48,485 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:48] "GET /progress-scdg HTTP/1.1" 200 -[0m
+ImmutableMultiDict([('scdg_enable', 'scdg_enable'), ('SCDG exploration techniques used', 'CDFS'), ('Format to save graph output', 'json'), ('symb_loop', '3'), ('limit_pause', '200'), ('max_step', '50000'), ('max_deadend', '600'), ('simul_state', '5'), ('n_args', '0'), ('conc_loop', '1024'), ('count_block', 'count_block'), ('sim_file', 'sim_file'), ('min_size', '3'), ('dir', 'output/runs/'), ('timeout', '200'), ('exp_dir', 'output/runs/'), ('binary', '/src/databases/toy2_mutated/custom_recovered0'), ('sthread', '1'), ('threshold', '0.5'), ('biggest_subgraph', '5'), ('support', '0.75'), ('ctimeout', '3'), ('epoch', '5'), ('sepoch', '1'), ('data_scale', '1'), ('vector_size', '4'), ('batch_size', '1'), ('bancteian', 'bancteian'), ('delf', 'delf'), ('FeakerStealer', 'FeakerStealer'), ('gandcrab', 'gandcrab'), ('ircbot', 'ircbot'), ('lamer', 'lamer'), ('nitol', 'nitol'), ('RedLineStealer', 'RedLineStealer'), ('sfone', 'sfone'), ('sillyp2p', 'sillyp2p'), ('simbot', 'simbot'), ('Sodinokibi', 'Sodinokibi'), ('sytro', 'sytro'), ('upatre', 'upatre'), ('wabot', 'wabot'), ('RemcosRAT', 'RemcosRAT'), ('nthread', '12'), ('binaries', 'output/runs/')])
+next is binary
+/src/databases/toy2_mutated/custom_recovered0
+['', '/databases/toy2_mutated/custom_recovered0']
+['output/runs/']
+['--CDFS', '--json', '--symb_loop', '3', '--limit_pause', '200', '--max_step', '50000', '--max_deadend', '600', '--simul_state', '5', '--n_args', '0', '--conc_loop', '1024', '--count_block', '--sim_file', '--min_size', '3', '--dir', 'output/runs/', '--timeout', '200', '--exp_dir', 'output/runs/', '--sthread', '1', '/app/src/databases/toy2_mutated/custom_recovered0', '--threshold', '0.5', '--biggest_subgraph', '5', '--support', '0.75', '--ctimeout', '3', '--epoch', '5', '--sepoch', '1', '--data_scale', '1', '--vector_size', '4', '--batch_size', '1', '--bancteian', '--delf', '--FeakerStealer', '--gandcrab', '--ircbot', '--lamer', '--nitol', '--RedLineStealer', '--sfone', '--sillyp2p', '--simbot', '--Sodinokibi', '--sytro', '--upatre', '--wabot', '--RemcosRAT', '--nthread', '12', '/app/src/output/runs/']
+Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='/app/src/output/runs/', binary='/app/src/databases/toy2_mutated/custom_recovered0', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=True, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='output/runs/', discard_SCDG=True, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='output/runs/', familly=None, gandcrab=False, gs=False, gspan=False, inria=False, ircbot=False, json=True, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=True, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)
+src/output/runs/118/scdg.csv
+INFO    | 2023-04-14 09:23:59,125 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "POST /index.html HTTP/1.1" 200 -[0m
+/app/src/databases/toy2_mutated/custom_recovered0
+[1;32;40mINFO - 2023-04-14 09:23:59,242 - SemaSCDG - You decide to analyse a single binary: /app/src/databases/toy2_mutated/custom_recovered0[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,246 - SemaSCDG - Namespace(BFS=False, CBFS=False, CDFS=True, DBFS=False, DFS=False, FeakerStealer=False, RedLineStealer=False, RemcosRAT=False, SCDFS=False, SDFS=False, Sodinokibi=False, ThreadCDFS=False, approximate=False, bancteian=False, batch_size=1, biggest_subgraph=5, binaries='src/output/runs/118/', binary='/app/src/databases/toy2_mutated/custom_recovered0', classification=False, conc_loop=1024, concrete_target_is_local=False, count_block=True, ctimeout=3, data_scale=1.0, debug_error=False, delf=False, detection=False, dir='src/output/runs/118/', discard_SCDG=True, disjoint_union=False, dl=False, epoch=5, eval_time=False, exp_dir='src/output/runs/118/unknown/', familly=None, gandcrab=False, gs=False, gspan=False, inria=False, ircbot=False, json=True, lamer=False, limit_pause=200, max_deadend=600, max_step=50000, memory_limit=False, min_size=3, n_args=0, nitol=False, not_comp_args=False, not_ignore_zero=False, not_resolv_string=False, nthread=12, packed=False, post_run_thread=False, pre_run_thread=False, runtime_run_thread=False, sepoch=1, sfone=False, sillyp2p=False, sim_file=True, simbot=False, simul_state=5, sthread=1, support=0.75, symb_loop=3, symbion=False, sytro=False, three_edges=False, threshold=0.5, timeout=200, track_command=False, train=False, unipacker=False, upatre=False, vector_size=4, verbose_classifier=False, verbose_scdg=False, wabot=False, wl=False)[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,247 - SemaSCDG - src/output/runs/118/scdg.csv[0m
+src/output/runs/118/unknown//custom_recovered0/ src/output/runs/118/
+[1;32;40mINFO - 2023-04-14 09:23:59,247 - SemaSCDG - 
+--------------------------------------------------
+--- Building SCDG of unknown/custom_recovered0 ---
+--------------------------------------------------[0m
+[1;32;40mINFO - 2023-04-14 09:23:59,274 - SemaSCDG - expected 2, found 0[0m
+Exception in thread Thread-21:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/elftools/construct/core.py", line 351, in _parse
+INFO    | 2023-04-14 09:23:59,276 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/nyan.css HTTP/1.1[0m" 304 -[0m
+    return self.packer.unpack(_read_stream(stream, self.length))[0]
+  File "/usr/local/lib/python3.8/dist-packages/elftools/construct/core.py", line 293, in _read_stream
+INFO    | 2023-04-14 09:23:59,278 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/nyan.js HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:59,280 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:59,281 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/scripts.js HTTP/1.1[0m" 304 -[0m
+    raise FieldError("expected %d, found %d" % (length, len(data)))
+elftools.construct.core.FieldError: expected 2, found 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+INFO    | 2023-04-14 09:23:59,286 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/assets/demo/chart-area-demo.js HTTP/1.1[0m" 304 -[0m
+  File "/usr/local/lib/python3.8/dist-packages/elftools/common/utils.py", line 41, in struct_parse
+    return struct.parse_stream(stream)
+INFO    | 2023-04-14 09:23:59,287 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/js/datatables-simple-demo.js HTTP/1.1[0m" 304 -[0m
+  File "/usr/local/lib/python3.8/dist-packages/elftools/construct/core.py", line 190, in parse_stream
+INFO    | 2023-04-14 09:23:59,288 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/assets/demo/chart-bar-demo.js HTTP/1.1[0m" 304 -[0m
+    return self._parse(stream, Container())
+  File "/usr/local/lib/python3.8/dist-packages/elftools/construct/core.py", line 647, in _parse
+    subobj = sc._parse(stream, context)
+  File "/usr/local/lib/python3.8/dist-packages/elftools/construct/core.py", line 353, in _parse
+    raise FieldError(ex)
+elftools.construct.core.FieldError: expected 2, found 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1458, in start_scdg
+    self.build_scdg(args,is_fl=is_fl,csv_file=csv_file)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 297, in build_scdg
+    proj = angr.Project(
+  File "/usr/local/lib/python3.8/dist-packages/angr/project.py", line 138, in __init__
+    self.loader = cle.Loader(self.filename, concrete_target=concrete_target, **load_options)
+  File "/usr/local/lib/python3.8/dist-packages/cle/loader.py", line 133, in __init__
+    self.initial_load_objects = self._internal_load(main_binary, *preload_libs, *force_load_libs, preloading=(main_binary, *preload_libs))
+  File "/usr/local/lib/python3.8/dist-packages/cle/loader.py", line 689, in _internal_load
+    obj = self._load_object_isolated(main_spec)
+  File "/usr/local/lib/python3.8/dist-packages/cle/loader.py", line 871, in _load_object_isolated
+    result = backend_cls(binary, binary_stream, is_main_bin=self.main_object is None, loader=self, **options)
+  File "/usr/local/lib/python3.8/dist-packages/cle/backends/elf/elf.py", line 167, in __init__
+    self.__register_segments()
+  File "/usr/local/lib/python3.8/dist-packages/cle/backends/elf/elf.py", line 797, in __register_segments
+    self.__register_dyn(seg)
+  File "/usr/local/lib/python3.8/dist-packages/cle/backends/elf/elf.py", line 896, in __register_dyn
+    for _, aux in readelf_verneed.iter_versions():
+  File "/usr/local/lib/python3.8/dist-packages/elftools/elf/gnuversions.py", line 154, in iter_versions
+    for verneed, vernaux in super(GNUVerNeedSection, self).iter_versions():
+  File "/usr/local/lib/python3.8/dist-packages/elftools/elf/gnuversions.py", line 108, in iter_versions
+    entry = struct_parse(
+  File "/usr/local/lib/python3.8/dist-packages/elftools/common/utils.py", line 43, in struct_parse
+    raise ELFParseError(str(e))
+elftools.common.exceptions.ELFParseError: expected 2, found 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/src/SemaSCDG/SemaSCDG.py", line 1461, in start_scdg
+    self.log.info("Error: "+file+" is not a valid binary")
+UnboundLocalError: local variable 'file' referenced before assignment
+INFO    | 2023-04-14 09:23:59,344 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:59,345 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m
+INFO    | 2023-04-14 09:23:59,384 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "GET /iteration-scdg HTTP/1.1" 200 -[0m
+INFO    | 2023-04-14 09:23:59,386 | [33mwerkzeug[0m | [33m172.17.0.1 - - [14/Apr/2023 09:23:59] "GET /progress-scdg HTTP/1.1" 200 -[0m
+^CTraceback (most recent call last):
+  File "/app/SemaWebApp/SemaServer.py", line 810, in <module>
+    main()
+  File "/app/SemaWebApp/SemaServer.py", line 807, in main
+    sys.exit(sema.exec_())
+AttributeError: 'SemaServer' object has no attribute 'exec_'
+Traceback (most recent call last):
+  File "SemaWebApp/SemaServer.py", line 810, in <module>
+    main()
+  File "SemaWebApp/SemaServer.py", line 807, in main
+    sys.exit(sema.exec_())
+AttributeError: 'SemaServer' object has no attribute 'exec_'

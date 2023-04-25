@@ -215,8 +215,8 @@ printf '\n%s\n' "-------------> Install malware guacd: <-------------"
 ## install guac
 mkdir /tmp/guac-build
 cd /tmp/guac-build
-wget https://www.apache.org/dist/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz
-tar xvf guacamole-server-1.3.0.tar.gz && cd guacamole-server-1.3.0
+wget https://www.apache.org/dist/guacamole/1.5.0/source/guacamole-server-1.5.0.tar.gz
+tar xvf guacamole-server-1.5.0.tar.gz && cd guacamole-server-1.5.0
 ./configure --with-init-dir=/etc/init.d
 make && sudo make install && cd ..
 sudo ldconfig

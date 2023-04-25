@@ -1,0 +1,70 @@
+[1;32;40mINFO - 2023-04-10 13:34:34,626 - [34mangr.project[0m - [34mLoading binary /app/src/databases/toy_examples/toy_noarg1[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,674 - [34mangr.project[0m - [34mDisabling IRSB translation cache because support for self-modifying code is enabled.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,674 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved printf from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,675 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved free from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,675 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fclose from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,675 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved rewind from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,676 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fseek from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,676 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fwrite from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,676 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fread from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,676 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved malloc from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,677 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved exit from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,677 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved __libc_start_main from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,677 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved ftell from libc.so.0[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,677 - [34mangr.project[0m - [34mUsing builtin SimProcedure for unresolved fopen from libc.so.0[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,679 - [33mangr.engines.vex.lifter[0m - [33mSelf-modifying code is not always correctly optimized by PyVEX. To guarantee correctness, VEX optimizations have been disabled.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mThe program is accessing memory with an unspecified value. This could indicate unwanted behavior.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mangr will cope with this by generating an unconstrained symbolic variable and continuing. You can resolve this by:[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m1) setting a value to the initial state[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m2) adding the state option ZERO_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to make unknown regions hold null[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32m3) adding the state option SYMBOL_FILL_UNCONSTRAINED_{MEMORY,REGISTERS}, to suppress these messages.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:34,752 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc000800c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,772 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:34:34] "[36mGET /static/css/images/rainbow.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,773 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:34:34] "[36mGET /static/css/images/nyanCat.png HTTP/1.1[0m" 304 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,806 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:34:34] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:34,810 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:34:34] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:38,140 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0010014 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:41,459 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc001801c with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:44,687 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0xc0020024 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:47,972 - [32mangr.storage.memory_mixins.default_filler_mixin[0m - [32mFilling memory at 0x30 with 4 unconstrained bytes referenced from 0x80491c0 (_start+0x0 in toy_noarg1 (0x80491c0))[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:48,088 - [36mCustomSimProcedure[0m - [36mcustom_hook_static[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,088 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,088 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,089 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,090 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x0, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100004, <SimProcedure printf>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100008, <SimProcedure free>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810000c, <SimProcedure fclose>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,091 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100010, <SimProcedure rewind>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100014, <SimProcedure fseek>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100018, <SimProcedure fwrite>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810001c, <SimProcedure fread>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100020, <SimProcedure malloc>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100024, <SimProcedure exit>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100028, <SimProcedure __libc_start_main>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x810002c, <SimProcedure ftell>). Not re-hooking.[0m[0m
+[1;33;40mWARNING - 2023-04-10 13:34:48,092 - [34mangr.project[0m - [34mAddress is already hooked, during hook(0x8100030, <SimProcedure fopen>). Not re-hooking.[0m[0m
+[1;32;40mINFO - 2023-04-10 13:34:48,093 - [36mCustomSimProcedure[0m - [36mcustom_hook_no_symbols[0m[0m
+[1;32;40mINFO - 2023-04-10 13:35:04,809 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:35:04] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:35:04,812 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:35:04] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:35:34,807 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:35:34] "GET /iteration-scdg HTTP/1.1" 200 -[0m[0m
+[1;32;40mINFO - 2023-04-10 13:35:34,811 - [33mwerkzeug[0m - [33m172.17.0.1 - - [10/Apr/2023 13:35:34] "GET /progress-scdg HTTP/1.1" 200 -[0m[0m
