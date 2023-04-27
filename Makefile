@@ -31,8 +31,6 @@ build-web-sema:
 	docker build  --rm -t sema-web -f Dockerfile.sema.fix --build-arg image=sema-web-nf .
 
 build-binrec:
-	git submodule update --recursive --init #TODO only binrec
-	git submodule update --recursive
 	docker build --rm -t binrec -f Dockerfile.binrec .
 
 run-binrec-api:
@@ -45,7 +43,7 @@ run-binrec-api:
 			   -v $(PWD)/penv-fix/:/penv-fix/ \
 			   -p 8181:8080 \
 			   --network="bridge" \
-			   -it binrec just run-api
+			   -it binrec bash run_binrec_api.sh
 
 run-web:
 	#bash update_etc_hosts.sh

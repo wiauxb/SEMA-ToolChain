@@ -58,6 +58,7 @@ RUN git config --global url."https://".insteadOf git:// && \
     git clone https://github.com/wiauxb/binrec-tob.git
 
 WORKDIR /home/myuser/binrec-tob
+ADD run_binrec_api.sh /home/myuser/binrec-tob/run_binrec_api.sh
 
 RUN git checkout rest-api; chmod +x get_just.sh; ./get_just.sh; just install-binrec
 
