@@ -2,7 +2,7 @@ import argparse
 import sys
 
 from src import SemaMutator
-
+    
 
 class ArgumentParserMutator:
     
@@ -23,6 +23,13 @@ class ArgumentParserMutator:
             "--trace",
             help="Add a trace (usage: <name of trace> <symbolic arg> <args>)"
         )
+        
+        self.group.add_argument(
+            "mutant_number",
+            help="Number of mutants to generate",
+            default=1,
+            type=int
+        )
 
         self.group.add_argument(
             "--binaries_mutated",
@@ -35,6 +42,7 @@ class ArgumentParserMutator:
     def update_tool(self,args):
         self.tool_mutator.binary = args.binary
         self.tool_mutator.traces = args.trace
+        self.tool_mutator.mutant_number = args.mutant_number
         self.tool_mutator.output = args.binaries_mutated + "/"
 
     def parse_arguments(self, allow_unk = False, args_list=None):

@@ -8,6 +8,7 @@ class SemaMutator:
 
     binary = ""
     traces = []
+    mutant_number = 1
     output = ""
 
     log = logging.getLogger("SemaMutator")
@@ -23,14 +24,15 @@ class SemaMutator:
 
     def start_mutation(self):
         
-        # res = client.containers.run("binrec",
-        #                             ["sh", "-c", f"just new-project test {self.binary} && just add-trace test {self.traces} && just recover test && mv s2e/projects/test/s2e-out/recovered {self.output}"],
-        #                             environment=["TERM=linux", "TERMINFO=/etc/terminfo"],
-        #                             volumes=["/app/src:/app/src"],
-        #                             remove=True)
         
         r = requests.post("http://172.17.0.2:8080/add-project", json={"project":"test",
-                                                              "path":"programs/mult_func"})
+                                                              "path": self.binary})
+        
+        r = requests.post("http://172.17.0.2:8080/projects/test/add-trace", json={"trace_name":"tr1",
+                                                                "trace_args": self.traces[0],
+                                                                "trace_symbolic_args": self.traces[1]})
+
+        r = requests.get(f"http://172.17.0.2:8080/projects/test/mutations/{self.mutant_number}")
         
         print(r)
         print("+"*20)
