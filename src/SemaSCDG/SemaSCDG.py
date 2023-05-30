@@ -376,9 +376,9 @@ class SemaSCDG:
         # addr = 0x00406fac
         # Create initial state of the binary
         
-        options =  {angr.options.USE_SYSTEM_TIMES} # angr.options.ZERO_FILL_UNCONSTRAINED_REGISTERS {angr.options.SYMBOLIC_INITIAL_VALUES
-        options.add(angr.options.EFFICIENT_STATE_MERGING)
-        options.add(angr.options.DOWNSIZE_Z3)
+        #options =  {angr.options.USE_SYSTEM_TIMES} # angr.options.ZERO_FILL_UNCONSTRAINED_REGISTERS {angr.options.SYMBOLIC_INITIAL_VALUES
+        #options.add(angr.options.EFFICIENT_STATE_MERGING)
+        #options.add(angr.options.DOWNSIZE_Z3)
         
         # Already present in "symbolic mode"
         # options.add(angr.options.OPTIMIZE_IR)
@@ -386,12 +386,12 @@ class SemaSCDG:
         # options.add(angr.options.SIMPLIFY_MEMORY_READS)
         # options.add(angr.options.SIMPLIFY_MEMORY_WRITES)
         # options.add(angr.options.SIMPLIFY_CONSTRAINTS)
-        # options.add(angr.options.SYMBOLIC_INITIAL_VALUES)
+        options = {angr.options.SYMBOLIC_INITIAL_VALUES}
         
-        # options.add(angr.options.ZERO_FILL_UNCONSTRAINED_REGISTERS) # remove for magicRAT
-        # options.add(angr.options.ZERO_FILL_UNCONSTRAINED_MEMORY)
-        # options.add(angr.options.SYMBOL_FILL_UNCONSTRAINED_REGISTERS)
-        # options.add(angr.options.SYMBOL_FILL_UNCONSTRAINED_MEMORY)
+        options.add(angr.options.ZERO_FILL_UNCONSTRAINED_REGISTERS) # remove for magicRAT
+        options.add(angr.options.ZERO_FILL_UNCONSTRAINED_MEMORY)
+        options.add(angr.options.SYMBOL_FILL_UNCONSTRAINED_REGISTERS)
+        options.add(angr.options.SYMBOL_FILL_UNCONSTRAINED_MEMORY)
          
         options.add(angr.options.MEMORY_CHUNK_INDIVIDUAL_READS)
         #options.add(angr.options.SYMBOLIC_WRITE_ADDRESSES)
@@ -1275,7 +1275,7 @@ class SemaSCDG:
                     "trace": self.scdg[stateDead.globals["id"]],
                 }
                 dump_id = dump_id + 1
-                self.scdg_fin.append(self.scdg[state.globals["id"]])
+                self.scdg_fin.append(self.scdg[stateDead.globals["id"]])
 
         for state in simgr.active:
             hashVal = hash(str(self.scdg[state.globals["id"]]))
@@ -1289,7 +1289,7 @@ class SemaSCDG:
                 self.scdg_fin.append(self.scdg[state.globals["id"]])
 
         for error in simgr.errored:
-            hashVal = hash(str(self.scdg[state.globals["id"]]))
+            hashVal = hash(str(self.scdg[error.state.globals["id"]]))
             if hashVal not in dic_hash_SCDG:
                 dic_hash_SCDG[hashVal] = 1
                 dump_file[dump_id] = {
@@ -1297,7 +1297,7 @@ class SemaSCDG:
                     "trace": self.scdg[error.state.globals["id"]],
                 }
                 dump_id = dump_id + 1
-                self.scdg_fin.append(self.scdg[state.globals["id"]])
+                self.scdg_fin.append(self.scdg[error.state.globals["id"]])
                 
         for error in simgr.pause:
             hashVal = hash(str(self.scdg[state.globals["id"]]))

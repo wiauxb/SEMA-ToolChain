@@ -269,6 +269,7 @@ class GraphBuilder:
 
             for i in range(len(SCDG)):
                 if self.verbose:
+                    self.lw.info(SCDG[i])
                     self.lw.info("Using SCDG " + str(i + 1) + " over " + str(len(SCDG)))
 
                 if len(SCDG[i]) >= self.MIN_SIZE:
